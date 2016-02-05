@@ -1,0 +1,33 @@
+<?php
+
+namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Fisicas
+ *
+ * @ORM\Table(name="fisicas")
+ * @ORM\Entity
+ */
+class Fisicas
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_fisicas", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idFisicas;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fisicas", type="string", length=45, nullable=true)
+     */
+    private $fisicas;
+
+
+}
+

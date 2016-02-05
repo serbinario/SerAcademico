@@ -1,0 +1,43 @@
+<?php
+
+namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Cidades
+ *
+ * @ORM\Table(name="cidades", indexes={@ORM\Index(name="fk_cidades_estados1_idx", columns={"estados_id_estados"})})
+ * @ORM\Entity
+ */
+class Cidades
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_cidades", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCidades;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome_cidade", type="string", length=50, nullable=true)
+     */
+    private $nomeCidade;
+
+    /**
+     * @var \Estados
+     *
+     * @ORM\ManyToOne(targetEntity="Estados")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estados_id_estados", referencedColumnName="id_estados")
+     * })
+     */
+    private $estadosEstados;
+
+
+}
+

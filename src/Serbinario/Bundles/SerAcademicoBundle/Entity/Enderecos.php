@@ -1,0 +1,193 @@
+<?php
+
+namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Enderecos
+ *
+ * @ORM\Table(name="enderecos", indexes={@ORM\Index(name="fk_enderecos_bairros1_idx", columns={"bairros_id_bairros"})})
+ * @ORM\Entity
+ */
+class Enderecos
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_enderecos", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idEnderecos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="logradouro", type="string", length=50, nullable=true)
+     */
+    private $logradouro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cep", type="string", length=20, nullable=true)
+     */
+    private $cep;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero", type="string", length=10, nullable=true)
+     */
+    private $numero;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="complemento", type="string", length=20, nullable=true)
+     */
+    private $complemento;
+
+    /**
+     * @var \Bairros
+     *
+     * @ORM\ManyToOne(targetEntity="Bairros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="bairros_id_bairros", referencedColumnName="id_bairros")
+     * })
+     */
+    private $bairrosBairros;
+
+
+
+    /**
+     * Get idEnderecos
+     *
+     * @return integer
+     */
+    public function getIdEnderecos()
+    {
+        return $this->idEnderecos;
+    }
+
+    /**
+     * Set logradouro
+     *
+     * @param string $logradouro
+     *
+     * @return Enderecos
+     */
+    public function setLogradouro($logradouro)
+    {
+        $this->logradouro = $logradouro;
+
+        return $this;
+    }
+
+    /**
+     * Get logradouro
+     *
+     * @return string
+     */
+    public function getLogradouro()
+    {
+        return $this->logradouro;
+    }
+
+    /**
+     * Set cep
+     *
+     * @param string $cep
+     *
+     * @return Enderecos
+     */
+    public function setCep($cep)
+    {
+        $this->cep = $cep;
+
+        return $this;
+    }
+
+    /**
+     * Get cep
+     *
+     * @return string
+     */
+    public function getCep()
+    {
+        return $this->cep;
+    }
+
+    /**
+     * Set numero
+     *
+     * @param string $numero
+     *
+     * @return Enderecos
+     */
+    public function setNumero($numero)
+    {
+        $this->numero = $numero;
+
+        return $this;
+    }
+
+    /**
+     * Get numero
+     *
+     * @return string
+     */
+    public function getNumero()
+    {
+        return $this->numero;
+    }
+
+    /**
+     * Set complemento
+     *
+     * @param string $complemento
+     *
+     * @return Enderecos
+     */
+    public function setComplemento($complemento)
+    {
+        $this->complemento = $complemento;
+
+        return $this;
+    }
+
+    /**
+     * Get complemento
+     *
+     * @return string
+     */
+    public function getComplemento()
+    {
+        return $this->complemento;
+    }
+
+    /**
+     * Set bairrosBairros
+     *
+     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Bairros $bairrosBairros
+     *
+     * @return Enderecos
+     */
+    public function setBairrosBairros(\Serbinario\Bundles\SerAcademicoBundle\Entity\Bairros $bairrosBairros = null)
+    {
+        $this->bairrosBairros = $bairrosBairros;
+
+        return $this;
+    }
+
+    /**
+     * Get bairrosBairros
+     *
+     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\Bairros
+     */
+    public function getBairrosBairros()
+    {
+        return $this->bairrosBairros;
+    }
+}

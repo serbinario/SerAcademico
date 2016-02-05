@@ -1,0 +1,40 @@
+<?php
+
+namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Estados
+ *
+ * @ORM\Table(name="estados")
+ * @ORM\Entity
+ */
+class Estados
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_estados", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idEstados;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome_estados", type="string", length=50, nullable=true)
+     */
+    private $nomeEstados;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prefixo_estados", type="string", length=3, nullable=true)
+     */
+    private $prefixoEstados;
+
+
+}
+

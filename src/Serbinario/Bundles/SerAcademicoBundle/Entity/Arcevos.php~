@@ -1,0 +1,92 @@
+<?php
+
+namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Arcevos
+ *
+ * @ORM\Table(name="arcevos", indexes={@ORM\Index(name="fk_arcevos_tipos_acervos1_idx", columns={"tipos_acervos_id_tipos_acervos"})})
+ * @ORM\Entity
+ */
+class Arcevos
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_arcevos", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idArcevos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="entrada_principal_arcevos", type="string", length=50, nullable=true)
+     */
+    private $entradaPrincipalArcevos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="entrada_secundaria_arcevos", type="string", length=50, nullable=true)
+     */
+    private $entradaSecundariaArcevos;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="classificacao_decimal_arcevos", type="integer", nullable=true)
+     */
+    private $classificacaoDecimalArcevos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="assunto_arcevos", type="string", length=100, nullable=true)
+     */
+    private $assuntoArcevos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titulo_arcevos", type="string", length=100, nullable=true)
+     */
+    private $tituloArcevos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subtitulo_arcevos", type="string", length=100, nullable=true)
+     */
+    private $subtituloArcevos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cutter_arcevos", type="string", length=50, nullable=true)
+     */
+    private $cutterArcevos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero_chamada_arcevos", type="string", length=10, nullable=true)
+     */
+    private $numeroChamadaArcevos;
+
+    /**
+     * @var \TiposAcervos
+     *
+     * @ORM\ManyToOne(targetEntity="TiposAcervos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="tipos_acervos_id_tipos_acervos", referencedColumnName="id_tipos_acervos")
+     * })
+     */
+    private $tiposAcervosTiposAcervos;
+
+
+}
+

@@ -1,0 +1,129 @@
+<?php
+
+namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Exemplares
+ *
+ * @ORM\Table(name="exemplares", indexes={@ORM\Index(name="fk_exemplares_obras_idx", columns={"obras_id_obras"}), @ORM\Index(name="fk_exemplares_editoras1_idx", columns={"editoras_id_editoras"}), @ORM\Index(name="fk_exemplares_ilustracoes1_idx", columns={"ilustracoes_id_ilustracoes"}), @ORM\Index(name="fk_exemplares_idiomas1_idx", columns={"idiomas_id_idiomas"})})
+ * @ORM\Entity
+ */
+class Exemplares
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_exemplares", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idExemplares;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ano_exemplares", type="integer", nullable=true)
+     */
+    private $anoExemplares;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="notas_gerais_exemplares", type="string", length=100, nullable=true)
+     */
+    private $notasGeraisExemplares;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="notas_bibliograficas_exemplares", type="string", length=100, nullable=true)
+     */
+    private $notasBibliograficasExemplares;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="isbn_exemplares", type="string", length=10, nullable=true)
+     */
+    private $isbnExemplares;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="registros_exemplares", type="string", length=45, nullable=true)
+     */
+    private $registrosExemplares;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_catagolacao_exemplares", type="date", nullable=true)
+     */
+    private $dataCatagolacaoExemplares;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numero_pag_exemplares", type="integer", nullable=true)
+     */
+    private $numeroPagExemplares;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero_edicao_exemplares", type="string", length=10, nullable=true)
+     */
+    private $numeroEdicaoExemplares;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="palavras_chaves_exemplares", type="string", length=100, nullable=true)
+     */
+    private $palavrasChavesExemplares;
+
+    /**
+     * @var \Editoras
+     *
+     * @ORM\ManyToOne(targetEntity="Editoras")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="editoras_id_editoras", referencedColumnName="id_editoras")
+     * })
+     */
+    private $editorasEditoras;
+
+    /**
+     * @var \Idiomas
+     *
+     * @ORM\ManyToOne(targetEntity="Idiomas")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idiomas_id_idiomas", referencedColumnName="id_idiomas")
+     * })
+     */
+    private $idiomasiomas;
+
+    /**
+     * @var \Ilustracoes
+     *
+     * @ORM\ManyToOne(targetEntity="Ilustracoes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ilustracoes_id_ilustracoes", referencedColumnName="id_ilustracoes")
+     * })
+     */
+    private $ilustracoesIlustracoes;
+
+    /**
+     * @var \Arcevos
+     *
+     * @ORM\ManyToOne(targetEntity="Arcevos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="obras_id_obras", referencedColumnName="id_arcevos")
+     * })
+     */
+    private $obrasObras;
+
+
+}
+

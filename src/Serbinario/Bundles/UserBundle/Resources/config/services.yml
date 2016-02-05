@@ -1,0 +1,17 @@
+services:
+    app.serbinario.user_repository:
+        class: Doctrine\ORM\EntityRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - Serbinario\Bundles\UserBundle\Entity\User
+
+    app.serbinario.user.provider:
+        class: Serbinario\Bundles\UserBundle\Provider\UserProvider
+        arguments: ["@app.serbinario.user_repository"]
+
+    oauth_event_listener:
+        class:  Serbinario\Bundles\UserBundle\EventListener\OAuthEventListener
+        arguments: ["@doctrine.orm.entity_manager"]
+        tags:
+            - { name: kernel.event_listener, event: fos_oauth_server.pre_authorization_process,  method: onPreAuthorizationProcess }
+            - { name: kernel.event_listener, event: fos_oauth_server.post_authorization_process, method: onPostAuthorizationProcess }

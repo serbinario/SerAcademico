@@ -1,0 +1,347 @@
+<?php
+
+namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Alunos
+ *
+ * @ORM\Table(name="alunos", indexes={@ORM\Index(name="fk_alunos_enderecos1_idx", columns={"enderecos_id_enderecos"}), @ORM\Index(name="fk_alunos_sexos1_idx", columns={"sexos_id_sexos"}), @ORM\Index(name="fk_alunos_emancipados1_idx", columns={"emancipados_id_emancipados"}), @ORM\Index(name="fk_alunos_turnos1_idx", columns={"turnos_id_turnos"}), @ORM\Index(name="fk_alunos_grau_instrucoes1_idx", columns={"grau_instrucoes_id_grau_instrucoes"}), @ORM\Index(name="fk_alunos_profissoes1_idx", columns={"profissoes_id_profissoes"}), @ORM\Index(name="fk_alunos_religioes1_idx", columns={"religioes_id_religioes"}), @ORM\Index(name="fk_alunos_estados_civis1_idx", columns={"estados_civis_id_estados_civis"}), @ORM\Index(name="fk_alunos_tipos_sanguinios1_idx", columns={"tipos_sanguinios_id_tipos_sanguinios"}), @ORM\Index(name="fk_alunos_cores_racas1_idx", columns={"cores_racas_idcores_racas"}), @ORM\Index(name="fk_alunos_estados1_idx", columns={"estados_id_estados"}), @ORM\Index(name="fk_alunos_exames1_idx", columns={"exames_id_exames"}), @ORM\Index(name="fk_alunos_exames2_idx", columns={"exames_id_exames1"}), @ORM\Index(name="fk_alunos_auditivas1_idx", columns={"auditivas_id_auditivas"}), @ORM\Index(name="fk_alunos_fisicas1_idx", columns={"fisicas_id_fisicas"}), @ORM\Index(name="fk_alunos_visuais1_idx", columns={"visuais_id_visuais"})})
+ * @ORM\Entity
+ */
+class Alunos
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_alunos", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="matricula_alunos", type="string", length=20, nullable=true)
+     */
+    private $matriculaAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome_alunos", type="string", length=50, nullable=true)
+     */
+    private $nomeAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome_pai_alunos", type="string", length=50, nullable=true)
+     */
+    private $nomePaiAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome_social_alunos", type="string", length=50, nullable=true)
+     */
+    private $nomeSocialAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome_mae_alunos", type="string", length=50, nullable=true)
+     */
+    private $nomeMaeAlunos;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="identidade_alunos", type="integer", nullable=true)
+     */
+    private $identidadeAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="orgao_rg_alunos", type="string", length=30, nullable=true)
+     */
+    private $orgaoRgAlunos;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_expedicao_alunos", type="date", nullable=true)
+     */
+    private $dataExpedicaoAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cpf_alunos", type="string", length=20, nullable=true)
+     */
+    private $cpfAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titulo_eleitoral_alunos", type="string", length=20, nullable=true)
+     */
+    private $tituloEleitoralAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="zona_alunos", type="string", length=20, nullable=true)
+     */
+    private $zonaAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="secao_alunos", type="string", length=20, nullable=true)
+     */
+    private $secaoAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="resevista_alunos", type="string", length=20, nullable=true)
+     */
+    private $resevistaAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="catagoria_resevista_alunos", type="string", length=20, nullable=true)
+     */
+    private $catagoriaResevistaAlunos;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_nasciemento_alunos", type="date", nullable=true)
+     */
+    private $dataNasciementoAlunos;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="nacionalidade_aluno", type="date", nullable=true)
+     */
+    private $nacionalidadeAluno;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="naturalidade", type="date", nullable=true)
+     */
+    private $naturalidade;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ano_conclusao_2_grau_alunos", type="integer", nullable=true)
+     */
+    private $anoConclusao2GrauAlunos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="outra_escola_alunos", type="string", length=100, nullable=true)
+     */
+    private $outraEscolaAlunos;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_exame_nacional_um", type="date", nullable=true)
+     */
+    private $dataExameNacionalUm;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="nota_exame_nacional_um", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $notaExameNacionalUm;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_exame_nacional_dois", type="date", nullable=true)
+     */
+    private $dataExameNacionalDois;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="nota_exame_nacional_dois", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $notaExameNacionalDois;
+
+    /**
+     * @var \Enderecos
+     *
+     * @ORM\ManyToOne(targetEntity="Enderecos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="enderecos_id_enderecos", referencedColumnName="id_enderecos")
+     * })
+     */
+    private $enderecosEnderecos;
+
+    /**
+     * @var \Sexos
+     *
+     * @ORM\ManyToOne(targetEntity="Sexos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="sexos_id_sexos", referencedColumnName="id_sexos")
+     * })
+     */
+    private $sexosSexos;
+
+    /**
+     * @var \Emancipados
+     *
+     * @ORM\ManyToOne(targetEntity="Emancipados")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="emancipados_id_emancipados", referencedColumnName="id_emancipados")
+     * })
+     */
+    private $emancipadosEmancipados;
+
+    /**
+     * @var \Turnos
+     *
+     * @ORM\ManyToOne(targetEntity="Turnos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="turnos_id_turnos", referencedColumnName="id_turnos")
+     * })
+     */
+    private $turnosTurnos;
+
+    /**
+     * @var \GrauInstrucoes
+     *
+     * @ORM\ManyToOne(targetEntity="GrauInstrucoes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="grau_instrucoes_id_grau_instrucoes", referencedColumnName="id_grau_instrucoes")
+     * })
+     */
+    private $grauInstrucoesGrauInstrucoes;
+
+    /**
+     * @var \Profissoes
+     *
+     * @ORM\ManyToOne(targetEntity="Profissoes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="profissoes_id_profissoes", referencedColumnName="id_profissoes")
+     * })
+     */
+    private $profissoesProfissoes;
+
+    /**
+     * @var \Religioes
+     *
+     * @ORM\ManyToOne(targetEntity="Religioes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="religioes_id_religioes", referencedColumnName="id_religioes")
+     * })
+     */
+    private $religioesReligioes;
+
+    /**
+     * @var \EstadosCivis
+     *
+     * @ORM\ManyToOne(targetEntity="EstadosCivis")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estados_civis_id_estados_civis", referencedColumnName="id_estados_civis")
+     * })
+     */
+    private $estadosCivisEstadosCivis;
+
+    /**
+     * @var \TiposSanguinios
+     *
+     * @ORM\ManyToOne(targetEntity="TiposSanguinios")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="tipos_sanguinios_id_tipos_sanguinios", referencedColumnName="id_tipos_sanguinios")
+     * })
+     */
+    private $tiposSanguiniosTiposSanguinios;
+
+    /**
+     * @var \CoresRacas
+     *
+     * @ORM\ManyToOne(targetEntity="CoresRacas")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cores_racas_idcores_racas", referencedColumnName="idcores_racas")
+     * })
+     */
+    private $coresRacascoresRacas;
+
+    /**
+     * @var \Estados
+     *
+     * @ORM\ManyToOne(targetEntity="Estados")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estados_id_estados", referencedColumnName="id_estados")
+     * })
+     */
+    private $estadosEstados;
+
+    /**
+     * @var \Exames
+     *
+     * @ORM\ManyToOne(targetEntity="Exames")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="exames_id_exames", referencedColumnName="id_exames")
+     * })
+     */
+    private $examesExames;
+
+    /**
+     * @var \Exames
+     *
+     * @ORM\ManyToOne(targetEntity="Exames")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="exames_id_exames1", referencedColumnName="id_exames")
+     * })
+     */
+    private $examesExames1;
+
+    /**
+     * @var \Auditivas
+     *
+     * @ORM\ManyToOne(targetEntity="Auditivas")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="auditivas_id_auditivas", referencedColumnName="id_auditivas")
+     * })
+     */
+    private $auditivasAuditivas;
+
+    /**
+     * @var \Fisicas
+     *
+     * @ORM\ManyToOne(targetEntity="Fisicas")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fisicas_id_fisicas", referencedColumnName="id_fisicas")
+     * })
+     */
+    private $fisicasFisicas;
+
+    /**
+     * @var \Visuais
+     *
+     * @ORM\ManyToOne(targetEntity="Visuais")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="visuais_id_visuais", referencedColumnName="id_visuais")
+     * })
+     */
+    private $visuaisVisuais;
+
+
+}
+

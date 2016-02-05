@@ -1,0 +1,64 @@
+<?php
+
+namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Enderecos
+ *
+ * @ORM\Table(name="enderecos", indexes={@ORM\Index(name="fk_enderecos_bairros1_idx", columns={"bairros_id_bairros"})})
+ * @ORM\Entity
+ */
+class Enderecos
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_enderecos", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idEnderecos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="logradouro", type="string", length=50, nullable=true)
+     */
+    private $logradouro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cep", type="string", length=20, nullable=true)
+     */
+    private $cep;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero", type="string", length=10, nullable=true)
+     */
+    private $numero;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="complemento", type="string", length=20, nullable=true)
+     */
+    private $complemento;
+
+    /**
+     * @var \Bairros
+     *
+     * @ORM\ManyToOne(targetEntity="Bairros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="bairros_id_bairros", referencedColumnName="id_bairros")
+     * })
+     */
+    private $bairrosBairros;
+
+
+}
+

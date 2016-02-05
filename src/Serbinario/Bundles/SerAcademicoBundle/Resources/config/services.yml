@@ -1,0 +1,14 @@
+parameters:
+    dao.class.alunos: Serbinario\Bundles\SerAcademicoBundle\DAO\AlunosDAO
+    rn.class.alunos : Serbinario\Bundles\SerAcademicoBundle\RN\AlunosRN
+
+    
+services:
+    alunos_dao:
+        class:  %dao.class.alunos%
+        arguments:  [ "@doctrine.orm.entity_manager" ]
+        public: false
+        
+    alunos_rn:
+        class:  %rn.class.alunos%
+        arguments:  [ "@alunos_dao" ]
