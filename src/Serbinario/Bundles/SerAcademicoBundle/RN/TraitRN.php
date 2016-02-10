@@ -6,12 +6,6 @@ trait TraitRN
 {
     /**
      *
-     * @var type
-     */
-    private $dao;
-
-    /**
-     *
      * @param type $entity
      * @return type
      */

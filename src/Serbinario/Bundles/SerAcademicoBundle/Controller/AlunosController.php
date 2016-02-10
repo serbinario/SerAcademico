@@ -158,11 +158,11 @@ class AlunosController extends FOSRestController
 
             #Repasando a requisição
             $form->submit($request);
-           
+
             #Verifica se os dados são válidos
             if ($form->isValid()) {
                 #Recuperando o objeto alunos
-                $alunos   = $form->getData();
+                $alunos     = $form->getData();
 
                 #Tratamento de exceções
                 try {
@@ -177,6 +177,8 @@ class AlunosController extends FOSRestController
                         throw new HttpException(400, "Já existe registros com os dados informados");
                     }
 
+                    #Exception não prevista
+                    throw new HttpException(400, "Desculpe, ocorreu um erro!");
                 } catch (\Error $e) {
                     throw new HttpException(400, $e->getMessage());
                 }
