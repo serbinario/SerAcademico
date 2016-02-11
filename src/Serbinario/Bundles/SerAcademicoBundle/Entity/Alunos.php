@@ -185,7 +185,7 @@ class Alunos
     /**
      * @var \Enderecos
      *
-     * @ORM\ManyToOne(targetEntity="Enderecos")
+     * @ORM\ManyToOne(targetEntity="Serbinario\Bundles\UtilBundle\Entity\Enderecos")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="enderecos_id_enderecos", referencedColumnName="id_enderecos")
      * })

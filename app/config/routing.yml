@@ -1,7 +1,12 @@
 user:
     resource: "@UserBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /security
+
+util:
+    resource: "@UtilBundle/Controller/"
+    type:     annotation
+    prefix:   /util
 
 alunos:
     type:     rest

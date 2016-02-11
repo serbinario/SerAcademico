@@ -10,6 +10,7 @@ use Serbinario\Bundles\SerAcademicoBundle\Entity\Alunos;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Respect\Validation\Validator as v;
 use Doctrine\ORM\NoResultException;
+use Serbinario\Bundles\UtilBundle\Util\ErroList;
 
 class AlunosController extends FOSRestController
 {
@@ -32,12 +33,12 @@ class AlunosController extends FOSRestController
 
             #Retorno
             return new Response($serializer->serialize($alunos, "json"));
-        } catch (NoResultException $e) {
-            throw new HttpException(400, $e->getMessage());
+        }  catch (NoResultException $e) {
+            return new HttpException(400, ErroList::NO_RESULT);
         } catch (\Exception $e) {
-            throw new HttpException(400, $e->getMessage());
+            return new HttpException(400, ErroList::EXCEPTION);
         } catch (\Error $e) {
-            throw new HttpException(400, $e->getMessage());
+            return new HttpException(400, ErroList::FATAL_ERROR);
         }
     }
 
@@ -52,7 +53,7 @@ class AlunosController extends FOSRestController
     {
         #Validando o id do parâmetro
         if(!v::numeric()->validate($id)) {
-            throw new HttpException(400, "Parâmetro inválido");
+            throw new HttpException(400, ErroList::PARAMETER_INVALID);
         }
 
         #Recuperando os serviços
@@ -66,12 +67,12 @@ class AlunosController extends FOSRestController
 
             #Retorno
             return new Response($serializer->serialize($alunos, "json"));
-        } catch (NoResultException $e) {
-            throw new HttpException(400, $e->getMessage());
+        }  catch (NoResultException $e) {
+            return new HttpException(400, ErroList::NO_RESULT);
         } catch (\Exception $e) {
-            throw new HttpException(400, $e->getMessage());
+            return new HttpException(400, ErroList::EXCEPTION);
         } catch (\Error $e) {
-            throw new HttpException(400, $e->getMessage());
+            return new HttpException(400, ErroList::FATAL_ERROR);
         }
     }
 
@@ -86,7 +87,7 @@ class AlunosController extends FOSRestController
     {
         #Validando o id do parâmetro
         if(!v::numeric()->validate($id)) {
-            throw new HttpException(400, "Parâmetro inválido");
+            throw new HttpException(400, ErroList::PARAMETER_INVALID);
         }
 
         #Recuperando os serviços
@@ -125,17 +126,19 @@ class AlunosController extends FOSRestController
                 } catch (\Exception $e) {
                     #Verificando se existe violação de unicidade. (campos definidos como únicos).
                     if($e->getPrevious()->getCode() == 23000) {
-                        throw new HttpException(400, "Já existe registros com os dados informados");
+                        throw new HttpException(400, ErroList::UNIQUE_EXCEPTION);
                     }
 
+                    #Erro genérico
+                    throw new HttpException(400, ErroList::EXCEPTION);
                 } catch (\Error $e) {
-                    throw new HttpException(400, $e->getMessage());
+                    throw new HttpException(400, ErroList::FATAL_ERROR);
                 }
             }
         }
 
         #Retorno
-        throw new HttpException(400, "Solicitação inválida");
+        throw new HttpException(400, ErroList::REQUEST_INVALID);
     }
 
     /**
@@ -174,18 +177,18 @@ class AlunosController extends FOSRestController
                 } catch (\Exception $e) {
                     #Verificando se existe violação de unicidade. (campos definidos como únicos).
                     if($e->getPrevious()->getCode() == 23000) {
-                        throw new HttpException(400, "Já existe registros com os dados informados");
+                        throw new HttpException(400, ErroList::UNIQUE_EXCEPTION);
                     }
 
-                    #Exception não prevista
-                    throw new HttpException(400, "Desculpe, ocorreu um erro!");
+                    #Erro genérico
+                    throw new HttpException(400, ErroList::EXCEPTION);
                 } catch (\Error $e) {
-                    throw new HttpException(400, $e->getMessage());
+                    throw new HttpException(400, ErroList::FATAL_ERROR);
                 }
             }
         }
 
         #Retorno
-        throw new HttpException(400, "Solicitação inválida");
+        throw new HttpException(400, ErroList::REQUEST_INVALID);
     }
 }
