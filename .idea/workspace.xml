@@ -21,14 +21,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AlunosController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php">
+      <file leaf-file-name="Editoras.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Editoras.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17889908">
-              <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
-              <folding>
-                <element signature="e#68#116#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.4472477">
+              <caret line="82" column="73" selection-start-line="82" selection-start-column="73" selection-end-line="82" selection-end-column="73" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,7 +44,6 @@
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/RN/TraitRN.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Estados.php" />
-        <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Alunos.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Util/ErroList.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
@@ -61,6 +58,8 @@
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Enderecos.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Controller/BairrosController.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" />
+        <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Alunos.php" />
+        <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Editoras.php" />
       </list>
     </option>
   </component>
@@ -213,7 +212,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -299,7 +298,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1365" height="615" extended-state="1" />
+    <frame x="0" y="24" width="1365" height="615" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29157177" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -363,13 +362,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -595,13 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Alunos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44954127">
-          <caret line="187" column="79" selection-start-line="187" selection-start-column="79" selection-end-line="187" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.85779816">
@@ -735,11 +720,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17889908">
-          <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.4472477">
+          <caret line="106" column="64" selection-start-line="106" selection-start-column="64" selection-end-line="106" selection-end-column="64" />
           <folding>
             <element signature="e#68#116#0#PHP" expanded="true" />
+            <marker date="1455226564359" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Alunos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.7087157">
+          <caret line="287" column="80" selection-start-line="287" selection-start-column="36" selection-end-line="287" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Editoras.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4472477">
+          <caret line="82" column="73" selection-start-line="82" selection-start-column="73" selection-end-line="82" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>

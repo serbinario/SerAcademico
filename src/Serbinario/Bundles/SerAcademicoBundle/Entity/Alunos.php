@@ -285,7 +285,7 @@ class Alunos
     /**
      * @var \Estados
      *
-     * @ORM\ManyToOne(targetEntity="Estados")
+     * @ORM\ManyToOne(targetEntity="Serbinario\Bundles\UtilBundle\Entity\Estados")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="estados_id_estados", referencedColumnName="id_estados")
      * })
