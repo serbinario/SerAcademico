@@ -3,18 +3,25 @@
 namespace Serbinario\Bundles\UtilBundle\Controller;
 
 use Serbinario\Bundles\UtilBundle\Entity\Cidades;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FOS\RestBundle\Controller\FOSRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use FOS\RestBundle\Controller\Annotations\Get;
+use FOS\RestBundle\Controller\Annotations\Post;
+use Symfony\Component\HttpFoundation\Request;
+use Serbinario\Bundles\UtilBundle\Util\ErroList;
+use Doctrine\ORM\NoResultException;
+use Symfony\Component\HttpFoundation\Response;
 
-class CidadesController extends Controller
+class CidadesController extends FOSRestController
 {
     /**
-     * @Get("/cidades/{idEstado}/estado", name="cidadesByEstado")
+     * @Post("/byestado", name="cidadesByEstado")
      */
-    public function getCidadesByEstado($idEstado)
+    public function getCidadesByEstadoAction(Request $request)
     {
+        #Recuperando parametros da requisição
+        $idEstado = $request->request->get("estado");
+
         #Recuperando os serviços
         $serializer = $this->get("jms_serializer");
 
@@ -29,21 +36,21 @@ class CidadesController extends Controller
             $queryBuilder->setParameter("idEstado", $idEstado);
 
             #Executando a query e recuperando o resultado
-            $result = $queryBuilder->getQuery()->getResult();
+            $cidades = $queryBuilder->getQuery()->getResult();
 
             #Verificando se a consulta veio vazia
-            if(!$result) {
+            if(!$cidades) {
                 throw new NoResultException();
             }
 
             #Retorno
-            return new Response($serializer->serialize($estados, "json"));
+            return new Response($serializer->serialize($cidades, "json"));
         }  catch (NoResultException $e) {
-            return new HttpException(400, ErroList::NO_RESULT);
+            throw new HttpException(400, ErroList::NO_RESULT);
         } catch (\Exception $e) {
-            return new HttpException(400, ErroList::EXCEPTION);
-        } catch (\Error $e) {
-            return new HttpException(400, ErroList::FATAL_ERROR);
+            throw new HttpException(400, ErroList::EXCEPTION);
+        } catch (\Error $e) {var_dump($e->getMessage());exit;
+            throw new HttpException(400, ErroList::FATAL_ERROR);
         }
     }
 }

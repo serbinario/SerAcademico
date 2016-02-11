@@ -11,6 +11,19 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 use Respect\Validation\Validator as v;
 use Doctrine\ORM\NoResultException;
 use Serbinario\Bundles\UtilBundle\Util\ErroList;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\Sexos;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\Turnos;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\GrauInstrucoes;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\Profissoes;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\Religioes;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\EstadosCivis;
+use Serbinario\Bundles\UtilBundle\Entity\Estados;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\TiposSanguinios;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\CoresRacas;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\Exames;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\Auditivas;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\Visuais;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\Fisicas;
 
 class AlunosController extends FOSRestController
 {
@@ -34,11 +47,11 @@ class AlunosController extends FOSRestController
             #Retorno
             return new Response($serializer->serialize($alunos, "json"));
         }  catch (NoResultException $e) {
-            return new HttpException(400, ErroList::NO_RESULT);
+            throw new HttpException(400, ErroList::NO_RESULT);
         } catch (\Exception $e) {
-            return new HttpException(400, ErroList::EXCEPTION);
+            throw new HttpException(400, ErroList::EXCEPTION);
         } catch (\Error $e) {
-            return new HttpException(400, ErroList::FATAL_ERROR);
+            throw new HttpException(400, ErroList::FATAL_ERROR);
         }
     }
 
@@ -68,11 +81,48 @@ class AlunosController extends FOSRestController
             #Retorno
             return new Response($serializer->serialize($alunos, "json"));
         }  catch (NoResultException $e) {
-            return new HttpException(400, ErroList::NO_RESULT);
+            throw new HttpException(400, ErroList::NO_RESULT);
         } catch (\Exception $e) {
-            return new HttpException(400, ErroList::EXCEPTION);
+            throw new HttpException(400, ErroList::EXCEPTION);
         } catch (\Error $e) {
-            return new HttpException(400, ErroList::FATAL_ERROR);
+            throw new HttpException(400, ErroList::FATAL_ERROR);
+        }
+    }
+
+    /**
+     * @return Response
+     */
+    public function newAlunosAction()
+    {
+        try {
+            #Recuperando o entity manager
+            $manager = $this->getDoctrine()->getManager();
+
+            #Recuperando os serviços
+            $serializer = $this->get("jms_serializer");
+
+            #Recuperando os dados pre cadastrados
+            $result = array(
+                'sexos'        => $manager->getRepository(Sexos::class)->findAll(),
+                'turnos'       => $manager->getRepository(Turnos::class)->findAll(),
+                'grauIn'       => $manager->getRepository(GrauInstrucoes::class)->findAll(),
+                'religioes'    => $manager->getRepository(Religioes::class)->findAll(),
+                'estadosCivis' => $manager->getRepository(EstadosCivis::class)->findAll(),
+                'estados'      => $manager->getRepository(Estados::class)->findAll(),
+                'tiposSagui'   => $manager->getRepository(TiposSanguinios::class)->findAll(),
+                'coresRacas'   => $manager->getRepository(CoresRacas::class)->findAll(),
+                'exames'       => $manager->getRepository(Exames::class)->findAll(),
+                'auditivas'    => $manager->getRepository(Auditivas::class)->findAll(),
+                'visuais'      => $manager->getRepository(Visuais::class)->findAll(),
+                'fisicas'      => $manager->getRepository(Fisicas::class)->findAll(),
+            );
+
+            #Retorno
+            return new Response($serializer->serialize($result, "json"));
+        } catch (\Exception $e) {
+            throw new HttpException(400, ErroList::EXCEPTION);
+        } catch (\Error $e) {
+            throw new HttpException(400, ErroList::FATAL_ERROR);
         }
     }
 

@@ -3,20 +3,26 @@
 namespace Serbinario\Bundles\UtilBundle\Controller;
 
 use Serbinario\Bundles\UtilBundle\Entity\Bairros;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FOS\RestBundle\Controller\FOSRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use FOS\RestBundle\Controller\Annotations\Get;
+use FOS\RestBundle\Controller\Annotations\Post;
+use Symfony\Component\HttpFoundation\Request;
 use Serbinario\Bundles\UtilBundle\Util\ErroList;
+use Doctrine\ORM\NoResultException;
+use Symfony\Component\HttpFoundation\Response;
 
 
-class BairrosController extends Controller
+class BairrosController extends FOSRestController
 {
-**
-* @Get("/bairros/{idCidade}/cidade", name="bairrosByCidade")
-*/
-    public function getBairrosByCidade($idCidade)
+    /**
+    * @Post("/bycidade", name="bairrosByCidade")
+    */
+    public function getBairrosByCidadeAction(Request $request)
     {
+        #Recuperando parametros da requisição
+        $idCidade = $request->request->get("cidade");
+
         #Recuperando os serviços
         $serializer = $this->get("jms_serializer");
 
@@ -31,21 +37,21 @@ class BairrosController extends Controller
             $queryBuilder->setParameter("idCidade", $idCidade);
 
             #Executando a query e recuperando o resultado
-            $result = $queryBuilder->getQuery()->getResult();
+            $bairros = $queryBuilder->getQuery()->getResult();
 
             #Verificando se a consulta veio vazia
-            if(!$result) {
+            if(!$bairros) {
                 throw new NoResultException();
             }
 
             #Retorno
-            return new Response($serializer->serialize($estados, "json"));
+            return new Response($serializer->serialize($bairros, "json"));
         } catch (NoResultException $e) {
-            return new HttpException(400, ErroList::NO_RESULT);
+            throw new HttpException(400, ErroList::NO_RESULT);
         } catch (\Exception $e) {
-            return new HttpException(400, ErroList::EXCEPTION);
+            throw new HttpException(400, ErroList::EXCEPTION);
         } catch (\Error $e) {
-            return new HttpException(400, ErroList::FATAL_ERROR);
+            throw new HttpException(400, ErroList::FATAL_ERROR);
         }
     }
 }

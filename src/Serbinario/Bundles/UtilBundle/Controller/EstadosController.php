@@ -2,19 +2,20 @@
 
 namespace Serbinario\Bundles\UtilBundle\Controller;
 
-use Doctrine\ORM\NoResultException;
 use Serbinario\Bundles\UtilBundle\Entity\Estados;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use FOS\RestBundle\Controller\Annotations\Get;
+use Serbinario\Bundles\UtilBundle\Util\ErroList;
+use Symfony\Component\HttpFoundation\Response;
+use Doctrine\ORM\NoResultException;
 
-class EstadosController extends Controller
+class EstadosController extends FOSRestController
 {
     /**
-     * @Get("/estados/all", name="estadosAll")
+     * @Get("/all", name="estadosAll")
      */
-    public function getEstados()
+    public function getEstadosAction()
     {
         #Recuperando os serviços
         $serializer = $this->get("jms_serializer");
@@ -25,18 +26,18 @@ class EstadosController extends Controller
             $estados = $manager->getRepository(Estados::class)->findAll();
 
             #Verificando se a consulta veio vazia
-            if(!$result) {
+            if(!$estados) {
                 throw new NoResultException();
             }
 
             #Retorno
             return new Response($serializer->serialize($estados, "json"));
         }  catch (NoResultException $e) {
-            return new HttpException(400, ErroList::NO_RESULT);
+            throw new HttpException(400, ErroList::NO_RESULT, $e);
         } catch (\Exception $e) {
-            return new HttpException(400, ErroList::EXCEPTION);
+            throw new HttpException(400, ErroList::EXCEPTION, $e);
         } catch (\Error $e) {
-            return new HttpException(400, ErroList::FATAL_ERROR);
+            throw new HttpException(400, ErroList::FATAL_ERROR, $e);
         }
     }
 }

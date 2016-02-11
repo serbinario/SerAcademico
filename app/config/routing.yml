@@ -1,12 +1,22 @@
 user:
     resource: "@UserBundle/Controller/"
     type:     annotation
-    prefix:   /security
+    prefix:   /
 
-util:
-    resource: "@UtilBundle/Controller/"
-    type:     annotation
-    prefix:   /util
+estados:
+    resource: "@UtilBundle/Controller/EstadosController.php"
+    type:     rest
+    prefix:   /estados
+
+cidades:
+    resource: "@UtilBundle/Controller/CidadesController.php"
+    type:     rest
+    prefix:   /cidades
+
+bairros:
+    resource: "@UtilBundle/Controller/BairrosController.php"
+    type:     rest
+    prefix:   /bairros
 
 alunos:
     type:     rest

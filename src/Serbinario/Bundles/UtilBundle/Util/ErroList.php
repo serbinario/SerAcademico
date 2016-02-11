@@ -1,10 +1,10 @@
 <?php
 namespace Serbinario\Bundles\UtilBundle\Util;
 
-
-class ErroList extends \SplEnum
+class ErroList
 {
     const __default = 1;
+
     const NO_RESULT = 2;
     const EXCEPTION = 3;
     const FATAL_ERROR = 4;
