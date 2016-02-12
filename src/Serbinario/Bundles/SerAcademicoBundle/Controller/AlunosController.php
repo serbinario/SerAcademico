@@ -106,19 +106,19 @@ class AlunosController extends FOSRestController
             #Recuperando os dados pre cadastrados
             $result = [
                 'sexos'         => $manager->getRepository(Sexos::class)->findAll(),
-                'turnos'        =>$manager->getRepository(Turnos::class)->findAll(),
-                'grauIn'        =>$manager->getRepository(GrauInstrucoes::class)->findAll(),
-                'religioes'     =>$manager->getRepository(Religioes::class)->findAll(),
-                'estadosCivis'  =>$manager->getRepository(EstadosCivis::class)->findAll(),
-                'estados'       =>$manager->getRepository(Estados::class)->findAll(),
-                'tiposSagui'    =>$manager->getRepository(TiposSanguinios::class)->findAll(),
-                'coresRacas'    =>$manager->getRepository(CoresRacas::class)->findAll(),
+                'turnos'        => $manager->getRepository(Turnos::class)->findAll(),
+                'grauIn'        => $manager->getRepository(GrauInstrucoes::class)->findAll(),
+                'religioes'     => $manager->getRepository(Religioes::class)->findAll(),
+                'estadosCivis'  => $manager->getRepository(EstadosCivis::class)->findAll(),
+                'estados'       => $manager->getRepository(Estados::class)->findAll(),
+                'tiposSagui'    => $manager->getRepository(TiposSanguinios::class)->findAll(),
+                'coresRacas'    => $manager->getRepository(CoresRacas::class)->findAll(),
                 'exames'        => $manager->getRepository(Exames::class)->findAll(),
-                'auditivas'     =>$manager->getRepository(Auditivas::class)->findAll(),
+                'auditivas'     => $manager->getRepository(Auditivas::class)->findAll(),
                 'visuais'       => $manager->getRepository(Visuais::class)->findAll(),
-                'fisicas'       =>$manager->getRepository(Fisicas::class)->findAll(),
-                'emancipados'   =>$manager->getRepository(Emancipados::class)->findAll(),
-                'profissoes'    =>$manager->getRepository(Profissoes::class)->findAll(),
+                'fisicas'       => $manager->getRepository(Fisicas::class)->findAll(),
+                'emancipados'   => $manager->getRepository(Emancipados::class)->findAll(),
+                'profissoes'    => $manager->getRepository(Profissoes::class)->findAll(),
             ];
 
             #Retorno
@@ -229,12 +229,6 @@ class AlunosController extends FOSRestController
                     #Retorno
                     return new Response($serializer->serialize($result, "json"));
                 } catch (\Exception $e) {
-                    #Verificando se existe violação de unicidade. (campos definidos como únicos).
-                    if($e->getPrevious()->getCode() == 23000) {
-                        throw new HttpException(400, ErroList::UNIQUE_EXCEPTION);
-                    }
-
-                    #Erro genérico
                     throw new HttpException(400, ErroList::EXCEPTION);
                 } catch (\Error $e) {
                     throw new HttpException(400, ErroList::FATAL_ERROR);

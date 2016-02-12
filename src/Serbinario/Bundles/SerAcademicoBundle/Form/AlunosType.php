@@ -5,6 +5,7 @@ namespace Serbinario\Bundles\SerAcademicoBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Serbinario\Bundles\UtilBundle\Form\EnderecosType;
 
 class AlunosType extends AbstractType
 {
@@ -22,23 +23,35 @@ class AlunosType extends AbstractType
             ->add('nomeMaeAlunos')
             ->add('identidadeAlunos')
             ->add('orgaoRgAlunos')
-            ->add('dataExpedicaoAlunos')
+            ->add('dataExpedicaoAlunos', 'date', array(
+                'widget' => 'single_text',
+                'format' => 'dd/MM/yyyy',
+             ))
             ->add('cpfAlunos')
             ->add('tituloEleitoralAlunos')
             ->add('zonaAlunos')
             ->add('secaoAlunos')
             ->add('resevistaAlunos')
             ->add('catagoriaResevistaAlunos')
-            ->add('dataNasciementoAlunos')
+            ->add('dataNasciementoAlunos', 'date', array(
+                'widget' => 'single_text',
+                'format' => 'dd/MM/yyyy',
+            ))
             ->add('nacionalidadeAluno')
             ->add('naturalidade')
             ->add('anoConclusao2GrauAlunos')
             ->add('outraEscolaAlunos')
-            ->add('dataExameNacionalUm')
+            ->add('dataExameNacionalUm', 'date', array(
+                'widget' => 'single_text',
+                'format' => 'dd/MM/yyyy',
+            ))
             ->add('notaExameNacionalUm')
-            ->add('dataExameNacionalDois')
+            ->add('dataExameNacionalDois', 'date', array(
+                'widget' => 'single_text',
+                'format' => 'dd/MM/yyyy',
+            ))
             ->add('notaExameNacionalDois')
-            ->add('enderecosEnderecos')
+            ->add('enderecosEnderecos', EnderecosType::class)
             ->add('sexosSexos')
             ->add('emancipadosEmancipados')
             ->add('turnosTurnos')

@@ -127,16 +127,16 @@ class Alunos
     private $dataNasciementoAlunos;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="nacionalidade_aluno", type="date", nullable=true)
+     * @ORM\Column(name="nacionalidade_aluno", type="string", nullable=true)
      */
     private $nacionalidadeAluno;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="naturalidade", type="date", nullable=true)
+     * @ORM\Column(name="naturalidade", type="string", nullable=true)
      */
     private $naturalidade;
 
@@ -157,7 +157,7 @@ class Alunos
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="data_exame_nacional_um", type="date", nullable=true)
+     * @ORM\Column(name="data_exame_nacional_um", type="datetime", nullable=true)
      */
     private $dataExameNacionalUm;
 
@@ -171,7 +171,7 @@ class Alunos
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="data_exame_nacional_dois", type="date", nullable=true)
+     * @ORM\Column(name="data_exame_nacional_dois", type="datetime", nullable=true)
      */
     private $dataExameNacionalDois;
 
@@ -185,7 +185,7 @@ class Alunos
     /**
      * @var \Enderecos
      *
-     * @ORM\ManyToOne(targetEntity="Serbinario\Bundles\UtilBundle\Entity\Enderecos")
+     * @ORM\ManyToOne(targetEntity="Serbinario\Bundles\UtilBundle\Entity\Enderecos", cascade = {"all"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="enderecos_id_enderecos", referencedColumnName="id_enderecos")
      * })
@@ -909,11 +909,11 @@ class Alunos
     /**
      * Set enderecosEnderecos
      *
-     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Enderecos $enderecosEnderecos
+     * @param \Serbinario\Bundles\UtilBundle\Entity\Enderecos $enderecosEnderecos
      *
      * @return Alunos
      */
-    public function setEnderecosEnderecos(\Serbinario\Bundles\SerAcademicoBundle\Entity\Enderecos $enderecosEnderecos = null)
+    public function setEnderecosEnderecos(\Serbinario\Bundles\UtilBundle\Entity\Enderecos $enderecosEnderecos = null)
     {
         $this->enderecosEnderecos = $enderecosEnderecos;
 
@@ -923,7 +923,7 @@ class Alunos
     /**
      * Get enderecosEnderecos
      *
-     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\Enderecos
+     * @return \Serbinario\Bundles\UtilBundle\Entity\Enderecos
      */
     public function getEnderecosEnderecos()
     {
@@ -1149,11 +1149,11 @@ class Alunos
     /**
      * Set estadosEstados
      *
-     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Estados $estadosEstados
+     * @param \Serbinario\Bundles\UtilBundle\Entity\Estados $estadosEstados
      *
      * @return Alunos
      */
-    public function setEstadosEstados(\Serbinario\Bundles\SerAcademicoBundle\Entity\Estados $estadosEstados = null)
+    public function setEstadosEstados(\Serbinario\Bundles\UtilBundle\Entity\Estados $estadosEstados = null)
     {
         $this->estadosEstados = $estadosEstados;
 
@@ -1163,7 +1163,7 @@ class Alunos
     /**
      * Get estadosEstados
      *
-     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\Estados
+     * @return \Serbinario\Bundles\UtilBundle\Entity\Estados
      */
     public function getEstadosEstados()
     {
