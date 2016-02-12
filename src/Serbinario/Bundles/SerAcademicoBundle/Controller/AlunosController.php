@@ -211,6 +211,8 @@ class AlunosController extends FOSRestController
         $alunosRN   = $this->get("alunos_rn");
         $serializer = $this->get("jms_serializer");
 
+
+
         #Verificando o método http
         if ($request->getMethod() === "POST") {
             #Criando o formulário
