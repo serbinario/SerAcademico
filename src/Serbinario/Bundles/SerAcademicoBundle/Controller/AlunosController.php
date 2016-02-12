@@ -103,18 +103,18 @@ class AlunosController extends FOSRestController
 
             #Recuperando os dados pre cadastrados
             $result = [
-                $manager->getRepository(Sexos::class)->findAll(),
-                $manager->getRepository(Turnos::class)->findAll(),
-                $manager->getRepository(GrauInstrucoes::class)->findAll(),
-                $manager->getRepository(Religioes::class)->findAll(),
-                $manager->getRepository(EstadosCivis::class)->findAll(),
-                $manager->getRepository(Estados::class)->findAll(),
-                $manager->getRepository(TiposSanguinios::class)->findAll(),
-                $manager->getRepository(CoresRacas::class)->findAll(),
-                $manager->getRepository(Exames::class)->findAll(),
-                $manager->getRepository(Auditivas::class)->findAll(),
-                $manager->getRepository(Visuais::class)->findAll(),
-                $manager->getRepository(Fisicas::class)->findAll(),
+                'sexos'         => $manager->getRepository(Sexos::class)->findAll(),
+                'turnos'        =>$manager->getRepository(Turnos::class)->findAll(),
+                'grauIn'        =>$manager->getRepository(GrauInstrucoes::class)->findAll(),
+                'religioes'     =>$manager->getRepository(Religioes::class)->findAll(),
+                'estadosCivis'  =>$manager->getRepository(EstadosCivis::class)->findAll(),
+                'estados'       =>$manager->getRepository(Estados::class)->findAll(),
+                'tiposSagui'    =>$manager->getRepository(TiposSanguinios::class)->findAll(),
+                'coresRacas'    =>$manager->getRepository(CoresRacas::class)->findAll(),
+                'exames'        => $manager->getRepository(Exames::class)->findAll(),
+                'auditivas'     =>$manager->getRepository(Auditivas::class)->findAll(),
+                'visuais'       => $manager->getRepository(Visuais::class)->findAll(),
+                'fisicas'       =>$manager->getRepository(Fisicas::class)->findAll(),
             ];
 
             #Retorno
