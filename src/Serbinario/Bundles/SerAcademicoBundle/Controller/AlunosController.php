@@ -139,6 +139,7 @@ class AlunosController extends FOSRestController
      */
     public function putAlunosAction(Request $request, $id)
     {
+        //var_dump('sdsdsd');exit();
         #Validando o id do parâmetro
         if(!v::numeric()->validate($id)) {
             throw new HttpException(400, ErroList::PARAMETER_INVALID);
