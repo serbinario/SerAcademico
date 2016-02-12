@@ -3,6 +3,21 @@ user:
     type:     annotation
     prefix:   /
 
+estados:
+    resource: "@UtilBundle/Controller/EstadosController.php"
+    type:     rest
+    prefix:   /estados
+
+cidades:
+    resource: "@UtilBundle/Controller/CidadesController.php"
+    type:     rest
+    prefix:   /cidades
+
+bairros:
+    resource: "@UtilBundle/Controller/BairrosController.php"
+    type:     rest
+    prefix:   /bairros
+
 alunos:
     type:     rest
     resource: Serbinario\Bundles\SerAcademicoBundle\Controller\AlunosController

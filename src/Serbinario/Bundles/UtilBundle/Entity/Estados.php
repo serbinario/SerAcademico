@@ -1,6 +1,6 @@
 <?php
 
-namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
+namespace Serbinario\Bundles\UtilBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

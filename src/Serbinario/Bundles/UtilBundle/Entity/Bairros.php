@@ -1,6 +1,6 @@
 <?php
 
-namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
+namespace Serbinario\Bundles\UtilBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -77,11 +77,11 @@ class Bairros
     /**
      * Set cidadesCidades
      *
-     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Cidades $cidadesCidades
+     * @param \Serbinario\Bundles\UtilBundle\Entity\Cidades $cidadesCidades
      *
      * @return Bairros
      */
-    public function setCidadesCidades(\Serbinario\Bundles\SerAcademicoBundle\Entity\Cidades $cidadesCidades = null)
+    public function setCidadesCidades(\Serbinario\Bundles\UtilBundle\Entity\Cidades $cidadesCidades = null)
     {
         $this->cidadesCidades = $cidadesCidades;
 
@@ -91,7 +91,7 @@ class Bairros
     /**
      * Get cidadesCidades
      *
-     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\Cidades
+     * @return \Serbinario\Bundles\UtilBundle\Entity\Cidades
      */
     public function getCidadesCidades()
     {

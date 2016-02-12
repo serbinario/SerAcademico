@@ -4,6 +4,7 @@ imports:
     - { resource: services.yml }
     - { resource: "@SerAcademicoBundle/Resources/config/services.yml" }
     - { resource: "@UserBundle/Resources/config/services.yml" }
+    - { resource: "@UtilBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -75,9 +76,10 @@ fos_rest:
     routing_loader:
         default_format: json
     exception:
-            codes:
-                'Symfony\Component\Routing\Exception\ResourceNotFoundException': 404
-                'Doctrine\ORM\OptimisticLockException': HTTP_CONFLICT
+        enabled: true
+        codes:
+            'Symfony\Component\Routing\Exception\ResourceNotFoundException': 404
+            'Doctrine\ORM\OptimisticLockException': HTTP_CONFLICT
 
 #jms_serializer
 jms_serializer:
@@ -95,3 +97,12 @@ fos_oauth_server:
     auth_code_class:     Serbinario\Bundles\UserBundle\Entity\AuthCode
     service:
         user_provider:   app.serbinario.user.provider
+        #options:
+           # access_token_lifetime: 20
+
+nelmio_cors:
+    paths:
+        '^/':
+            allow_origin: ['http://localhost:[0-9]+']
+            allow_headers: ['Authorization', 'X-Requested-With', 'Content-Type', 'Accept', 'Origin', 'X-Custom-Auth']
+            allow_methods: ['POST', 'PUT', 'GET', 'DELETE', 'OPTIONS']
