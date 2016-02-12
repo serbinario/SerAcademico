@@ -24,6 +24,8 @@ use Serbinario\Bundles\SerAcademicoBundle\Entity\Exames;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Auditivas;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Visuais;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Fisicas;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\Emancipados;
+
 
 class AlunosController extends FOSRestController
 {
@@ -115,6 +117,8 @@ class AlunosController extends FOSRestController
                 'auditivas'     =>$manager->getRepository(Auditivas::class)->findAll(),
                 'visuais'       => $manager->getRepository(Visuais::class)->findAll(),
                 'fisicas'       =>$manager->getRepository(Fisicas::class)->findAll(),
+                'emancipados'   =>$manager->getRepository(Emancipados::class)->findAll(),
+                'profissoes'    =>$manager->getRepository(Profissoes::class)->findAll(),
             ];
 
             #Retorno
