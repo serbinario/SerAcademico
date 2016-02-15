@@ -137,9 +137,11 @@ class AlunosController extends FOSRestController
      * @param Request $request
      * @return Response
      */
-    public function putAlunosAction(Request $request, $id)
+    public function putAlunosAction(Request $request)
     {
-        //var_dump('sdsdsd');exit();
+        #Recuperandoparametros da requisição
+        $id = $request->request->get("idAluno");
+
         #Validando o id do parâmetro
         if(!v::numeric()->validate($id)) {
             throw new HttpException(400, ErroList::PARAMETER_INVALID);

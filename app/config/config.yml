@@ -97,8 +97,8 @@ fos_oauth_server:
     auth_code_class:     Serbinario\Bundles\UserBundle\Entity\AuthCode
     service:
         user_provider:   app.serbinario.user.provider
-        #options:
-           # access_token_lifetime: 20
+        options:
+           access_token_lifetime: 199999999
 
 nelmio_cors:
     paths:
