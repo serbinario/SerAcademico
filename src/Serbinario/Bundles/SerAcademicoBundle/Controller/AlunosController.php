@@ -25,35 +25,70 @@ use Serbinario\Bundles\SerAcademicoBundle\Entity\Auditivas;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Visuais;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Fisicas;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Emancipados;
+use Serbinario\Bundles\UtilBundle\Util\GridClass;
+use FOS\RestBundle\Controller\Annotations\Post;
 
 
 class AlunosController extends FOSRestController
 {
     /**
-     * Retorna uma collection de alunos ou null
-     * se não existir nenhuma
-     *
-     * @return Response
+     * @Post("/grid", name="gridAlunos")
      */
-    public function getAlunosAction()
+    public function gridAction(Request $request)
     {
         #Recuperando os serviços
-        $alunosRN   = $this->get("alunos_rn");
         $serializer = $this->get("jms_serializer");
 
         #Tratamento de exceções
         try {
-            #Recuperando todas as alunos cadastradas
-            $alunos = $alunosRN->all(Alunos::class);
+            $columns = array("a.nomeAlunos",
+            );
+            //var_dump($request->request->all());exit;
+            $entityJOIN = array();
+            $eventosArray         = array();
+            $parametros           = $request->request->all();
+            $entity               = "Serbinario\Bundles\SerAcademicoBundle\Entity\Alunos";
+            $columnWhereMain      = "";
+            $whereValueMain       = "";
+            $whereFull            = "";
+
+            $gridClass = new GridClass($this->getDoctrine()->getManager(),
+                $parametros,
+                $columns,
+                $entity,
+                $entityJOIN,
+                $columnWhereMain,
+                $whereValueMain,
+                $whereFull);
+
+            $resultCliente  = $gridClass->builderQuery();
+            $countTotal     = $gridClass->getCount();
+            $countEventos   = count($resultCliente);
+
+            for($i=0;$i < $countEventos; $i++)
+            {
+                $eventosArray[$i]['DT_RowId']   =  "row_".$resultCliente[$i]->getIdAlunos();
+                $eventosArray[$i]['nomeAlunos'] =  $resultCliente[$i]->getNomeAlunos();
+            }
+
+            //Se a variável $sqlFilter estiver vazio
+            if(!$gridClass->isFilter()){
+                $countEventos = $countTotal;
+            }
+
+            $columns = array(
+                'draw'              => $parametros['draw'],
+                'recordsTotal'      => "{$countTotal}",
+                'recordsFiltered'   => "{$countEventos}",
+                'data'              => $eventosArray
+            );
 
             #Retorno
-            return new Response($serializer->serialize($alunos, "json"));
-        }  catch (NoResultException $e) {
-            throw new HttpException(400, ErroList::NO_RESULT);
+            return new Response($serializer->serialize($columns, "json"));
         } catch (\Exception $e) {
-            throw new HttpException(400, ErroList::EXCEPTION);
-        } catch (\Error $e) {
-            throw new HttpException(400, ErroList::FATAL_ERROR);
+            throw new HttpException(400, $e->getMessage());
+        } catch (\Error $e) {//var_dump();exit;
+            throw new HttpException(400, $e->getMessage());
         }
     }
 
