@@ -68,9 +68,9 @@ class AlunosController extends FOSRestController
             for($i=0;$i < $countEventos; $i++)
             {
                 $eventosArray[$i]['DT_RowId']   =  "row_".$resultCliente[$i]->getIdAlunos();
-                $eventosArray[$i]['id']   =  $resultCliente[$i]->getIdAlunos();
-                $eventosArray[$i]['nomeAlunos'] =  $resultCliente[$i]->getNomeAlunos();
-                $eventosArray[$i]['cpf'] =  $resultCliente[$i]->getCpfAlunos();
+                $eventosArray[$i]['id']         =  $resultCliente[$i]->getIdAlunos();
+                $eventosArray[$i]['nomeAlunos'] =  $resultCliente[$i]->getNomeAlunos() ?? "Nome não informado";
+                $eventosArray[$i]['cpfAlunos']  =  $resultCliente[$i]->getCpfAlunos() ?? "CPF não informado";
             }
 
             //Se a variável $sqlFilter estiver vazio
