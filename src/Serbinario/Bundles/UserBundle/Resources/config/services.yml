@@ -1,4 +1,40 @@
+parameters:
+    dao.class.projetos:   Serbinario\Bundles\UserBundle\DAO\ProjetosDAO
+    rn.class.projetos :   Serbinario\Bundles\UserBundle\RN\ProjetosRN
+    dao.class.aplicacoes: Serbinario\Bundles\UserBundle\DAO\AplicacoesDAO
+    rn.class.aplicacoes : Serbinario\Bundles\UserBundle\RN\AplicacoesRN
+    dao.class.permissoes: Serbinario\Bundles\UserBundle\DAO\PermissoesDAO
+    rn.class.permissoes : Serbinario\Bundles\UserBundle\RN\PermissoesRN
+
 services:
+    projetos_dao:
+        class:  %dao.class.projetos%
+        arguments:  [ "@doctrine.orm.entity_manager" ]
+        public: false
+
+    projetos_rn:
+        class:  %rn.class.projetos%
+        arguments:  [ "@projetos_dao" ]
+
+    aplicacoes_dao:
+        class:  %dao.class.aplicacoes%
+        arguments:  [ "@doctrine.orm.entity_manager" ]
+        public: false
+
+    aplicacoes_rn:
+        class:  %rn.class.aplicacoes%
+        arguments:  [ "@aplicacoes_dao" ]
+
+    permissoes_dao:
+        class:  %dao.class.permissoes%
+        arguments:  [ "@doctrine.orm.entity_manager" ]
+        public: false
+
+    permissoes_rn:
+        class:  %rn.class.permissoes%
+        arguments:  [ "@permissoes_dao" ]
+
+
     app.serbinario.user_repository:
         class: Doctrine\ORM\EntityRepository
         factory: ["@doctrine.orm.entity_manager", getRepository]

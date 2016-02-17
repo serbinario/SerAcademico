@@ -102,7 +102,7 @@ class User implements UserInterface, AdvancedUserInterface, EquatableInterface, 
         foreach ($this->roles->toArray() as $role) {
             $roles[] = $role->getRole();
         }
-
+        //var_dump($roles);exit;
         return $roles;
     }
 

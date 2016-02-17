@@ -28,9 +28,9 @@ class DefaultController extends Controller
         }
 
         return array(
-            // last username entered by the user
+        // last username entered by the user
             'last_username' => $lastUsername,
-            'error'         => $error,
+            'error' => $error,
         );
 
     }
@@ -57,13 +57,16 @@ class DefaultController extends Controller
         $serializer = $this->get("jms_serializer");
 
         $tokenManager = $this->get('fos_oauth_server.access_token_manager.default');
-        $accessToken = $tokenManager->findTokenByToken(
-            $this->get('security.token_storage')->getToken()->getToken()
+        $accessToken  = $tokenManager->findTokenByToken(
+           $this->get('security.token_storage')->getToken()->getToken()
         );
 
         $user = $accessToken->getUser();
 
+        //$tokenManager = $this->get('fos_oauth_server.access_token_manager.default');
+        //$tokenManager = $this->get('fos_oauth_server.refresh_token_manager.default');
+
         #Retorno
-        return new Response($serializer->serialize($user, "json"));
+        return new Response($serializer->serialize(get_class_methods($tokenManager2), "json"));
     }
 }
