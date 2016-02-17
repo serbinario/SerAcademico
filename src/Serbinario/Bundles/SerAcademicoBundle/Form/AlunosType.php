@@ -25,7 +25,7 @@ class AlunosType extends AbstractType
             ->add('orgaoRgAlunos')
             ->add('dataExpedicaoAlunos', 'date', array(
                 'widget' => 'single_text',
-                'format' => 'dd/MM/yyyy',
+                'format' => 'dd/MM/yyyy'
              ))
             ->add('cpfAlunos')
             ->add('tituloEleitoralAlunos')
@@ -35,7 +35,7 @@ class AlunosType extends AbstractType
             ->add('catagoriaResevistaAlunos')
             ->add('dataNasciementoAlunos', 'date', array(
                 'widget' => 'single_text',
-                'format' => 'dd/MM/yyyy',
+                'format' => 'dd/MM/yyyy'
             ))
             ->add('nacionalidadeAluno')
             ->add('naturalidade')
@@ -43,12 +43,12 @@ class AlunosType extends AbstractType
             ->add('outraEscolaAlunos')
             ->add('dataExameNacionalUm', 'date', array(
                 'widget' => 'single_text',
-                'format' => 'dd/MM/yyyy',
+                'format' => 'dd/MM/yyyy'
             ))
             ->add('notaExameNacionalUm')
             ->add('dataExameNacionalDois', 'date', array(
                 'widget' => 'single_text',
-                'format' => 'dd/MM/yyyy',
+                'format' => 'dd/MM/yyyy'
             ))
             ->add('notaExameNacionalDois')
             ->add('enderecosEnderecos', EnderecosType::class)
