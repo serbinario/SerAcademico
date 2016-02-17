@@ -342,6 +342,19 @@ class Alunos
      */
     private $visuaisVisuais;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img_alunos", type="string", length=50, nullable=true)
+     */
+    private $imgAlunos;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean", nullable=true)
+     */
+    private $status = true;
 
 
     /**
@@ -1289,4 +1302,38 @@ class Alunos
     {
         return $this->visuaisVisuais;
     }
+
+    /**
+     * @return string
+     */
+    public function getImgAlunos()
+    {
+        return $this->imgAlunos;
+    }
+
+    /**
+     * @param string $imgAlunos
+     */
+    public function setImgAlunos($imgAlunos)
+    {
+        $this->imgAlunos = $imgAlunos;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param boolean $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+
 }
