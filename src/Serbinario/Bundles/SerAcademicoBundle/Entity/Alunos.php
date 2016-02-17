@@ -354,7 +354,7 @@ class Alunos
      *
      * @ORM\Column(name="status", type="boolean", nullable=true)
      */
-    private $status = true;
+    private $status;
 
 
     /**
