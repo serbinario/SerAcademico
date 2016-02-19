@@ -18,6 +18,11 @@ bairros:
     type:     rest
     prefix:   /bairros
 
+users:
+    resource: "@UserBundle/Controller/UserController.php"
+    type:     rest
+    prefix:   /users
+
 alunos:
     type:     rest
     resource: Serbinario\Bundles\SerAcademicoBundle\Controller\AlunosController

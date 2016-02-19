@@ -1,12 +1,12 @@
 <?php
 
-namespace Serbinario\Bundles\UtilBundle\Form;
+namespace Serbinario\Bundles\UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class EnderecosType extends AbstractType
+class ProjetosType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,11 +15,7 @@ class EnderecosType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('logradouro')
-            ->add('cep')
-            ->add('numero')
-            ->add('complemento')
-            ->add('bairrosBairros')
+            ->add('nomeProjeto')
         ;
     }
     
@@ -29,7 +25,7 @@ class EnderecosType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Serbinario\Bundles\UtilBundle\Entity\Enderecos'
+            'data_class' => 'Serbinario\Bundles\UserBundle\Entity\Projetos'
         ));
     }
 }
