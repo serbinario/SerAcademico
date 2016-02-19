@@ -2,50 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33d237ef-1d90-4fe0-9e17-eb13d6e6dc66" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/InterfacePerfilDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/InterfaceRoleDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/InterfaceUserDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Perfil.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/PerfilDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/RN/PerfilRN.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/RoleDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/RN/RoleRN.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/UserDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/RN/UserRN.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Form/UserType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/AccessToken.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/AccessToken.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Alunos.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Alunos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Aplicacoes.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Aplicacoes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Controller/AplicacoesController.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Controller/AplicacoesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/AplicacoesDAO.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/AplicacoesDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/RN/AplicacoesRN.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/RN/AplicacoesRN.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Form/AplicacoesType.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Form/AplicacoesType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/AuthCode.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/AuthCode.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Client.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Client.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Form/EnderecosType.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Form/EnderecosType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/InterfaceAplicacoesDAO.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/InterfaceAplicacoesDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/InterfacePermissoesDAO.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/InterfacePermissoesDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/InterfaceProjetosDAO.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/InterfaceProjetosDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Permissoes.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Permissoes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Controller/PermissoesController.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Controller/PermissoesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/PermissoesDAO.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/PermissoesDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/RN/PermissoesRN.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/RN/PermissoesRN.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Form/PermissoesType.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Form/PermissoesType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Projetos.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Projetos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Controller/ProjetosController.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Controller/ProjetosController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/ProjetosDAO.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/DAO/ProjetosDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/RN/ProjetosRN.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/RN/ProjetosRN.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Form/ProjetosType.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Form/ProjetosType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/RefreshToken.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/RefreshToken.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Role.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Role.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SerAcademico.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -163,6 +120,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -183,7 +141,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,7 +227,7 @@
     <frame x="-1" y="24" width="1368" height="616" extended-state="7" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27045456" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.275" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790223" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
