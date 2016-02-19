@@ -1,12 +1,45 @@
 parameters:
-    dao.class.projetos:   Serbinario\Bundles\UserBundle\DAO\ProjetosDAO
-    rn.class.projetos :   Serbinario\Bundles\UserBundle\RN\ProjetosRN
+    dao.class.projetos  : Serbinario\Bundles\UserBundle\DAO\ProjetosDAO
+    rn.class.projetos   : Serbinario\Bundles\UserBundle\RN\ProjetosRN
     dao.class.aplicacoes: Serbinario\Bundles\UserBundle\DAO\AplicacoesDAO
     rn.class.aplicacoes : Serbinario\Bundles\UserBundle\RN\AplicacoesRN
     dao.class.permissoes: Serbinario\Bundles\UserBundle\DAO\PermissoesDAO
     rn.class.permissoes : Serbinario\Bundles\UserBundle\RN\PermissoesRN
+    dao.class.user      : Serbinario\Bundles\UserBundle\DAO\UserDAO
+    rn.class.user       : Serbinario\Bundles\UserBundle\RN\UserRN
+    dao.class.perfil    : Serbinario\Bundles\UserBundle\DAO\PerfilDAO
+    rn.class.perfil     : Serbinario\Bundles\UserBundle\RN\PerfilRN
+    dao.class.role      : Serbinario\Bundles\UserBundle\DAO\RoleDAO
+    rn.class.role       : Serbinario\Bundles\UserBundle\RN\RoleRN
 
 services:
+    role_dao:
+        class:  %dao.class.role%
+        arguments:  [ "@doctrine.orm.entity_manager" ]
+        public: false
+
+    role_rn:
+        class:  %rn.class.role%
+        arguments:  [ "@role_dao" ]
+
+    perfil_dao:
+        class:  %dao.class.perfil%
+        arguments:  [ "@doctrine.orm.entity_manager" ]
+        public: false
+
+    perfil_rn:
+        class:  %rn.class.perfil%
+        arguments:  [ "@perfil_dao" ]
+
+    user_dao:
+        class:  %dao.class.user%
+        arguments:  [ "@doctrine.orm.entity_manager" ]
+        public: false
+
+    user_rn:
+        class:  %rn.class.user%
+        arguments:  [ "@user_dao" ]
+
     projetos_dao:
         class:  %dao.class.projetos%
         arguments:  [ "@doctrine.orm.entity_manager" ]

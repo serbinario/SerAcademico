@@ -67,6 +67,8 @@ class AlunosType extends AbstractType
             ->add('auditivasAuditivas')
             ->add('fisicasFisicas')
             ->add('visuaisVisuais')
+            ->add('imgAlunos')
+            ->add('status')
         ;
     }
     

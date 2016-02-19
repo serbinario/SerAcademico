@@ -29,7 +29,7 @@ class Permissoes
     private $nomePermissao;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Aplicacoes", inversedBy="permissoes")
+     * @ORM\ManyToOne(targetEntity="Aplicacoes")
      * @ORM\JoinColumn(name="aplicacao_id", referencedColumnName="id")
      */
     private $aplicacao;

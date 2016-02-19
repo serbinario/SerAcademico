@@ -29,13 +29,13 @@ class Aplicacoes
     private $nomeAplicacao;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Projetos", inversedBy="aplicacoes")
+     * @ORM\ManyToOne(targetEntity="Projetos")
      * @ORM\JoinColumn(name="projeto_id", referencedColumnName="id")
      */
     private $projeto;
 
     /**
-     * @ORM\OneToMany(targetEntity="Permissoes", mappedBy="aplicacao")
+     * @ORM\OneToMany(targetEntity="Permissao", mappedBy="aplicacao")
      **/
     private $permissoes;
 
@@ -95,46 +95,5 @@ class Aplicacoes
     public function getProjeto()
     {
         return $this->projeto;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->permissoes = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add permisso
-     *
-     * @param \Serbinario\Bundles\UserBundle\Entity\Permissao $permisso
-     *
-     * @return Aplicacoes
-     */
-    public function addPermisso(\Serbinario\Bundles\UserBundle\Entity\Permissao $permisso)
-    {
-        $this->permissoes[] = $permisso;
-
-        return $this;
-    }
-
-    /**
-     * Remove permisso
-     *
-     * @param \Serbinario\Bundles\UserBundle\Entity\Permissao $permisso
-     */
-    public function removePermisso(\Serbinario\Bundles\UserBundle\Entity\Permissao $permisso)
-    {
-        $this->permissoes->removeElement($permisso);
-    }
-
-    /**
-     * Get permissoes
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPermissoes()
-    {
-        return $this->permissoes;
     }
 }

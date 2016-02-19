@@ -29,7 +29,7 @@ class Projetos
     private $nomeProjeto;
 
     /**
-     * @ORM\OneToMany(targetEntity="Aplicacoes", mappedBy="projeto")
+     * @ORM\OneToMany(targetEntity="Aplicacao", mappedBy="projeto")
      **/
     private $aplicacoes;
 

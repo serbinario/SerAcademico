@@ -67,6 +67,6 @@ class DefaultController extends Controller
         //$tokenManager = $this->get('fos_oauth_server.refresh_token_manager.default');
 
         #Retorno
-        return new Response($serializer->serialize(get_class_methods($tokenManager2), "json"));
+        return new Response($serializer->serialize($user, "json"));
     }
 }
