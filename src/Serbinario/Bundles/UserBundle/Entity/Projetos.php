@@ -81,7 +81,7 @@ class Projetos
      *
      * @return Projetos
      */
-    public function addAplicaco(\Serbinario\Bundles\UserBundle\Entity\Aplicacao $aplicaco)
+    public function addAplicaco(\Serbinario\Bundles\UserBundle\Entity\Aplicacoes $aplicaco)
     {
         $this->aplicacoes[] = $aplicaco;
 
@@ -93,7 +93,7 @@ class Projetos
      *
      * @param \Serbinario\Bundles\UserBundle\Entity\Aplicacao $aplicaco
      */
-    public function removeAplicaco(\Serbinario\Bundles\UserBundle\Entity\Aplicacao $aplicaco)
+    public function removeAplicaco(\Serbinario\Bundles\UserBundle\Entity\Aplicacoes $aplicaco)
     {
         $this->aplicacoes->removeElement($aplicaco);
     }

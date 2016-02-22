@@ -298,7 +298,7 @@ class Editoras
      *
      * @return Editoras
      */
-    public function setEnderecosEnderecos(\Serbinario\Bundles\SerAcademicoBundle\Entity\Enderecos $enderecosEnderecos = null)
+    public function setEnderecosEnderecos(\Serbinario\Bundles\UtilBundle\Entity\Enderecos $enderecosEnderecos = null)
     {
         $this->enderecosEnderecos = $enderecosEnderecos;
 
