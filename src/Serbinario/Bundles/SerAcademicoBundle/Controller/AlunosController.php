@@ -27,6 +27,7 @@ use Serbinario\Bundles\SerAcademicoBundle\Entity\Fisicas;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Emancipados;
 use Serbinario\Bundles\UtilBundle\Util\GridClass;
 use FOS\RestBundle\Controller\Annotations\Post;
+use Serbinario\Bundles\Util\FormErrorsSerializer as formErrors;
 
 
 class AlunosController extends FOSRestController
@@ -276,7 +277,14 @@ class AlunosController extends FOSRestController
             }
         }
 
+        $translated = $this->get('translator')->trans('error.error');
+        //Instanciei a classe formErros, e passo a classe $form no construtor
+        $errors =  new formErrors();
+        $asd = $errors->serializeFormErrors($form, false, false);
+
+        return new Response($serializer->serialize([ $request->getLocale(), $asd, 'success' => 'false' , 'message' => $translated], "json"));
+
         #Retorno
-        throw new HttpException(400, ErroList::REQUEST_INVALID);
+        //throw new HttpException(400, ErroList::REQUEST_INVALID);
     }
 }
