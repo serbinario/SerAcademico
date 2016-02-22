@@ -32,7 +32,7 @@ use FOS\RestBundle\Controller\Annotations\Post;
 class AlunosController extends FOSRestController
 {
     /**
-     * @Post("/grid", name="gridAlunos")
+     * @Post("/grid", name="_alunos")
      */
     public function gridAction(Request $request)
     {

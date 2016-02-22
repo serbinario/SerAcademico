@@ -98,7 +98,7 @@ fos_oauth_server:
     service:
         user_provider:   app.serbinario.user.provider
         options:
-           access_token_lifetime: 190000
+           access_token_lifetime: 10
 
 nelmio_cors:
     paths:

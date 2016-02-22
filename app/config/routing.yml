@@ -1,3 +1,7 @@
+alunos:
+    type:     rest
+    resource: Serbinario\Bundles\SerAcademicoBundle\Controller\AlunosController
+
 user:
     resource: "@UserBundle/Controller/"
     type:     annotation
@@ -23,9 +27,8 @@ users:
     type:     rest
     prefix:   /users
 
-alunos:
-    type:     rest
-    resource: Serbinario\Bundles\SerAcademicoBundle\Controller\AlunosController
+
+
 
 fos_oauth_server_token:
     resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
