@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33d237ef-1d90-4fe0-9e17-eb13d6e6dc66" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/Util/FormErrorsSerializer.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Util/FormErrorsSerializer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml" afterPath="$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SerAcademico.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AlunosType.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AlunosType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6536697">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state vertical-scroll-proportion="-7.5">
+              <caret line="24" column="64" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -60,18 +53,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlunosController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AlunosController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.916666">
-              <caret line="295" column="51" selection-start-line="295" selection-start-column="51" selection-end-line="295" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.5527523">
+              <caret line="371" column="42" selection-start-line="371" selection-start-column="42" selection-end-line="371" selection-end-column="42" />
               <folding>
                 <element signature="e#68#116#0#PHP" expanded="false" />
-                <marker date="1456148060985" expanded="true" signature="3683:3684" placeholder="..." />
-                <marker date="1456148060985" expanded="true" signature="9428:10552" placeholder="..." />
-                <marker date="1456148060985" expanded="true" signature="10147:10521" placeholder="..." />
-                <marker date="1456148060985" expanded="true" signature="12011:13134" placeholder="..." />
-                <marker date="1456148060985" expanded="true" signature="12726:12746" placeholder="..." />
+                <marker date="1456149547629" expanded="true" signature="3683:3684" placeholder="..." />
+                <marker date="1456149547629" expanded="true" signature="9428:10552" placeholder="..." />
+                <marker date="1456149547629" expanded="true" signature="10147:10521" placeholder="..." />
+                <marker date="1456149547629" expanded="true" signature="12073:13217" placeholder="..." />
+                <marker date="1456149547629" expanded="true" signature="12809:12829" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -128,9 +121,9 @@
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Aplicacoes.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/Util/FormErrorsSerializer.php" />
         <option value="$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml" />
-        <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" />
         <option value="$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml" />
+        <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" />
       </list>
     </option>
   </component>
@@ -757,33 +750,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.916666">
-          <caret line="295" column="51" selection-start-line="295" selection-start-column="51" selection-end-line="295" selection-end-column="51" />
-          <folding>
-            <element signature="e#68#116#0#PHP" expanded="false" />
-            <marker date="1456148060985" expanded="true" signature="3683:3684" placeholder="..." />
-            <marker date="1456148060985" expanded="true" signature="9428:10552" placeholder="..." />
-            <marker date="1456148060985" expanded="true" signature="10147:10521" placeholder="..." />
-            <marker date="1456148060985" expanded="true" signature="12011:13134" placeholder="..." />
-            <marker date="1456148060985" expanded="true" signature="12726:12746" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.en.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="28" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -796,6 +766,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="24" column="64" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -804,11 +790,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php">
+    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6536697">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding />
+        <state vertical-scroll-proportion="0.5527523">
+          <caret line="371" column="42" selection-start-line="371" selection-start-column="42" selection-end-line="371" selection-end-column="42" />
+          <folding>
+            <element signature="e#68#116#0#PHP" expanded="false" />
+            <marker date="1456149547629" expanded="true" signature="3683:3684" placeholder="..." />
+            <marker date="1456149547629" expanded="true" signature="9428:10552" placeholder="..." />
+            <marker date="1456149547629" expanded="true" signature="10147:10521" placeholder="..." />
+            <marker date="1456149547629" expanded="true" signature="12073:13217" placeholder="..." />
+            <marker date="1456149547629" expanded="true" signature="12809:12829" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
