@@ -107,11 +107,11 @@ class Aplicacoes
     /**
      * Add permisso
      *
-     * @param \Serbinario\Bundles\UserBundle\Entity\Permissao $permisso
+     * @param \Serbinario\Bundles\UserBundle\Entity\Permissoes $permisso
      *
      * @return Aplicacoes
      */
-    public function addPermisso(\Serbinario\Bundles\UserBundle\Entity\Permissao $permisso)
+    public function addPermisso(\Serbinario\Bundles\UserBundle\Entity\Permissoes $permisso)
     {
         $this->permissoes[] = $permisso;
 
@@ -121,7 +121,7 @@ class Aplicacoes
     /**
      * Remove permisso
      *
-     * @param \Serbinario\Bundles\UserBundle\Entity\Permissao $permisso
+     * @param \Serbinario\Bundles\UserBundle\Entity\Permissoes $permisso
      */
     public function removePermisso(\Serbinario\Bundles\UserBundle\Entity\Permissao $permisso)
     {

@@ -294,11 +294,11 @@ class Editoras
     /**
      * Set enderecosEnderecos
      *
-     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Enderecos $enderecosEnderecos
+     * @param \Serbinario\Bundles\UtilBundle\Entity\Enderecos $enderecosEnderecos
      *
      * @return Editoras
      */
-    public function setEnderecosEnderecos(\Serbinario\Bundles\SerAcademicoBundle\Entity\Enderecos $enderecosEnderecos = null)
+    public function setEnderecosEnderecos(\Serbinario\Bundles\UtilBundle\Entity\Enderecos $enderecosEnderecos = null)
     {
         $this->enderecosEnderecos = $enderecosEnderecos;
 
