@@ -45,7 +45,7 @@ class UserProvider implements UserProviderInterface
             ->getQuery();
 
         try {
-            $user = $q->getSingleResult();
+            $user = $q->getOneOrNullResult();
         } catch (NoResultException $e) {
             $message = sprintf(
                 'Usu[ario "%s" não encontrado.',
