@@ -295,7 +295,8 @@ class AlunosController extends FOSRestController
                 return new Response(
                     $serializer->serialize([$errors->serializeFormErrors($form, true, true),
                         'success' => false,
-                        'message' => $mensagem],
+                        'message' => $mensagem
+                        'request' => $request->request->all()],
                         "json"
                     ));
             }
@@ -353,7 +354,8 @@ class AlunosController extends FOSRestController
                             'success' => true,
                             'message' => $mensagem],
                             "json"
-                        ));
+                        )
+                    );
                 } catch (\Throwable $e) {
                     #Setando a mensagem
                     $mensagem = $this->get('translator')->trans('alunos.error_save');
@@ -373,7 +375,8 @@ class AlunosController extends FOSRestController
                 return new Response(
                     $serializer->serialize([$errors->serializeFormErrors($form, true, true),
                     'success' => false,
-                    'message' => $mensagem],
+                    'message' => $mensagem,
+                    'request' => $request->request->all()],
                     "json"
                 ));
             }
