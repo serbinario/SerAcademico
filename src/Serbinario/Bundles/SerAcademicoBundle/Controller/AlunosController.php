@@ -112,7 +112,6 @@ class AlunosController extends FOSRestController
         #Recuperando os serviços
         $alunosRN   = $this->get("alunos_rn");
         $serializer = $this->get("jms_serializer");
-        $errors     = $this->get("form_erros");
 
         #Validando o id do parâmetro
         if(!v::numeric()->validate($id)) {
@@ -140,7 +139,7 @@ class AlunosController extends FOSRestController
             ));
         } catch (\Throwable $e) {
             #Setando a mensagem
-            $mensagem = $this->get('translator')->trans('error_get_aluno');
+            $mensagem = $this->get('translator')->trans('alunos.error_get_aluno');
 
             #Retorno
             return new Response($serializer->serialize([$e,
@@ -162,7 +161,6 @@ class AlunosController extends FOSRestController
 
             #Recuperando os serviços
             $serializer = $this->get("jms_serializer");
-            $errors     = $this->get("form_erros");
 
             #Recuperando os dados pre cadastrados
             $result = [
@@ -295,8 +293,7 @@ class AlunosController extends FOSRestController
                 return new Response(
                     $serializer->serialize([$errors->serializeFormErrors($form, true, true),
                         'success' => false,
-                        'message' => $mensagem,
-                        'request' => $request->request->all()],
+                        'message' => $mensagem],
                         "json"
                     ));
             }
@@ -375,8 +372,7 @@ class AlunosController extends FOSRestController
                 return new Response(
                     $serializer->serialize([$errors->serializeFormErrors($form, true, true),
                     'success' => false,
-                    'message' => $mensagem,
-                    'request' => $request->request->all()],
+                    'message' => $mensagem],
                     "json"
                 ));
             }
