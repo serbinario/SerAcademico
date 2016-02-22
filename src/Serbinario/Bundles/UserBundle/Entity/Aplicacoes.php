@@ -107,7 +107,7 @@ class Aplicacoes
     /**
      * Add permisso
      *
-     * @param \Serbinario\Bundles\UserBundle\Entity\Permissao $permisso
+     * @param \Serbinario\Bundles\UserBundle\Entity\Permissoes $permisso
      *
      * @return Aplicacoes
      */
@@ -121,7 +121,7 @@ class Aplicacoes
     /**
      * Remove permisso
      *
-     * @param \Serbinario\Bundles\UserBundle\Entity\Permissao $permisso
+     * @param \Serbinario\Bundles\UserBundle\Entity\Permissoes $permisso
      */
     public function removePermisso(\Serbinario\Bundles\UserBundle\Entity\Permissoes $permisso)
     {

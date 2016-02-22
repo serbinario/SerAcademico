@@ -77,7 +77,7 @@ class Projetos
     /**
      * Add aplicaco
      *
-     * @param \Serbinario\Bundles\UserBundle\Entity\Aplicacao $aplicaco
+     * @param \Serbinario\Bundles\UserBundle\Entity\Aplicacoes $aplicaco
      *
      * @return Projetos
      */
@@ -91,7 +91,7 @@ class Projetos
     /**
      * Remove aplicaco
      *
-     * @param \Serbinario\Bundles\UserBundle\Entity\Aplicacao $aplicaco
+     * @param \Serbinario\Bundles\UserBundle\Entity\Aplicacoes $aplicaco
      */
     public function removeAplicaco(\Serbinario\Bundles\UserBundle\Entity\Aplicacoes $aplicaco)
     {

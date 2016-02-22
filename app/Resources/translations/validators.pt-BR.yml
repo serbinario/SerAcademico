@@ -1,2 +1,2 @@
-author.name.not_blank: Por favor entre com o nome do Autor.
-error.error: Erro ao inserir
+alunos:
+  nome_pai_not_blank: Por favor entre com o nome do pai do aluno.

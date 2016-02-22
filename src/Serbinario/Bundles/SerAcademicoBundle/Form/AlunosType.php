@@ -22,7 +22,7 @@ class AlunosType extends AbstractType
             ->add('nomePaiAlunos', null, [
                 'constraints' =>[
                     new Assert\NotBlank([
-                        'message' => "author.name.not_blank"
+                        'message' => "alunos.nome_pai_not_blank"
                     ]),
                     new Assert\Length([
                         'min' => "10",

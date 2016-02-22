@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33d237ef-1d90-4fe0-9e17-eb13d6e6dc66" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/Util/FormErrorsSerializer.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Util/FormErrorsSerializer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Aplicacoes.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Aplicacoes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Editoras.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Editoras.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Projetos.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Projetos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml" afterPath="$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml" />
     </list>
     <ignored path="SerAcademico.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,8 +105,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -318,6 +317,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,8 +398,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="723" extended-state="7" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1366" height="723" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -435,9 +436,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27465856" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -465,7 +466,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,7 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -804,7 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5714286">
           <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -820,7 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50883394">
           <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>

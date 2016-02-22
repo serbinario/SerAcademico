@@ -1,1 +1,13 @@
-error.error: error ao inserir
+alunos:
+  error_save: Aluno cadastro com sucesso!
+  sucess_save: Ocorreu um erro na tentativa de cadastro, por favor tente novamente!
+  sucess_updte: Atualizaçõa realizada com sucesso!
+  error_updte: Ocorreu um erro na tentativa de atualização, por favor tente novamente!
+  error_form_invalid: Os dados informados são inválidos.
+  error_pre_load: Erro ao carregar os registros.
+  error_get_aluno: Erro ao recuperar o aluno.
+
+request_error: Solicitação inválida.
+
+internal_error: Ocorreu um erro interno.
+

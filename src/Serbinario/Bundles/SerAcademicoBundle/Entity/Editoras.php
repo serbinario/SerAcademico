@@ -294,7 +294,7 @@ class Editoras
     /**
      * Set enderecosEnderecos
      *
-     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Enderecos $enderecosEnderecos
+     * @param \Serbinario\Bundles\UtilBundle\Entity\Enderecos $enderecosEnderecos
      *
      * @return Editoras
      */
