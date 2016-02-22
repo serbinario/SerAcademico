@@ -362,7 +362,7 @@ class AlunosController extends FOSRestController
                     $mensagem = $this->get('translator')->trans('alunos.error_save');
 
                     #Retorno
-                    return new Response($serializer->serialize(
+                    return new Response($serializer->serialize([
                         array("message" => $e->getMessage()),
                         'success' => false,
                         'message' => $mensagem],
