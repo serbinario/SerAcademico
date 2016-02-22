@@ -27,7 +27,6 @@ use Serbinario\Bundles\SerAcademicoBundle\Entity\Fisicas;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Emancipados;
 use Serbinario\Bundles\UtilBundle\Util\GridClass;
 use FOS\RestBundle\Controller\Annotations\Post;
-use Serbinario\Bundles\Util\FormErrorsSerializer as formErrors;
 
 
 class AlunosController extends FOSRestController
@@ -104,6 +103,7 @@ class AlunosController extends FOSRestController
      */
     public function getAlunoAction($id)
     {
+
         #Validando o id do parâmetro
         if(!v::numeric()->validate($id)) {
             throw new HttpException(400, ErroList::PARAMETER_INVALID);
@@ -279,10 +279,13 @@ class AlunosController extends FOSRestController
 
         $translated = $this->get('translator')->trans('error.error');
         //Instanciei a classe formErros, e passo a classe $form no construtor
-        $errors =  new formErrors();
-        $asd = $errors->serializeFormErrors($form, false, false);
+        //$errors =  new formErrors();
+        //$asd = $errors->serializeFormErrors($form, false, true);
 
-        return new Response($serializer->serialize([ $request->getLocale(), $asd, 'success' => 'false' , 'message' => $translated], "json"));
+        $errors = $this->get("form_erros");
+        $asd = $errors->serializeFormErrors($form, true, true);
+
+        return new Response($serializer->serialize([ $asd,  'success' => 'false' , 'message' => $translated], "json"));
 
         #Retorno
         //throw new HttpException(400, ErroList::REQUEST_INVALID);
