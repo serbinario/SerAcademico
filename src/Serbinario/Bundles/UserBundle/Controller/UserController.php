@@ -82,7 +82,8 @@ class UserController extends FOSRestController
             $mensagem = $this->get('translator')->trans('internal_error');
 
             #Retorno
-            return new Response($serializer->serialize([$e,
+            return new Response($serializer->serialize([
+                array("message" => $e->getMessage()),
                 'success' => false,
                 'message' => $mensagem],
                 "json"
@@ -165,7 +166,8 @@ class UserController extends FOSRestController
             $mensagem = $this->get('translator')->trans('usuarios.error_pre_load');
 
             #Retorno
-            return new Response($serializer->serialize([$e,
+            return new Response($serializer->serialize([
+                array("message" => $e->getMessage()),
                 'success' => false,
                 'message' => $mensagem],
                 "json"
@@ -249,7 +251,8 @@ class UserController extends FOSRestController
                     $mensagem = $this->get('translator')->trans('usuarios.error_save');
 
                     #Retorno
-                    return new Response($serializer->serialize([$e,
+                    return new Response($serializer->serialize([
+                        array("message" => $e->getMessage()),
                         'success' => false,
                         'message' => $mensagem],
                         "json"
@@ -401,7 +404,8 @@ class UserController extends FOSRestController
                     $mensagem = $this->get('translator')->trans('usuarios.error_update');
 
                     #Retorno
-                    return new Response($serializer->serialize([$e,
+                    return new Response($serializer->serialize([
+                        array("message" => $e->getMessage()),
                         'success' => false,
                         'message' => $mensagem],
                         "json"

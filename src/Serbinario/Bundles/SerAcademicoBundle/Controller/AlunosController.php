@@ -92,7 +92,8 @@ class AlunosController extends FOSRestController
             $mensagem = $this->get('translator')->trans('internal_error');
 
             #Retorno
-            return new Response($serializer->serialize([$e,
+            return new Response($serializer->serialize([
+                array("message" => $e->getMessage()),
                 'success' => false,
                 'message' => $mensagem],
                 "json"
@@ -142,7 +143,8 @@ class AlunosController extends FOSRestController
             $mensagem = $this->get('translator')->trans('alunos.error_get_aluno');
 
             #Retorno
-            return new Response($serializer->serialize([$e,
+            return new Response($serializer->serialize([
+                array("message" => $e->getMessage()),
                 'success' => 'false',
                 'message' => $mensagem],
                 "json"
@@ -191,7 +193,8 @@ class AlunosController extends FOSRestController
             $mensagem = $this->get('translator')->trans('alunos.error_pre_load');
 
             #Retorno
-            return new Response($serializer->serialize([$e,
+            return new Response($serializer->serialize([
+                array("message" => $e->getMessage()),
                 'success' => false,
                 'message' => $mensagem],
                 "json"
@@ -279,7 +282,8 @@ class AlunosController extends FOSRestController
                     $mensagem = $this->get('translator')->trans('alunos.error_update');
 
                     #Retorno
-                    return new Response($serializer->serialize([$e,
+                    return new Response($serializer->serialize([
+                        array("message" => $e->getMessage()),
                         'success' => false,
                         'message' => $mensagem],
                         "json"
@@ -358,7 +362,8 @@ class AlunosController extends FOSRestController
                     $mensagem = $this->get('translator')->trans('alunos.error_save');
 
                     #Retorno
-                    return new Response($serializer->serialize([array(),
+                    return new Response($serializer->serialize(
+                        array("message" => $e->getMessage()),
                         'success' => false,
                         'message' => $mensagem],
                         "json"
