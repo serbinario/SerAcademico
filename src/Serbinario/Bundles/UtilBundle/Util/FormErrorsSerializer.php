@@ -1,5 +1,5 @@
 <?php
-namespace Serbinario\Bundles\Util;
+namespace Serbinario\Bundles\UtilBundle\Util;
 
 class FormErrorsSerializer {
 

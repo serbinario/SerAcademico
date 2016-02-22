@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33d237ef-1d90-4fe0-9e17-eb13d6e6dc66" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/Util/FormErrorsSerializer.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Util/FormErrorsSerializer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Resources/config/services.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml" afterPath="$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -24,21 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlunosType.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AlunosType.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875">
-              <caret line="24" column="59" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.6536697">
+              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -48,38 +44,35 @@
         <entry file="file://$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messages.en.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.en.yml">
+      <file leaf-file-name="messages.pt-BR.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="28" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="28" />
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlunosController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AlunosController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51834863">
-              <caret line="281" column="36" selection-start-line="281" selection-start-column="36" selection-end-line="281" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormErrorsSerializer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/Util/FormErrorsSerializer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.8333335">
-              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-              <folding />
+            <state vertical-scroll-proportion="-21.916666">
+              <caret line="295" column="51" selection-start-line="295" selection-start-column="51" selection-end-line="295" selection-end-column="51" />
+              <folding>
+                <element signature="e#68#116#0#PHP" expanded="false" />
+                <marker date="1456148060985" expanded="true" signature="3683:3684" placeholder="..." />
+                <marker date="1456148060985" expanded="true" signature="9428:10552" placeholder="..." />
+                <marker date="1456148060985" expanded="true" signature="10147:10521" placeholder="..." />
+                <marker date="1456148060985" expanded="true" signature="12011:13134" placeholder="..." />
+                <marker date="1456148060985" expanded="true" signature="12726:12746" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,7 +102,6 @@
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Bairros.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Enderecos.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Controller/BairrosController.php" />
-        <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Alunos.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Util/GridClass.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Controller/DefaultController.php" />
@@ -129,13 +121,15 @@
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Form/UserType.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Controller/UserController.php" />
-        <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Editoras.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Projetos.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Aplicacoes.php" />
         <option value="$PROJECT_DIR$/src/Serbinario/Bundles/Util/FormErrorsSerializer.php" />
+        <option value="$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml" />
+        <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" />
+        <option value="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" />
         <option value="$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml" />
       </list>
     </option>
@@ -182,6 +176,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -191,9 +186,108 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Serbinario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SerAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="translations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -280,7 +374,7 @@
     <frame x="0" y="24" width="1366" height="615" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2837633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25417298" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790223" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -336,25 +430,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="19" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/oauth-server-bundle/Resources/config/security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24475524">
-          <caret line="7" column="49" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/oauth-server-bundle/Resources/config/authorize.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06993007">
@@ -654,43 +734,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/Util/FormErrorsSerializer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.8333335">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/translations/validators.en.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Util/FormErrorsSerializer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core_c.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state vertical-scroll-proportion="-6.375">
+          <caret line="236" column="36" selection-start-line="236" selection-start-column="27" selection-end-line="236" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.916666">
+          <caret line="295" column="51" selection-start-line="295" selection-start-column="51" selection-end-line="295" selection-end-column="51" />
+          <folding>
+            <element signature="e#68#116#0#PHP" expanded="false" />
+            <marker date="1456148060985" expanded="true" signature="3683:3684" placeholder="..." />
+            <marker date="1456148060985" expanded="true" signature="9428:10552" placeholder="..." />
+            <marker date="1456148060985" expanded="true" signature="10147:10521" placeholder="..." />
+            <marker date="1456148060985" expanded="true" signature="12011:13134" placeholder="..." />
+            <marker date="1456148060985" expanded="true" signature="12726:12746" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -702,10 +780,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51834863">
-          <caret line="281" column="36" selection-start-line="281" selection-start-column="36" selection-end-line="281" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57608694">
+          <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6536697">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
           <folding />
         </state>
       </provider>

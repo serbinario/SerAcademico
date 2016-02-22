@@ -27,7 +27,6 @@ use Serbinario\Bundles\SerAcademicoBundle\Entity\Fisicas;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Emancipados;
 use Serbinario\Bundles\UtilBundle\Util\GridClass;
 use FOS\RestBundle\Controller\Annotations\Post;
-use Serbinario\Bundles\Util\FormErrorsSerializer as formErrors;
 
 
 class AlunosController extends FOSRestController
@@ -88,10 +87,16 @@ class AlunosController extends FOSRestController
 
             #Retorno
             return new Response($serializer->serialize($columns, "json"));
-        } catch (\Exception $e) {
-            throw new HttpException(400, $e->getMessage());
-        } catch (\Error $e) {//var_dump();exit;
-            throw new HttpException(400, $e->getMessage());
+        } catch (\Throwable $e) {
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('internal_error');
+
+            #Retorno
+            return new Response($serializer->serialize([$e,
+                'success' => false,
+                'message' => $mensagem],
+                "json"
+            ));
         }
     }
 
@@ -104,28 +109,45 @@ class AlunosController extends FOSRestController
      */
     public function getAlunoAction($id)
     {
-        #Validando o id do parâmetro
-        if(!v::numeric()->validate($id)) {
-            throw new HttpException(400, ErroList::PARAMETER_INVALID);
-        }
-
         #Recuperando os serviços
         $alunosRN   = $this->get("alunos_rn");
         $serializer = $this->get("jms_serializer");
+        $errors     = $this->get("form_erros");
+
+        #Validando o id do parâmetro
+        if(!v::numeric()->validate($id)) {
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('request_error');
+
+            #Retorno
+            return new Response($serializer->serialize([array(),
+                'success' => 'false',
+                'message' => $mensagem],
+                "json"
+            ));
+        }
 
         #Tratamento de exceções
         try {
             #Recuperando a alunos solicitada
-            $alunos = $alunosRN->find(Alunos::class, $id);
+            $aluno = $alunosRN->find(Alunos::class, $id);
 
             #Retorno
-            return new Response($serializer->serialize($alunos, "json"));
-        } catch (NoResultException $e) {
-            throw new HttpException(400, ErroList::NO_RESULT);
-        } catch (\Exception $e) {
-            throw new HttpException(400, ErroList::EXCEPTION);
-        } catch (\Error $e) {
-            throw new HttpException(400, ErroList::FATAL_ERROR);
+            return new Response($serializer->serialize([$aluno,
+                'success' => true,
+                'message' => ''],
+                "json"
+            ));
+        } catch (\Throwable $e) {
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('error_get_aluno');
+
+            #Retorno
+            return new Response($serializer->serialize([$e,
+                'success' => 'false',
+                'message' => $mensagem],
+                "json"
+            ));
         }
     }
 
@@ -140,6 +162,7 @@ class AlunosController extends FOSRestController
 
             #Recuperando os serviços
             $serializer = $this->get("jms_serializer");
+            $errors     = $this->get("form_erros");
 
             #Recuperando os dados pre cadastrados
             $result = [
@@ -160,11 +183,21 @@ class AlunosController extends FOSRestController
             ];
 
             #Retorno
-            return new Response($serializer->serialize($result, "json"));
-        } catch (\Exception $e) {
-            throw new HttpException(400, ErroList::EXCEPTION);
-        } catch (\Error $e) {
-            throw new HttpException(400, ErroList::FATAL_ERROR);
+            return new Response($serializer->serialize([$result,
+                'success' => true,
+                'message' => ''],
+                "json"
+            ));
+        } catch (\Throwable $e) {
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('alunos.error_pre_load');
+
+            #Retorno
+            return new Response($serializer->serialize([$e,
+                'success' => false,
+                'message' => $mensagem],
+                "json"
+            ));
         }
     }
 
@@ -180,21 +213,38 @@ class AlunosController extends FOSRestController
         #Recuperandoparametros da requisição
         $id = $request->request->get("idAluno");
 
-        #Validando o id do parâmetro
-        if(!v::numeric()->validate($id)) {
-            throw new HttpException(400, ErroList::PARAMETER_INVALID);
-        }
-
         #Recuperando os serviços
         $alunosRN   = $this->get("alunos_rn");
         $serializer = $this->get("jms_serializer");
+        $errors     = $this->get("form_erros");
+
+        #Validando o id do parâmetro
+        if(!v::numeric()->validate($id)) {
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('request_error');
+
+            #Retorno
+            return new Response($serializer->serialize([array(),
+                'success' => false,
+                'message' => $mensagem],
+                "json"
+            ));
+        }
 
         #Recuperando o objeto alunos
         $objPessoa  = $alunosRN->find(Alunos::class, $id);
 
         #Verificando se o objeto alunos existe
         if(!isset($objPessoa)) {
-           throw new HttpException(400, "Solicitação inválida");
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('request_error');
+
+            #Retorno
+            return new Response($serializer->serialize([array(),
+                'success' => false,
+                'message' => $mensagem],
+                "json"
+            ));
         }
 
         #Verificando o método http
@@ -216,24 +266,50 @@ class AlunosController extends FOSRestController
                     #Atualizando o objeto
                     $result = $alunosRN->update($alunos);
 
-                    #Retorno
-                    return new Response($serializer->serialize($result, "json"));
-                } catch (\Exception $e) {
-                    #Verificando se existe violação de unicidade. (campos definidos como únicos).
-                    if($e->getPrevious()->getCode() == 23000) {
-                        throw new HttpException(400, ErroList::UNIQUE_EXCEPTION);
-                    }
+                    #Setando a mensagem
+                    $mensagem = $this->get('translator')->trans('alunos.sucess_update');
 
-                    #Erro genérico
-                    throw new HttpException(400, ErroList::EXCEPTION);
-                } catch (\Error $e) {
-                    throw new HttpException(400, ErroList::FATAL_ERROR);
+                    #Retorno
+                    return new Response(
+                        $serializer->serialize([$result,
+                            'success' => true,
+                            'message' => $mensagem],
+                            "json"
+                        ));
+                } catch (\Throwable $e) {
+                    #Setando a mensagem
+                    $mensagem = $this->get('translator')->trans('alunos.error_update');
+
+                    #Retorno
+                    return new Response($serializer->serialize([$e,
+                        'success' => false,
+                        'message' => $mensagem],
+                        "json"
+                    ));
                 }
+            } else {
+                #Setando a mensagem
+                $mensagem = $this->get('translator')->trans('alunos.error_form_invalid');
+
+                #Retorno
+                return new Response(
+                    $serializer->serialize([$errors->serializeFormErrors($form, true, true),
+                        'success' => false,
+                        'message' => $mensagem],
+                        "json"
+                    ));
             }
         }
 
+        #Setando a mensagem
+        $mensagem = $this->get('translator')->trans('request_error');
+
         #Retorno
-        throw new HttpException(400, ErroList::REQUEST_INVALID);
+        return new Response($serializer->serialize([array(),
+            'success' => false,
+            'message' => $mensagem],
+            "json"
+        ));
     }
 
     /**
@@ -248,6 +324,7 @@ class AlunosController extends FOSRestController
         #Recuperando os serviços
         $alunosRN   = $this->get("alunos_rn");
         $serializer = $this->get("jms_serializer");
+        $errors     = $this->get("form_erros");
 
         #Verificando o método http
         if ($request->getMethod() === "POST") {
@@ -267,24 +344,49 @@ class AlunosController extends FOSRestController
                     #Atualizando o objeto
                     $result = $alunosRN->save($alunos);
 
+                    #Setando a mensagem
+                    $mensagem = $this->get('translator')->trans('alunos.sucess_save');
+
                     #Retorno
-                    return new Response($serializer->serialize($result, "json"));
-                } catch (\Exception $e) {
-                    throw new HttpException(400, ErroList::EXCEPTION);
-                } catch (\Error $e) {
-                    throw new HttpException(400, ErroList::FATAL_ERROR);
+                    return new Response(
+                        $serializer->serialize([$result,
+                            'success' => true,
+                            'message' => $mensagem],
+                            "json"
+                        ));
+                } catch (\Throwable $e) {
+                    #Setando a mensagem
+                    $mensagem = $this->get('translator')->trans('alunos.error_save');
+
+                    #Retorno
+                    return new Response($serializer->serialize([array(),
+                        'success' => false,
+                        'message' => $mensagem],
+                        "json"
+                    ));
                 }
+            } else {
+                #Setando a mensagem
+                $mensagem = $this->get('translator')->trans('alunos.error_form_invalid');
+
+                #Retorno
+                return new Response(
+                    $serializer->serialize([$errors->serializeFormErrors($form, true, true),
+                    'success' => false,
+                    'message' => $mensagem],
+                    "json"
+                ));
             }
         }
 
-        $translated = $this->get('translator')->trans('error.error');
-        //Instanciei a classe formErros, e passo a classe $form no construtor
-        $errors =  new formErrors();
-        $asd = $errors->serializeFormErrors($form, false, false);
-
-        return new Response($serializer->serialize([ $request->getLocale(), $asd, 'success' => 'false' , 'message' => $translated], "json"));
+        #Setando a mensagem
+        $mensagem = $this->get('translator')->trans('request_error');
 
         #Retorno
-        //throw new HttpException(400, ErroList::REQUEST_INVALID);
+        return new Response($serializer->serialize([array(),
+            'success' => false,
+            'message' => $mensagem],
+            "json"
+        ));
     }
 }
