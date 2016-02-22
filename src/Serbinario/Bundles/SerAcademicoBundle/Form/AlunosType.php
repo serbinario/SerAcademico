@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Serbinario\Bundles\UtilBundle\Form\EnderecosType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class AlunosType extends AbstractType
 {
@@ -18,7 +19,19 @@ class AlunosType extends AbstractType
         $builder
             ->add('matriculaAlunos')
             ->add('nomeAlunos')
-            ->add('nomePaiAlunos')
+            ->add('nomePaiAlunos', null, [
+                'constraints' =>[
+                    new Assert\NotBlank([
+                        'message' => "author.name.not_blank"
+                    ]),
+                    new Assert\Length([
+                        'min' => "10",
+                        'max' => "255",
+                        'minMessage' => "Renginio pavadinimas negali būti trumpesnis nei {{ limit }} simboliai",
+                        'maxMessage' => "Renginio pavadinimas negali būti ilgesnis nei {{ limit }} simboliai"
+                    ])
+                ]
+            ])
             ->add('nomeSocialAlunos')
             ->add('nomeMaeAlunos')
             ->add('identidadeAlunos')
