@@ -29,5 +29,38 @@ class TiposAcervos
     private $tiposAcervos;
 
 
-}
 
+    /**
+     * Get idTiposAcervos
+     *
+     * @return integer
+     */
+    public function getIdTiposAcervos()
+    {
+        return $this->idTiposAcervos;
+    }
+
+    /**
+     * Set tiposAcervos
+     *
+     * @param string $tiposAcervos
+     *
+     * @return TiposAcervos
+     */
+    public function setTiposAcervos($tiposAcervos)
+    {
+        $this->tiposAcervos = $tiposAcervos;
+
+        return $this;
+    }
+
+    /**
+     * Get tiposAcervos
+     *
+     * @return string
+     */
+    public function getTiposAcervos()
+    {
+        return $this->tiposAcervos;
+    }
+}

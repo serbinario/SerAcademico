@@ -32,7 +32,7 @@ class CidadesController extends FOSRestController
             $queryBuilder->select("a");
             $queryBuilder->from(Cidades::class, "a");
             $queryBuilder->join("a.estadosEstados", "b");
-            $queryBuilder->where("b.idEstados = :idEstado");
+            $queryBuilder->where("b.id = :idEstado");
             $queryBuilder->setParameter("idEstado", $idEstado);
 
             #Executando a query e recuperando o resultado
@@ -46,11 +46,11 @@ class CidadesController extends FOSRestController
             #Retorno
             return new Response($serializer->serialize($cidades, "json"));
         }  catch (NoResultException $e) {
-            throw new HttpException(400, ErroList::NO_RESULT);
+            throw new HttpException(400, $e->getMessage());
         } catch (\Exception $e) {
-            throw new HttpException(400, ErroList::EXCEPTION);
-        } catch (\Error $e) {var_dump($e->getMessage());exit;
-            throw new HttpException(400, ErroList::FATAL_ERROR);
+            throw new HttpException(400, $e->getMessage());
+        } catch (\Error $e) {
+            throw new HttpException(400, $e->getMessage());
         }
     }
 }

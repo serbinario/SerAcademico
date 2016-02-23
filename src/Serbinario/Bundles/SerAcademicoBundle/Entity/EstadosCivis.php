@@ -3,6 +3,7 @@
 namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * EstadosCivis
@@ -15,29 +16,29 @@ class EstadosCivis
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_estados_civis", type="integer", nullable=false)
+     * @SerializedName("id")
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idEstadosCivis;
+    private $id;
 
     /**
      * @var string
      *
+     * @SerializedName("estadosCivis")
      * @ORM\Column(name="estados_civis", type="string", length=45, nullable=true)
      */
     private $estadosCivis;
 
-
-
     /**
-     * Get idEstadosCivis
+     * Get id
      *
      * @return integer
      */
-    public function getIdEstadosCivis()
+    public function getId()
     {
-        return $this->idEstadosCivis;
+        return $this->id;
     }
 
     /**

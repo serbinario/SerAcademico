@@ -47,7 +47,8 @@ class User implements UserInterface, AdvancedUserInterface, EquatableInterface, 
     private $isActive;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Perfil")
+     *
+     * @ORM\ManyToMany(targetEntity="Perfil", cascade={"persist"})
      * @ORM\JoinTable(name="perfis_user",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="perfil_id", referencedColumnName="id")}
@@ -56,7 +57,8 @@ class User implements UserInterface, AdvancedUserInterface, EquatableInterface, 
     private $perfis;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Role")
+     *
+     * @ORM\ManyToMany(targetEntity="Role", cascade={"persist"})
      * @ORM\JoinTable(name="users_has_roles",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")}
@@ -71,6 +73,7 @@ class User implements UserInterface, AdvancedUserInterface, EquatableInterface, 
     {
         $this->isActive = true;
         $this->roles    = new ArrayCollection();
+        $this->perfis   = new ArrayCollection();
         $this->salt     = base_convert(sha1(uniqid(mt_rand(), true)), 16, 36);
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid(null, true));
@@ -107,12 +110,31 @@ class User implements UserInterface, AdvancedUserInterface, EquatableInterface, 
      */
     public function getRoles()
     {
-        $roles = array();
-        foreach ($this->roles->toArray() as $role) {
-            $roles[] = $role->getRole();
+        #Variáveis ultilizadas
+        $arrayRetorno = array('ROLE_USER');
+        $perfis       = $this->perfis->toArray();
+        $roles        = $this->roles->toArray();
+
+        #Adicionando roles dos perfis
+        if(count($perfis) > 0) {
+            foreach($perfis as $perfil) {
+                $rolesPerfil = $perfil->getRoles()->toArray();
+                if(count($rolesPerfil) > 0) {
+                    foreach($rolesPerfil as $role) {
+                        \array_push($arrayRetorno, $role->getRole());
+                    }
+
+                }
+            }
         }
-        //var_dump($roles);exit;
-        return $roles;
+
+        #Adicionando roles individuais
+        foreach($roles as $role) {
+            \array_push($arrayRetorno, $role->getRole());
+        }
+        
+        #Retorno
+        return \array_unique($arrayRetorno);
     }
 
     /**
@@ -312,6 +334,14 @@ class User implements UserInterface, AdvancedUserInterface, EquatableInterface, 
     }
 
     /**
+     *
+     */
+    public function clearRoles()
+    {
+        $this->roles->clear();
+    }
+
+    /**
      * The equality comparison should neither be done by referential equality
      * nor by comparing identities (i.e. getId() === getId()).
      *
@@ -392,5 +422,13 @@ class User implements UserInterface, AdvancedUserInterface, EquatableInterface, 
     public function getPerfis()
     {
         return $this->perfis;
+    }
+
+    /**
+     *
+     */
+    public function clearPerfis()
+    {
+        $this->roles->clear();
     }
 }

@@ -9,6 +9,7 @@
 namespace Serbinario\Bundles\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * @ORM\Entity
@@ -17,6 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Projetos
 {
     /**
+     * @SerializedName("id")
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -24,14 +26,23 @@ class Projetos
     private $id;
 
     /**
+     * @SerializedName("nome")
      * @ORM\Column(type="string", length=255)
      */
-    private $nomeProjeto;
+    private $nome;
 
     /**
+     * @SerializedName("aplicacoes")
      * @ORM\OneToMany(targetEntity="Aplicacoes", mappedBy="projeto")
      **/
     private $aplicacoes;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->aplicacoes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -44,34 +55,27 @@ class Projetos
     }
 
     /**
-     * Set nomeProjeto
+     * Set nome
      *
-     * @param string $nomeProjeto
+     * @param string $nome
      *
      * @return Projetos
      */
-    public function setNomeProjeto($nomeProjeto)
+    public function setNome($nome)
     {
-        $this->nomeProjeto = $nomeProjeto;
+        $this->nome = $nome;
 
         return $this;
     }
 
     /**
-     * Get nomeProjeto
+     * Get nome
      *
      * @return string
      */
-    public function getNomeProjeto()
+    public function getNome()
     {
-        return $this->nomeProjeto;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->aplicacoes = new \Doctrine\Common\Collections\ArrayCollection();
+        return $this->nome;
     }
 
     /**

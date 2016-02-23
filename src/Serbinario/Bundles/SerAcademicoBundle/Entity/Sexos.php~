@@ -3,6 +3,7 @@
 namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * Sexos
@@ -15,19 +16,18 @@ class Sexos
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_sexos", type="integer", nullable=false)
+     * @SerializedName("id")
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idSexos;
+    private $id;
 
     /**
      * @var string
      *
+     * @SerializedName("sexos")
      * @ORM\Column(name="sexos", type="string", length=10, nullable=true)
      */
     private $sexos;
-
-
 }
-

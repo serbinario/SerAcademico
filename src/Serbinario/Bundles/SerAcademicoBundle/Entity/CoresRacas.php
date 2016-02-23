@@ -3,6 +3,7 @@
 namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * CoresRacas
@@ -15,7 +16,8 @@ class CoresRacas
     /**
      * @var integer
      *
-     * @ORM\Column(name="idcores_racas", type="integer", nullable=false)
+     * @SerializedName("id")
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,11 +26,10 @@ class CoresRacas
     /**
      * @var string
      *
+     * @SerializedName("coresRacas")
      * @ORM\Column(name="cores_racas", type="string", length=45, nullable=true)
      */
     private $coresRacas;
-
-
 
     /**
      * Get idcoresRacas

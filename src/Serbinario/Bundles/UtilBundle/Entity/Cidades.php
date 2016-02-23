@@ -3,6 +3,7 @@
 namespace Serbinario\Bundles\UtilBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * Cidades
@@ -15,63 +16,65 @@ class Cidades
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_cidades", type="integer", nullable=false)
+     * @SerializedName("id")
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idCidades;
+    private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nome_cidade", type="string", length=50, nullable=true)
+     * @SerializedName("nome")
+     * @ORM\Column(name="nome", type="string", length=50, nullable=true)
      */
-    private $nomeCidade;
+    private $nome;
 
     /**
      * @var \Estados
      *
+     * @SerializedName("estadosEstados")
      * @ORM\ManyToOne(targetEntity="Estados")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="estados_id_estados", referencedColumnName="id_estados")
+     *   @ORM\JoinColumn(name="estados_id_estados", referencedColumnName="id")
      * })
      */
     private $estadosEstados;
-
-
+    
 
     /**
-     * Get idCidades
+     * Get id
      *
      * @return integer
      */
-    public function getIdCidades()
+    public function getId()
     {
-        return $this->idCidades;
+        return $this->id;
     }
 
     /**
-     * Set nomeCidade
+     * Set nome
      *
-     * @param string $nomeCidade
+     * @param string $nome
      *
      * @return Cidades
      */
-    public function setNomeCidade($nomeCidade)
+    public function setNome($nome)
     {
-        $this->nomeCidade = $nomeCidade;
+        $this->nome = $nome;
 
         return $this;
     }
 
     /**
-     * Get nomeCidade
+     * Get nome
      *
      * @return string
      */
-    public function getNomeCidade()
+    public function getNome()
     {
-        return $this->nomeCidade;
+        return $this->nome;
     }
 
     /**

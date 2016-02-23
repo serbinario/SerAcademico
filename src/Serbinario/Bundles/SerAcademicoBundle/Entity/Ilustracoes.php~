@@ -29,5 +29,38 @@ class Ilustracoes
     private $ilustracoes;
 
 
-}
 
+    /**
+     * Get idIlustracoes
+     *
+     * @return integer
+     */
+    public function getIdIlustracoes()
+    {
+        return $this->idIlustracoes;
+    }
+
+    /**
+     * Set ilustracoes
+     *
+     * @param string $ilustracoes
+     *
+     * @return Ilustracoes
+     */
+    public function setIlustracoes($ilustracoes)
+    {
+        $this->ilustracoes = $ilustracoes;
+
+        return $this;
+    }
+
+    /**
+     * Get ilustracoes
+     *
+     * @return string
+     */
+    public function getIlustracoes()
+    {
+        return $this->ilustracoes;
+    }
+}

@@ -41,7 +41,7 @@ class AlunosController extends FOSRestController
 
         #Tratamento de exceções
         try {
-            $columns = array("a.nomeAlunos",
+            $columns = array("a.nome",
             );
             //var_dump($request->request->all());exit;
             $entityJOIN = array();
@@ -67,10 +67,10 @@ class AlunosController extends FOSRestController
 
             for($i=0;$i < $countEventos; $i++)
             {
-                $eventosArray[$i]['DT_RowId']   =  "row_".$resultCliente[$i]->getIdAlunos();
-                $eventosArray[$i]['id']         =  $resultCliente[$i]->getIdAlunos();
-                $eventosArray[$i]['nomeAlunos'] =  $resultCliente[$i]->getNomeAlunos() ?? "Nome não informado";
-                $eventosArray[$i]['cpfAlunos']  =  $resultCliente[$i]->getCpfAlunos() ?? "CPF não informado";
+                $eventosArray[$i]['DT_RowId']   =  "row_".$resultCliente[$i]->getId();
+                $eventosArray[$i]['id']         =  $resultCliente[$i]->getId();
+                $eventosArray[$i]['nomeAlunos'] =  $resultCliente[$i]->getNome() ?? "Nome não informado";
+                $eventosArray[$i]['cpfAlunos']  =  $resultCliente[$i]->getCpf() ?? "CPF não informado";
             }
 
             //Se a variável $sqlFilter estiver vazio

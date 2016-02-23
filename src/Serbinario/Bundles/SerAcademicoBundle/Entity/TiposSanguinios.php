@@ -3,6 +3,7 @@
 namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * TiposSanguinios
@@ -15,29 +16,29 @@ class TiposSanguinios
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_tipos_sanguinios", type="integer", nullable=false)
+     * @SerializedName("id")
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idTiposSanguinios;
+    private $id;
 
     /**
      * @var string
      *
+     * @SerializedName("tiposSanguinios")
      * @ORM\Column(name="tipos_sanguinios", type="string", length=45, nullable=true)
      */
     private $tiposSanguinios;
 
-
-
     /**
-     * Get idTiposSanguinios
+     * Get id
      *
      * @return integer
      */
-    public function getIdTiposSanguinios()
+    public function getId()
     {
-        return $this->idTiposSanguinios;
+        return $this->id;
     }
 
     /**

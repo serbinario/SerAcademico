@@ -33,11 +33,11 @@ class EstadosController extends FOSRestController
             #Retorno
             return new Response($serializer->serialize($estados, "json"));
         }  catch (NoResultException $e) {
-            throw new HttpException(400, ErroList::NO_RESULT, $e);
+            throw new HttpException(200, $e->getMessage());
         } catch (\Exception $e) {
-            throw new HttpException(400, ErroList::EXCEPTION, $e);
+            throw new HttpException(200, $e->getMessage());
         } catch (\Error $e) {
-            throw new HttpException(400, ErroList::FATAL_ERROR, $e);
+            throw new HttpException(200, $e->getMessage());
         }
     }
 }

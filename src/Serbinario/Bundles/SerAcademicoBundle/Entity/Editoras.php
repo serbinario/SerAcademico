@@ -82,7 +82,7 @@ class Editoras
      *
      * @ORM\ManyToOne(targetEntity="Serbinario\Bundles\UtilBundle\Entity\Enderecos")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="enderecos_id_enderecos", referencedColumnName="id_enderecos")
+     *   @ORM\JoinColumn(name="enderecos_id_enderecos", referencedColumnName="id")
      * })
      */
     private $enderecosEnderecos;

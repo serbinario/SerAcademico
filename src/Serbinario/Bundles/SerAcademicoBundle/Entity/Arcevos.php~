@@ -88,5 +88,230 @@ class Arcevos
     private $tiposAcervosTiposAcervos;
 
 
-}
 
+    /**
+     * Get idArcevos
+     *
+     * @return integer
+     */
+    public function getIdArcevos()
+    {
+        return $this->idArcevos;
+    }
+
+    /**
+     * Set entradaPrincipalArcevos
+     *
+     * @param string $entradaPrincipalArcevos
+     *
+     * @return Arcevos
+     */
+    public function setEntradaPrincipalArcevos($entradaPrincipalArcevos)
+    {
+        $this->entradaPrincipalArcevos = $entradaPrincipalArcevos;
+
+        return $this;
+    }
+
+    /**
+     * Get entradaPrincipalArcevos
+     *
+     * @return string
+     */
+    public function getEntradaPrincipalArcevos()
+    {
+        return $this->entradaPrincipalArcevos;
+    }
+
+    /**
+     * Set entradaSecundariaArcevos
+     *
+     * @param string $entradaSecundariaArcevos
+     *
+     * @return Arcevos
+     */
+    public function setEntradaSecundariaArcevos($entradaSecundariaArcevos)
+    {
+        $this->entradaSecundariaArcevos = $entradaSecundariaArcevos;
+
+        return $this;
+    }
+
+    /**
+     * Get entradaSecundariaArcevos
+     *
+     * @return string
+     */
+    public function getEntradaSecundariaArcevos()
+    {
+        return $this->entradaSecundariaArcevos;
+    }
+
+    /**
+     * Set classificacaoDecimalArcevos
+     *
+     * @param integer $classificacaoDecimalArcevos
+     *
+     * @return Arcevos
+     */
+    public function setClassificacaoDecimalArcevos($classificacaoDecimalArcevos)
+    {
+        $this->classificacaoDecimalArcevos = $classificacaoDecimalArcevos;
+
+        return $this;
+    }
+
+    /**
+     * Get classificacaoDecimalArcevos
+     *
+     * @return integer
+     */
+    public function getClassificacaoDecimalArcevos()
+    {
+        return $this->classificacaoDecimalArcevos;
+    }
+
+    /**
+     * Set assuntoArcevos
+     *
+     * @param string $assuntoArcevos
+     *
+     * @return Arcevos
+     */
+    public function setAssuntoArcevos($assuntoArcevos)
+    {
+        $this->assuntoArcevos = $assuntoArcevos;
+
+        return $this;
+    }
+
+    /**
+     * Get assuntoArcevos
+     *
+     * @return string
+     */
+    public function getAssuntoArcevos()
+    {
+        return $this->assuntoArcevos;
+    }
+
+    /**
+     * Set tituloArcevos
+     *
+     * @param string $tituloArcevos
+     *
+     * @return Arcevos
+     */
+    public function setTituloArcevos($tituloArcevos)
+    {
+        $this->tituloArcevos = $tituloArcevos;
+
+        return $this;
+    }
+
+    /**
+     * Get tituloArcevos
+     *
+     * @return string
+     */
+    public function getTituloArcevos()
+    {
+        return $this->tituloArcevos;
+    }
+
+    /**
+     * Set subtituloArcevos
+     *
+     * @param string $subtituloArcevos
+     *
+     * @return Arcevos
+     */
+    public function setSubtituloArcevos($subtituloArcevos)
+    {
+        $this->subtituloArcevos = $subtituloArcevos;
+
+        return $this;
+    }
+
+    /**
+     * Get subtituloArcevos
+     *
+     * @return string
+     */
+    public function getSubtituloArcevos()
+    {
+        return $this->subtituloArcevos;
+    }
+
+    /**
+     * Set cutterArcevos
+     *
+     * @param string $cutterArcevos
+     *
+     * @return Arcevos
+     */
+    public function setCutterArcevos($cutterArcevos)
+    {
+        $this->cutterArcevos = $cutterArcevos;
+
+        return $this;
+    }
+
+    /**
+     * Get cutterArcevos
+     *
+     * @return string
+     */
+    public function getCutterArcevos()
+    {
+        return $this->cutterArcevos;
+    }
+
+    /**
+     * Set numeroChamadaArcevos
+     *
+     * @param string $numeroChamadaArcevos
+     *
+     * @return Arcevos
+     */
+    public function setNumeroChamadaArcevos($numeroChamadaArcevos)
+    {
+        $this->numeroChamadaArcevos = $numeroChamadaArcevos;
+
+        return $this;
+    }
+
+    /**
+     * Get numeroChamadaArcevos
+     *
+     * @return string
+     */
+    public function getNumeroChamadaArcevos()
+    {
+        return $this->numeroChamadaArcevos;
+    }
+
+    /**
+     * Set tiposAcervosTiposAcervos
+     *
+     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\TiposAcervos $tiposAcervosTiposAcervos
+     *
+     * @return Arcevos
+     */
+    public function setTiposAcervosTiposAcervos(\Serbinario\Bundles\SerAcademicoBundle\Entity\TiposAcervos $tiposAcervosTiposAcervos = null)
+    {
+        $this->tiposAcervosTiposAcervos = $tiposAcervosTiposAcervos;
+
+        return $this;
+    }
+
+    /**
+     * Get tiposAcervosTiposAcervos
+     *
+     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\TiposAcervos
+     */
+    public function getTiposAcervosTiposAcervos()
+    {
+        return $this->tiposAcervosTiposAcervos;
+    }
+}
