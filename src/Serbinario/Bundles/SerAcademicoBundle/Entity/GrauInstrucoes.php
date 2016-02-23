@@ -3,6 +3,7 @@
 namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * GrauInstrucoes
@@ -15,29 +16,29 @@ class GrauInstrucoes
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_grau_instrucoes", type="integer", nullable=false)
+     * @SerializedName("id")
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idGrauInstrucoes;
+    private $id;
 
     /**
      * @var string
      *
+     * @SerializedName("grauInstrucoes")
      * @ORM\Column(name="grau_instrucoes", type="string", length=45, nullable=true)
      */
     private $grauInstrucoes;
 
-
-
     /**
-     * Get idGrauInstrucoes
+     * Get id
      *
      * @return integer
      */
-    public function getIdGrauInstrucoes()
+    public function getId()
     {
-        return $this->idGrauInstrucoes;
+        return $this->id;
     }
 
     /**

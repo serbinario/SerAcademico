@@ -21,7 +21,7 @@ class Perfil
      * 
      * @ORM\Column(type="string")
      */
-    private $nomePerfil;
+    private $nome;
     
     /**
      * @ORM\ManyToMany(targetEntity="Role", cascade={"all"})
@@ -31,6 +31,7 @@ class Perfil
      *      )
      **/
     private $roles;
+    
     /**
      * Constructor
      */
@@ -50,27 +51,27 @@ class Perfil
     }
 
     /**
-     * Set nomePerfil
+     * Set nome
      *
-     * @param string $nomePerfil
+     * @param string $nome
      *
      * @return Perfil
      */
-    public function setNomePerfil($nomePerfil)
+    public function setNome($nome)
     {
-        $this->nomePerfil = $nomePerfil;
+        $this->nome = $nome;
 
         return $this;
     }
 
     /**
-     * Get nomePerfil
+     * Get nome
      *
      * @return string
      */
-    public function getNomePerfil()
+    public function getNome()
     {
-        return $this->nomePerfil;
+        return $this->nome;
     }
 
     /**
@@ -95,14 +96,6 @@ class Perfil
     public function removeRole(\Serbinario\Bundles\UserBundle\Entity\Role $role)
     {
         $this->roles->removeElement($role);
-    }
-    
-    /**
-     * 
-     */
-    public function clearRoles()
-    {
-        $this->roles->clear();
     }
 
     /**

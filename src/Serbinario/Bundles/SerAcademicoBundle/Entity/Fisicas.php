@@ -3,6 +3,7 @@
 namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * Fisicas
@@ -15,29 +16,29 @@ class Fisicas
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_fisicas", type="integer", nullable=false)
+     * @SerializedName("id")
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idFisicas;
+    private $id;
 
     /**
      * @var string
      *
+     * @SerializedName("fisicas")
      * @ORM\Column(name="fisicas", type="string", length=45, nullable=true)
      */
     private $fisicas;
 
-
-
     /**
-     * Get idFisicas
+     * Get id
      *
      * @return integer
      */
-    public function getIdFisicas()
+    public function getId()
     {
-        return $this->idFisicas;
+        return $this->id;
     }
 
     /**

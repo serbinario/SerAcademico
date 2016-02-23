@@ -17,9 +17,9 @@ class AlunosType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('matriculaAlunos')
-            ->add('nomeAlunos')
-            ->add('nomePaiAlunos', null, [
+            ->add('matricula')
+            ->add('nome')
+            ->add('nomePai', null, [
                 'constraints' =>[
                     new Assert\NotBlank([
                         'message' => "alunos.nome_pai_not_blank"
@@ -32,28 +32,28 @@ class AlunosType extends AbstractType
                     ])
                 ]
             ])
-            ->add('nomeSocialAlunos')
-            ->add('nomeMaeAlunos')
-            ->add('identidadeAlunos')
-            ->add('orgaoRgAlunos')
-            ->add('dataExpedicaoAlunos', 'date', array(
+            ->add('nomeSocial')
+            ->add('nomeMae')
+            ->add('identidade')
+            ->add('orgaoRg')
+            ->add('dataExpedicao', 'date', array(
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy'
              ))
-            ->add('cpfAlunos')
-            ->add('tituloEleitoralAlunos')
-            ->add('zonaAlunos')
-            ->add('secaoAlunos')
-            ->add('resevistaAlunos')
-            ->add('catagoriaResevistaAlunos')
-            ->add('dataNasciementoAlunos', 'date', array(
+            ->add('cpf')
+            ->add('tituloEleitoral')
+            ->add('zona')
+            ->add('secao')
+            ->add('resevista')
+            ->add('catagoriaResevista')
+            ->add('dataNasciemento', 'date', array(
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy'
             ))
             ->add('nacionalidadeAluno')
             ->add('naturalidade')
-            ->add('anoConclusao2GrauAlunos')
-            ->add('outraEscolaAlunos')
+            ->add('anoConclusao2Grau')
+            ->add('outraEscola')
             ->add('dataExameNacionalUm', 'date', array(
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy'
@@ -80,7 +80,7 @@ class AlunosType extends AbstractType
             ->add('auditivasAuditivas')
             ->add('fisicasFisicas')
             ->add('visuaisVisuais')
-            ->add('imgAlunos')
+            ->add('img')
             ->add('status')
         ;
     }

@@ -9,6 +9,7 @@
 namespace Serbinario\Bundles\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * @ORM\Entity()
@@ -17,6 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Aplicacoes
 {
     /**
+     * @SerializedName("id")
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -24,11 +26,13 @@ class Aplicacoes
     private $id;
 
     /**
+     * @SerializedName("nome")
      * @ORM\Column(type="string", length=255)
      */
-    private $nomeAplicacao;
+    private $nome;
 
     /**
+     * @SerializedName("projeto")
      * @ORM\ManyToOne(targetEntity="Projetos", inversedBy="aplicacoes")
      * @ORM\JoinColumn(name="projeto_id", referencedColumnName="id")
      */
@@ -38,6 +42,13 @@ class Aplicacoes
      * @ORM\OneToMany(targetEntity="Permissoes", mappedBy="aplicacao")
      **/
     private $permissoes;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->permissoes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -50,27 +61,27 @@ class Aplicacoes
     }
 
     /**
-     * Set nomeAplicacao
+     * Set nome
      *
-     * @param string $nomeAplicacao
+     * @param string $nome
      *
      * @return Aplicacoes
      */
-    public function setNomeAplicacao($nomeAplicacao)
+    public function setNome($nome)
     {
-        $this->nomeAplicacao = $nomeAplicacao;
+        $this->nome = $nome;
 
         return $this;
     }
 
     /**
-     * Get nomeAplicacao
+     * Get nome
      *
      * @return string
      */
-    public function getNomeAplicacao()
+    public function getNome()
     {
-        return $this->nomeAplicacao;
+        return $this->nome;
     }
 
     /**
@@ -95,13 +106,6 @@ class Aplicacoes
     public function getProjeto()
     {
         return $this->projeto;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->permissoes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

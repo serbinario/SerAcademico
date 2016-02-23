@@ -125,5 +125,326 @@ class Exemplares
     private $obrasObras;
 
 
-}
 
+    /**
+     * Get idExemplares
+     *
+     * @return integer
+     */
+    public function getIdExemplares()
+    {
+        return $this->idExemplares;
+    }
+
+    /**
+     * Set anoExemplares
+     *
+     * @param integer $anoExemplares
+     *
+     * @return Exemplares
+     */
+    public function setAnoExemplares($anoExemplares)
+    {
+        $this->anoExemplares = $anoExemplares;
+
+        return $this;
+    }
+
+    /**
+     * Get anoExemplares
+     *
+     * @return integer
+     */
+    public function getAnoExemplares()
+    {
+        return $this->anoExemplares;
+    }
+
+    /**
+     * Set notasGeraisExemplares
+     *
+     * @param string $notasGeraisExemplares
+     *
+     * @return Exemplares
+     */
+    public function setNotasGeraisExemplares($notasGeraisExemplares)
+    {
+        $this->notasGeraisExemplares = $notasGeraisExemplares;
+
+        return $this;
+    }
+
+    /**
+     * Get notasGeraisExemplares
+     *
+     * @return string
+     */
+    public function getNotasGeraisExemplares()
+    {
+        return $this->notasGeraisExemplares;
+    }
+
+    /**
+     * Set notasBibliograficasExemplares
+     *
+     * @param string $notasBibliograficasExemplares
+     *
+     * @return Exemplares
+     */
+    public function setNotasBibliograficasExemplares($notasBibliograficasExemplares)
+    {
+        $this->notasBibliograficasExemplares = $notasBibliograficasExemplares;
+
+        return $this;
+    }
+
+    /**
+     * Get notasBibliograficasExemplares
+     *
+     * @return string
+     */
+    public function getNotasBibliograficasExemplares()
+    {
+        return $this->notasBibliograficasExemplares;
+    }
+
+    /**
+     * Set isbnExemplares
+     *
+     * @param string $isbnExemplares
+     *
+     * @return Exemplares
+     */
+    public function setIsbnExemplares($isbnExemplares)
+    {
+        $this->isbnExemplares = $isbnExemplares;
+
+        return $this;
+    }
+
+    /**
+     * Get isbnExemplares
+     *
+     * @return string
+     */
+    public function getIsbnExemplares()
+    {
+        return $this->isbnExemplares;
+    }
+
+    /**
+     * Set registrosExemplares
+     *
+     * @param string $registrosExemplares
+     *
+     * @return Exemplares
+     */
+    public function setRegistrosExemplares($registrosExemplares)
+    {
+        $this->registrosExemplares = $registrosExemplares;
+
+        return $this;
+    }
+
+    /**
+     * Get registrosExemplares
+     *
+     * @return string
+     */
+    public function getRegistrosExemplares()
+    {
+        return $this->registrosExemplares;
+    }
+
+    /**
+     * Set dataCatagolacaoExemplares
+     *
+     * @param \DateTime $dataCatagolacaoExemplares
+     *
+     * @return Exemplares
+     */
+    public function setDataCatagolacaoExemplares($dataCatagolacaoExemplares)
+    {
+        $this->dataCatagolacaoExemplares = $dataCatagolacaoExemplares;
+
+        return $this;
+    }
+
+    /**
+     * Get dataCatagolacaoExemplares
+     *
+     * @return \DateTime
+     */
+    public function getDataCatagolacaoExemplares()
+    {
+        return $this->dataCatagolacaoExemplares;
+    }
+
+    /**
+     * Set numeroPagExemplares
+     *
+     * @param integer $numeroPagExemplares
+     *
+     * @return Exemplares
+     */
+    public function setNumeroPagExemplares($numeroPagExemplares)
+    {
+        $this->numeroPagExemplares = $numeroPagExemplares;
+
+        return $this;
+    }
+
+    /**
+     * Get numeroPagExemplares
+     *
+     * @return integer
+     */
+    public function getNumeroPagExemplares()
+    {
+        return $this->numeroPagExemplares;
+    }
+
+    /**
+     * Set numeroEdicaoExemplares
+     *
+     * @param string $numeroEdicaoExemplares
+     *
+     * @return Exemplares
+     */
+    public function setNumeroEdicaoExemplares($numeroEdicaoExemplares)
+    {
+        $this->numeroEdicaoExemplares = $numeroEdicaoExemplares;
+
+        return $this;
+    }
+
+    /**
+     * Get numeroEdicaoExemplares
+     *
+     * @return string
+     */
+    public function getNumeroEdicaoExemplares()
+    {
+        return $this->numeroEdicaoExemplares;
+    }
+
+    /**
+     * Set palavrasChavesExemplares
+     *
+     * @param string $palavrasChavesExemplares
+     *
+     * @return Exemplares
+     */
+    public function setPalavrasChavesExemplares($palavrasChavesExemplares)
+    {
+        $this->palavrasChavesExemplares = $palavrasChavesExemplares;
+
+        return $this;
+    }
+
+    /**
+     * Get palavrasChavesExemplares
+     *
+     * @return string
+     */
+    public function getPalavrasChavesExemplares()
+    {
+        return $this->palavrasChavesExemplares;
+    }
+
+    /**
+     * Set editorasEditoras
+     *
+     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Editoras $editorasEditoras
+     *
+     * @return Exemplares
+     */
+    public function setEditorasEditoras(\Serbinario\Bundles\SerAcademicoBundle\Entity\Editoras $editorasEditoras = null)
+    {
+        $this->editorasEditoras = $editorasEditoras;
+
+        return $this;
+    }
+
+    /**
+     * Get editorasEditoras
+     *
+     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\Editoras
+     */
+    public function getEditorasEditoras()
+    {
+        return $this->editorasEditoras;
+    }
+
+    /**
+     * Set idiomasiomas
+     *
+     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Idiomas $idiomasiomas
+     *
+     * @return Exemplares
+     */
+    public function setIdiomasiomas(\Serbinario\Bundles\SerAcademicoBundle\Entity\Idiomas $idiomasiomas = null)
+    {
+        $this->idiomasiomas = $idiomasiomas;
+
+        return $this;
+    }
+
+    /**
+     * Get idiomasiomas
+     *
+     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\Idiomas
+     */
+    public function getIdiomasiomas()
+    {
+        return $this->idiomasiomas;
+    }
+
+    /**
+     * Set ilustracoesIlustracoes
+     *
+     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Ilustracoes $ilustracoesIlustracoes
+     *
+     * @return Exemplares
+     */
+    public function setIlustracoesIlustracoes(\Serbinario\Bundles\SerAcademicoBundle\Entity\Ilustracoes $ilustracoesIlustracoes = null)
+    {
+        $this->ilustracoesIlustracoes = $ilustracoesIlustracoes;
+
+        return $this;
+    }
+
+    /**
+     * Get ilustracoesIlustracoes
+     *
+     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\Ilustracoes
+     */
+    public function getIlustracoesIlustracoes()
+    {
+        return $this->ilustracoesIlustracoes;
+    }
+
+    /**
+     * Set obrasObras
+     *
+     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Arcevos $obrasObras
+     *
+     * @return Exemplares
+     */
+    public function setObrasObras(\Serbinario\Bundles\SerAcademicoBundle\Entity\Arcevos $obrasObras = null)
+    {
+        $this->obrasObras = $obrasObras;
+
+        return $this;
+    }
+
+    /**
+     * Get obrasObras
+     *
+     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\Arcevos
+     */
+    public function getObrasObras()
+    {
+        return $this->obrasObras;
+    }
+}

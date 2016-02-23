@@ -9,6 +9,7 @@
 namespace Serbinario\Bundles\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * @ORM\Entity()
@@ -17,6 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Permissoes
 {
     /**
+     * @SerializedName("id")
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -24,11 +26,14 @@ class Permissoes
     private $id;
 
     /**
+     * @SerializedName("nome")
      * @ORM\Column(type="string", length=255)
      */
-    private $nomePermissao;
+    private $nome;
 
     /**
+     *
+     * @SerializedName("aplicacao")
      * @ORM\ManyToOne(targetEntity="Aplicacoes", inversedBy="permissoes")
      * @ORM\JoinColumn(name="aplicacao_id", referencedColumnName="id")
      */
@@ -45,27 +50,27 @@ class Permissoes
     }
 
     /**
-     * Set nomePermissao
+     * Set nome
      *
-     * @param string $nomePermissao
+     * @param string $nome
      *
      * @return Permissoes
      */
-    public function setNomePermissao($nomePermissao)
+    public function setNome($nome)
     {
-        $this->nomePermissao = $nomePermissao;
+        $this->nome = $nome;
 
         return $this;
     }
 
     /**
-     * Get nomePermissao
+     * Get nome
      *
      * @return string
      */
-    public function getNomePermissao()
+    public function getNome()
     {
-        return $this->nomePermissao;
+        return $this->nome;
     }
 
     /**

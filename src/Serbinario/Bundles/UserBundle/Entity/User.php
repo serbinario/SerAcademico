@@ -7,8 +7,11 @@ use Serbinario\Bundles\UserBundle\Entity\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\User\EquatableInterface;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Type;
 
 /**
+ *
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="Serbinario\Bundles\UserBundle\Entity\UserRepository")
  */
@@ -47,6 +50,7 @@ class User implements UserInterface, AdvancedUserInterface, EquatableInterface, 
     private $isActive;
 
     /**
+     *
      * @ORM\ManyToMany(targetEntity="Perfil", cascade={"persist"})
      * @ORM\JoinTable(name="perfis_user",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
@@ -71,6 +75,7 @@ class User implements UserInterface, AdvancedUserInterface, EquatableInterface, 
     {
         $this->isActive = true;
         $this->roles    = new ArrayCollection();
+        $this->perfis   = new ArrayCollection();
         $this->salt     = base_convert(sha1(uniqid(mt_rand(), true)), 16, 36);
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid(null, true));
@@ -118,7 +123,7 @@ class User implements UserInterface, AdvancedUserInterface, EquatableInterface, 
                 $rolesPerfil = $perfil->getRoles()->toArray();
                 if(count($rolesPerfil) > 0) {
                     foreach($rolesPerfil as $role) {
-                        \array_push($arrayRetorno, $role->getRole());
+                        \array_push($arrayRetorno, $role);
                     }
 
                 }
@@ -127,7 +132,7 @@ class User implements UserInterface, AdvancedUserInterface, EquatableInterface, 
 
         #Adicionando roles individuais
         foreach($roles as $role) {
-            \array_push($arrayRetorno, $role->getRole());
+            \array_push($arrayRetorno, $role);
         }
 
         #Retorno

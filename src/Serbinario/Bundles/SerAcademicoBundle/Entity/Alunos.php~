@@ -3,161 +3,185 @@
 namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * Alunos
  *
- * @ORM\Table(name="alunos", indexes={@ORM\Index(name="fk_alunos_enderecos1_idx", columns={"enderecos_id_enderecos"}), @ORM\Index(name="fk_alunos_sexos1_idx", columns={"sexos_id_sexos"}), @ORM\Index(name="fk_alunos_emancipados1_idx", columns={"emancipados_id_emancipados"}), @ORM\Index(name="fk_alunos_turnos1_idx", columns={"turnos_id_turnos"}), @ORM\Index(name="fk_alunos_grau_instrucoes1_idx", columns={"grau_instrucoes_id_grau_instrucoes"}), @ORM\Index(name="fk_alunos_profissoes1_idx", columns={"profissoes_id_profissoes"}), @ORM\Index(name="fk_alunos_religioes1_idx", columns={"religioes_id_religioes"}), @ORM\Index(name="fk_alunos_estados_civis1_idx", columns={"estados_civis_id_estados_civis"}), @ORM\Index(name="fk_alunos_tipos_sanguinios1_idx", columns={"tipos_sanguinios_id_tipos_sanguinios"}), @ORM\Index(name="fk_alunos_cores_racas1_idx", columns={"cores_racas_idcores_racas"}), @ORM\Index(name="fk_alunos_estados1_idx", columns={"estados_id_estados"}), @ORM\Index(name="fk_alunos_exames1_idx", columns={"exames_id_exames"}), @ORM\Index(name="fk_alunos_exames2_idx", columns={"exames_id_exames1"}), @ORM\Index(name="fk_alunos_auditivas1_idx", columns={"auditivas_id_auditivas"}), @ORM\Index(name="fk_alunos_fisicas1_idx", columns={"fisicas_id_fisicas"}), @ORM\Index(name="fk_alunos_visuais1_idx", columns={"visuais_id_visuais"})})
+ * @ORM\Table(name="alunos", indexes={@ORM\Index(name="fk_enderecos1_idx", columns={"enderecos_id_enderecos"}), @ORM\Index(name="fk_sexos1_idx", columns={"sexos_id_sexos"}), @ORM\Index(name="fk_emancipados1_idx", columns={"emancipados_id_emancipados"}), @ORM\Index(name="fk_turnos1_idx", columns={"turnos_id_turnos"}), @ORM\Index(name="fk_grau_instrucoes1_idx", columns={"grau_instrucoes_id_grau_instrucoes"}), @ORM\Index(name="fk_profissoes1_idx", columns={"profissoes_id_profissoes"}), @ORM\Index(name="fk_religioes1_idx", columns={"religioes_id_religioes"}), @ORM\Index(name="fk_estados_civis1_idx", columns={"estados_civis_id_estados_civis"}), @ORM\Index(name="fk_tipos_sanguinios1_idx", columns={"tipos_sanguinios_id_tipos_sanguinios"}), @ORM\Index(name="fk_cores_racas1_idx", columns={"cores_racas_idcores_racas"}), @ORM\Index(name="fk_estados1_idx", columns={"estados_id_estados"}), @ORM\Index(name="fk_exames1_idx", columns={"exames_id_exames"}), @ORM\Index(name="fk_exames2_idx", columns={"exames_id_exames1"}), @ORM\Index(name="fk_auditivas1_idx", columns={"auditivas_id_auditivas"}), @ORM\Index(name="fk_fisicas1_idx", columns={"fisicas_id_fisicas"}), @ORM\Index(name="fk_visuais1_idx", columns={"visuais_id_visuais"})})
  * @ORM\Entity
+ *
  */
 class Alunos
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_alunos", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @SerializedName("id")
      */
-    private $idAlunos;
+    private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="matricula_alunos", type="string", length=20, nullable=true)
+     * @ORM\Column(name="matricula", type="string", length=20, nullable=true)
+     * @SerializedName("matricula")
      */
-    private $matriculaAlunos;
+    private $matricula;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nome_alunos", type="string", length=50, nullable=true)
+     * @ORM\Column(name="nome", type="string", length=50, nullable=true)
+     * @SerializedName("nome")
      */
-    private $nomeAlunos;
+    private $nome;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nome_pai_alunos", type="string", length=50, nullable=true)
+     * @ORM\Column(name="nome_pai", type="string", length=50, nullable=true)
+     * @SerializedName("nomePai")
      */
-    private $nomePaiAlunos;
+    private $nomePai;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nome_social_alunos", type="string", length=50, nullable=true)
+     * @ORM\Column(name="nome_social", type="string", length=50, nullable=true)
+     * @SerializedName("nomeSocial")
      */
-    private $nomeSocialAlunos;
+    private $nomeSocial;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nome_mae_alunos", type="string", length=50, nullable=true)
+     * @ORM\Column(name="nome_mae", type="string", length=50, nullable=true)
+     * @SerializedName("nomeMae")
      */
-    private $nomeMaeAlunos;
+    private $nomeMae;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="identidade_alunos", type="integer", nullable=true)
+     * @ORM\Column(name="identidade", type="integer", nullable=true)
+     * @SerializedName("identidade")
      */
-    private $identidadeAlunos;
+    private $identidade;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="orgao_rg_alunos", type="string", length=30, nullable=true)
+     * @ORM\Column(name="orgao_rg", type="string", length=30, nullable=true)
+     * @SerializedName("orgaoRg")
      */
-    private $orgaoRgAlunos;
+    private $orgaoRg;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="data_expedicao_alunos", type="date", nullable=true)
+     * @ORM\Column(name="data_expedicao", type="date", nullable=true)
+     * @SerializedName("dataExpedicao")
+     *
      */
-    private $dataExpedicaoAlunos;
+    private $dataExpedicao;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cpf_alunos", type="string", length=20, nullable=true)
+     * @ORM\Column(name="cpf", type="string", length=20, nullable=true)
+     * @SerializedName("cpf")
      */
-    private $cpfAlunos;
+    private $cpf;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="titulo_eleitoral_alunos", type="string", length=20, nullable=true)
+     * @ORM\Column(name="titulo_eleitoral", type="string", length=20, nullable=true)
+     * @SerializedName("tituloEleitora")
      */
-    private $tituloEleitoralAlunos;
+    private $tituloEleitoral;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="zona_alunos", type="string", length=20, nullable=true)
+     * @ORM\Column(name="zona", type="string", length=20, nullable=true)
+     * @SerializedName("zona")
      */
-    private $zonaAlunos;
+    private $zona;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="secao_alunos", type="string", length=20, nullable=true)
+     * @ORM\Column(name="secao", type="string", length=20, nullable=true)
+     * @SerializedName("secao")
      */
-    private $secaoAlunos;
+    private $secao;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="resevista_alunos", type="string", length=20, nullable=true)
+     * @ORM\Column(name="resevista", type="string", length=20, nullable=true)
+     * @SerializedName("resevista")
      */
-    private $resevistaAlunos;
+    private $resevista;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="catagoria_resevista_alunos", type="string", length=20, nullable=true)
+     * @ORM\Column(name="catagoria_resevista", type="string", length=20, nullable=true)
+     * @SerializedName("catagoriaResevista")
      */
-    private $catagoriaResevistaAlunos;
+    private $catagoriaResevista;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="data_nasciemento_alunos", type="date", nullable=true)
+     * @ORM\Column(name="data_nasciemento", type="date", nullable=true)
+     * @SerializedName("dataNasciemento")
      */
-    private $dataNasciementoAlunos;
+    private $dataNasciemento;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="nacionalidade_aluno", type="date", nullable=true)
+     * @ORM\Column(name="nacionalidade", type="string", nullable=true)
+     * @SerializedName("nacionalidade")
      */
-    private $nacionalidadeAluno;
+    private $nacionalidade;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="naturalidade", type="date", nullable=true)
+     * @ORM\Column(name="naturalidade", type="string", nullable=true)
+     * @SerializedName("naturalidade")
      */
     private $naturalidade;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="ano_conclusao_2_grau_alunos", type="integer", nullable=true)
+     * @ORM\Column(name="ano_conclusao_2_grau", type="integer", nullable=true)
+     * @SerializedName("anoConclusao2Grau")
      */
-    private $anoConclusao2GrauAlunos;
+    private $anoConclusao2Grau;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="outra_escola_alunos", type="string", length=100, nullable=true)
+     * @ORM\Column(name="outra_escola", type="string", length=100, nullable=true)
+     * @SerializedName("outraEscola")
      */
-    private $outraEscolaAlunos;
+    private $outraEscola;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="data_exame_nacional_um", type="date", nullable=true)
+     * @ORM\Column(name="data_exame_nacional_um", type="datetime", nullable=true)
+     * @SerializedName("dataExameNacionalUm")
      */
     private $dataExameNacionalUm;
 
@@ -165,13 +189,15 @@ class Alunos
      * @var float
      *
      * @ORM\Column(name="nota_exame_nacional_um", type="float", precision=10, scale=0, nullable=true)
+     * @SerializedName("notaExameNacionalUm")
      */
     private $notaExameNacionalUm;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="data_exame_nacional_dois", type="date", nullable=true)
+     * @ORM\Column(name="data_exame_nacional_dois", type="datetime", nullable=true)
+     * @SerializedName("dataExameNacionalDois")
      */
     private $dataExameNacionalDois;
 
@@ -179,15 +205,17 @@ class Alunos
      * @var float
      *
      * @ORM\Column(name="nota_exame_nacional_dois", type="float", precision=10, scale=0, nullable=true)
+     * @SerializedName("notaExameNacionalDois")
      */
     private $notaExameNacionalDois;
 
     /**
      * @var \Enderecos
      *
-     * @ORM\ManyToOne(targetEntity="Enderecos")
+     * @SerializedName("enderecosEnderecos")
+     * @ORM\ManyToOne(targetEntity="Serbinario\Bundles\UtilBundle\Entity\Enderecos", cascade = {"all"})
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="enderecos_id_enderecos", referencedColumnName="id_enderecos")
+     *   @ORM\JoinColumn(name="enderecos_id_enderecos", referencedColumnName="id")
      * })
      */
     private $enderecosEnderecos;
@@ -195,9 +223,10 @@ class Alunos
     /**
      * @var \Sexos
      *
+     * @SerializedName("sexosSexos")
      * @ORM\ManyToOne(targetEntity="Sexos")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="sexos_id_sexos", referencedColumnName="id_sexos")
+     *   @ORM\JoinColumn(name="sexos_id_sexos", referencedColumnName="id")
      * })
      */
     private $sexosSexos;
@@ -205,9 +234,10 @@ class Alunos
     /**
      * @var \Emancipados
      *
+     * @SerializedName("emancipadosEmancipados")
      * @ORM\ManyToOne(targetEntity="Emancipados")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="emancipados_id_emancipados", referencedColumnName="id_emancipados")
+     *   @ORM\JoinColumn(name="emancipados_id_emancipados", referencedColumnName="id")
      * })
      */
     private $emancipadosEmancipados;
@@ -215,9 +245,10 @@ class Alunos
     /**
      * @var \Turnos
      *
+     * @SerializedName("turnosTurnos")
      * @ORM\ManyToOne(targetEntity="Turnos")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="turnos_id_turnos", referencedColumnName="id_turnos")
+     *   @ORM\JoinColumn(name="turnos_id_turnos", referencedColumnName="id")
      * })
      */
     private $turnosTurnos;
@@ -225,9 +256,10 @@ class Alunos
     /**
      * @var \GrauInstrucoes
      *
+     * @SerializedName("grauInstrucoesGrauInstrucoes")
      * @ORM\ManyToOne(targetEntity="GrauInstrucoes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="grau_instrucoes_id_grau_instrucoes", referencedColumnName="id_grau_instrucoes")
+     *   @ORM\JoinColumn(name="grau_instrucoes_id_grau_instrucoes", referencedColumnName="id")
      * })
      */
     private $grauInstrucoesGrauInstrucoes;
@@ -235,9 +267,10 @@ class Alunos
     /**
      * @var \Profissoes
      *
+     * @SerializedName("profissoesProfissoes")
      * @ORM\ManyToOne(targetEntity="Profissoes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="profissoes_id_profissoes", referencedColumnName="id_profissoes")
+     *   @ORM\JoinColumn(name="profissoes_id_profissoes", referencedColumnName="id")
      * })
      */
     private $profissoesProfissoes;
@@ -245,9 +278,10 @@ class Alunos
     /**
      * @var \Religioes
      *
+     * @SerializedName("religioesReligioes")
      * @ORM\ManyToOne(targetEntity="Religioes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="religioes_id_religioes", referencedColumnName="id_religioes")
+     *   @ORM\JoinColumn(name="religioes_id_religioes", referencedColumnName="id")
      * })
      */
     private $religioesReligioes;
@@ -255,9 +289,10 @@ class Alunos
     /**
      * @var \EstadosCivis
      *
+     * @SerializedName("estadosCivisEstadosCivis")
      * @ORM\ManyToOne(targetEntity="EstadosCivis")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="estados_civis_id_estados_civis", referencedColumnName="id_estados_civis")
+     *   @ORM\JoinColumn(name="estados_civis_id_estados_civis", referencedColumnName="id")
      * })
      */
     private $estadosCivisEstadosCivis;
@@ -265,9 +300,10 @@ class Alunos
     /**
      * @var \TiposSanguinios
      *
+     * @SerializedName("tiposSanguiniosTiposSanguinios")
      * @ORM\ManyToOne(targetEntity="TiposSanguinios")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="tipos_sanguinios_id_tipos_sanguinios", referencedColumnName="id_tipos_sanguinios")
+     *   @ORM\JoinColumn(name="tipos_sanguinios_id_tipos_sanguinios", referencedColumnName="id")
      * })
      */
     private $tiposSanguiniosTiposSanguinios;
@@ -275,9 +311,10 @@ class Alunos
     /**
      * @var \CoresRacas
      *
+     * @SerializedName("coresRacascoresRacas")
      * @ORM\ManyToOne(targetEntity="CoresRacas")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cores_racas_idcores_racas", referencedColumnName="idcores_racas")
+     *   @ORM\JoinColumn(name="cores_racas_idcores_racas", referencedColumnName="id")
      * })
      */
     private $coresRacascoresRacas;
@@ -285,9 +322,10 @@ class Alunos
     /**
      * @var \Estados
      *
-     * @ORM\ManyToOne(targetEntity="Estados")
+     * @SerializedName("estadosEstados")
+     * @ORM\ManyToOne(targetEntity="Serbinario\Bundles\UtilBundle\Entity\Estados")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="estados_id_estados", referencedColumnName="id_estados")
+     *   @ORM\JoinColumn(name="estados_id_estados", referencedColumnName="id")
      * })
      */
     private $estadosEstados;
@@ -295,9 +333,10 @@ class Alunos
     /**
      * @var \Exames
      *
+     * @SerializedName("examesExames")
      * @ORM\ManyToOne(targetEntity="Exames")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="exames_id_exames", referencedColumnName="id_exames")
+     *   @ORM\JoinColumn(name="exames_id_exames", referencedColumnName="id")
      * })
      */
     private $examesExames;
@@ -305,9 +344,10 @@ class Alunos
     /**
      * @var \Exames
      *
+     * @SerializedName("examesExames1")
      * @ORM\ManyToOne(targetEntity="Exames")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="exames_id_exames1", referencedColumnName="id_exames")
+     *   @ORM\JoinColumn(name="exames_id_exames1", referencedColumnName="id")
      * })
      */
     private $examesExames1;
@@ -315,9 +355,10 @@ class Alunos
     /**
      * @var \Auditivas
      *
+     * @SerializedName("auditivasAuditivas")
      * @ORM\ManyToOne(targetEntity="Auditivas")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="auditivas_id_auditivas", referencedColumnName="id_auditivas")
+     *   @ORM\JoinColumn(name="auditivas_id_auditivas", referencedColumnName="id")
      * })
      */
     private $auditivasAuditivas;
@@ -325,9 +366,10 @@ class Alunos
     /**
      * @var \Fisicas
      *
+     * @SerializedName("fisicasFisicas")
      * @ORM\ManyToOne(targetEntity="Fisicas")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="fisicas_id_fisicas", referencedColumnName="id_fisicas")
+     *   @ORM\JoinColumn(name="fisicas_id_fisicas", referencedColumnName="id")
      * })
      */
     private $fisicasFisicas;
@@ -335,13 +377,32 @@ class Alunos
     /**
      * @var \Visuais
      *
+     * @SerializedName("visuaisVisuais")
      * @ORM\ManyToOne(targetEntity="Visuais")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="visuais_id_visuais", referencedColumnName="id_visuais")
+     *   @ORM\JoinColumn(name="visuais_id_visuais", referencedColumnName="id")
      * })
      */
     private $visuaisVisuais;
 
+    /**
+     * @var string
+     *
+     * @SerializedName("img")
+     * @ORM\Column(name="img", type="string", length=50, nullable=true)
+     */
+    private $img;
+
+    /**
+     * @var boolean
+     *
+     * @SerializedName("status")
+     * @ORM\Column(name="status", type="boolean", nullable=true)
+     */
+    private $status;
+
+
+
+
 
 }
-
