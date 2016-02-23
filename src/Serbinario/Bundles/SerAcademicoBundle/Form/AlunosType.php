@@ -50,7 +50,7 @@ class AlunosType extends AbstractType
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy'
             ))
-            ->add('nacionalidadeAluno')
+            ->add('nacionalidade')
             ->add('naturalidade')
             ->add('anoConclusao2Grau')
             ->add('outraEscola')
