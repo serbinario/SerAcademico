@@ -92,7 +92,8 @@ class AlunosController extends FOSRestController
             $mensagem = $this->get('translator')->trans('internal_error');
 
             #Retorno
-            return new Response($serializer->serialize([$e,
+            return new Response($serializer->serialize([
+                array("message" => $e->getMessage()),
                 'success' => false,
                 'message' => $mensagem],
                 "json"
@@ -112,7 +113,6 @@ class AlunosController extends FOSRestController
         #Recuperando os serviços
         $alunosRN   = $this->get("alunos_rn");
         $serializer = $this->get("jms_serializer");
-        $errors     = $this->get("form_erros");
 
         #Validando o id do parâmetro
         if(!v::numeric()->validate($id)) {
@@ -140,10 +140,11 @@ class AlunosController extends FOSRestController
             ));
         } catch (\Throwable $e) {
             #Setando a mensagem
-            $mensagem = $this->get('translator')->trans('error_get_aluno');
+            $mensagem = $this->get('translator')->trans('alunos.error_get_aluno');
 
             #Retorno
-            return new Response($serializer->serialize([$e,
+            return new Response($serializer->serialize([
+                array("message" => $e->getMessage()),
                 'success' => 'false',
                 'message' => $mensagem],
                 "json"
@@ -162,7 +163,6 @@ class AlunosController extends FOSRestController
 
             #Recuperando os serviços
             $serializer = $this->get("jms_serializer");
-            $errors     = $this->get("form_erros");
 
             #Recuperando os dados pre cadastrados
             $result = [
@@ -193,7 +193,8 @@ class AlunosController extends FOSRestController
             $mensagem = $this->get('translator')->trans('alunos.error_pre_load');
 
             #Retorno
-            return new Response($serializer->serialize([$e,
+            return new Response($serializer->serialize([
+                array("message" => $e->getMessage()),
                 'success' => false,
                 'message' => $mensagem],
                 "json"
@@ -281,7 +282,8 @@ class AlunosController extends FOSRestController
                     $mensagem = $this->get('translator')->trans('alunos.error_update');
 
                     #Retorno
-                    return new Response($serializer->serialize([$e,
+                    return new Response($serializer->serialize([
+                        array("message" => $e->getMessage()),
                         'success' => false,
                         'message' => $mensagem],
                         "json"
@@ -295,8 +297,7 @@ class AlunosController extends FOSRestController
                 return new Response(
                     $serializer->serialize([$errors->serializeFormErrors($form, true, true),
                         'success' => false,
-                        'message' => $mensagem,
-                        'request' => $request->request->all()],
+                        'message' => $mensagem],
                         "json"
                     ));
             }
@@ -361,7 +362,8 @@ class AlunosController extends FOSRestController
                     $mensagem = $this->get('translator')->trans('alunos.error_save');
 
                     #Retorno
-                    return new Response($serializer->serialize([array(),
+                    return new Response($serializer->serialize([
+                        array("message" => $e->getMessage()),
                         'success' => false,
                         'message' => $mensagem],
                         "json"
@@ -375,8 +377,7 @@ class AlunosController extends FOSRestController
                 return new Response(
                     $serializer->serialize([$errors->serializeFormErrors($form, true, true),
                     'success' => false,
-                    'message' => $mensagem,
-                    'request' => $request->request->all()],
+                    'message' => $mensagem],
                     "json"
                 ));
             }

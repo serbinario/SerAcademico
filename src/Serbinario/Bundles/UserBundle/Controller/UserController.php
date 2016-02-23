@@ -77,10 +77,17 @@ class UserController extends FOSRestController
 
             #Retorno
             return new Response($serializer->serialize($columns, "json"));
-        } catch (\Exception $e) {
-            throw new HttpException(200, $e->getMessage());
-        } catch (\Error $e) {
-            throw new HttpException(200, $e->getMessage());
+        }  catch (\Throwable $e) {
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('internal_error');
+
+            #Retorno
+            return new Response($serializer->serialize([
+                array("message" => $e->getMessage()),
+                'success' => false,
+                'message' => $mensagem],
+                "json"
+            ));
         }
     }
 
@@ -89,14 +96,22 @@ class UserController extends FOSRestController
     */
     public function getAction(Request $request, $id)
     {
-        #Validando o id do parâmetro
-        if(!v::numeric()->validate($id)) {
-            throw new HttpException(200, ErroList::PARAMETER_INVALID);
-        }
-
         #Recuperando os serviços
         $userRN     = $this->get("user_rn");
         $serializer = $this->get("jms_serializer");
+
+        #Validando o id do parâmetro
+        if(!v::numeric()->validate($id)) {
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('request_error');
+
+            #Retorno
+            return new Response($serializer->serialize([array(),
+                'success' => 'false',
+                'message' => $mensagem],
+                "json"
+            ));
+        }
 
         #Tratamento de exceções
         try {
@@ -104,13 +119,21 @@ class UserController extends FOSRestController
             $user = $userRN->find(User::class, $id);
 
             #Retorno
-            return new Response($serializer->serialize($user, "json"));
-        } catch (NoResultException $e) {
-            throw new HttpException(400, ErroList::NO_RESULT);
-        } catch (\Exception $e) {
-            throw new HttpException(400, ErroList::EXCEPTION);
-        } catch (\Error $e) {
-            throw new HttpException(400, ErroList::FATAL_ERROR);
+            return new Response($serializer->serialize([$user,
+                'success' => true,
+                'message' => ''],
+                "json"
+            ));
+        }  catch (\Throwable $e) {
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('usuario.error_get_usuario');
+
+            #Retorno
+            return new Response($serializer->serialize([$e,
+                'success' => 'false',
+                'message' => $mensagem],
+                "json"
+            ));
         }
     }
 
@@ -133,11 +156,22 @@ class UserController extends FOSRestController
             ];
 
             #Retorno
-            return new Response($serializer->serialize($result, "json"));
-        } catch (\Exception $e) {
-            throw new HttpException(200, $e->getMessage());
-        } catch (\Error $e) {
-            throw new HttpException(200, $e->getMessage());
+            return new Response($serializer->serialize([$result,
+                'success' => true,
+                'message' => ''],
+                "json"
+            ));
+        } catch (\Throwable $e) {
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('usuarios.error_pre_load');
+
+            #Retorno
+            return new Response($serializer->serialize([
+                array("message" => $e->getMessage()),
+                'success' => false,
+                'message' => $mensagem],
+                "json"
+            ));
         }
     }
 
@@ -151,6 +185,7 @@ class UserController extends FOSRestController
         $userRN     = $this->get("user_rn");
         $perfilRN   = $this->get('perfil_rn');
         $roleRN     = $this->get('role_rn');
+        $errors     = $this->get("form_erros");
 
         #Verificando o método http
         if ($request->getMethod() === "POST") {
@@ -201,18 +236,52 @@ class UserController extends FOSRestController
                     #Atualizando o objeto
                     $result = $userRN->save($user);
 
+                    #Setando a mensagem
+                    $mensagem = $this->get('translator')->trans('usuarios.sucess_save');
+
                     #Retorno
-                    return new Response($serializer->serialize($result, "json"));
-                } catch (\Exception $e) {
-                    throw new HttpException(200, ErroList::EXCEPTION);
-                } catch (\Error $e) {
-                    throw new HttpException(200, ErroList::FATAL_ERROR);
+                    return new Response(
+                        $serializer->serialize([$result,
+                            'success' => true,
+                            'message' => $mensagem],
+                            "json"
+                        ));
+                }  catch (\Throwable $e) {
+                    #Setando a mensagem
+                    $mensagem = $this->get('translator')->trans('usuarios.error_save');
+
+                    #Retorno
+                    return new Response($serializer->serialize([
+                        array("message" => $e->getMessage()),
+                        'success' => false,
+                        'message' => $mensagem],
+                        "json"
+                    ));
                 }
+            } else {
+                #Setando a mensagem
+                $mensagem = $this->get('translator')->trans('usuarios.error_form_invalid');
+
+                #Retorno
+                return new Response(
+                    $serializer->serialize([$errors->serializeFormErrors($form, true, true),
+                        'success' => false,
+                        'message' => $mensagem,
+                        'request' => $request->request->all()],
+                        "json"
+                    ));
             }
         }
 
+        #Setando a mensagem
+        $mensagem = $this->get('translator')->trans('request_error');
+
         #Retorno
-        throw new HttpException(200, ErroList::REQUEST_INVALID);
+        return new Response($serializer->serialize([array(),
+            'success' => false,
+            'message' => $mensagem],
+            "json"
+        ));
     }
 
     /**
@@ -223,23 +292,40 @@ class UserController extends FOSRestController
         #Recuperandoparametros da requisição
         $id = $request->request->get("idUser");
 
-        #Validando o id do parâmetro
-        if(!v::numeric()->validate($id)) {
-            throw new HttpException(200, ErroList::PARAMETER_INVALID);
-        }
-
         #Recuperando os serviços
         $serializer = $this->get("jms_serializer");
         $userRN     = $this->get("user_rn");
         $perfilRN   = $this->get('perfil_rn');
         $roleRN     = $this->get('role_rn');
+        $errors     = $this->get("form_erros");
+
+        #Validando o id do parâmetro
+        if(!v::numeric()->validate($id)) {
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('request_error');
+
+            #Retorno
+            return new Response($serializer->serialize([array(),
+                'success' => false,
+                'message' => $mensagem],
+                "json"
+            ));
+        }
 
         #Recuperando o objeto alunos
         $objUser    = $userRN->find(User::class, $id);
 
         #Verificando se o objeto alunos existe
         if(!isset($objUser)) {
-            throw new HttpException(200, "Solicitação inválida");
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('request_error');
+
+            #Retorno
+            return new Response($serializer->serialize([array(),
+                'success' => false,
+                'message' => $mensagem],
+                "json"
+            ));
         }
 
         $oldPassword = $objUser->getPassword();
@@ -303,14 +389,41 @@ class UserController extends FOSRestController
                     #Atualizando o objeto
                     $result = $userRN->update($user);
 
+                    #Setando a mensagem
+                    $mensagem = $this->get('translator')->trans('usuarios.sucess_update');
+
                     #Retorno
-                    return new Response($serializer->serialize($result, "json"));
-                } catch (\Exception $e) {
-                    throw new HttpException(200, ErroList::EXCEPTION);
-                } catch (\Error $e) {
-                    throw new HttpException(200, ErroList::FATAL_ERROR);
+                    return new Response(
+                        $serializer->serialize([$result,
+                            'success' => true,
+                            'message' => $mensagem],
+                            "json"
+                        ));
+                } catch (\Throwable $e) {
+                    #Setando a mensagem
+                    $mensagem = $this->get('translator')->trans('usuarios.error_update');
+
+                    #Retorno
+                    return new Response($serializer->serialize([
+                        array("message" => $e->getMessage()),
+                        'success' => false,
+                        'message' => $mensagem],
+                        "json"
+                    ));
                 }
             }
+        } else {
+            #Setando a mensagem
+            $mensagem = $this->get('translator')->trans('usuarios.error_form_invalid');
+
+            #Retorno
+            return new Response(
+                $serializer->serialize([$errors->serializeFormErrors($form, true, true),
+                    'success' => false,
+                    'message' => $mensagem,
+                    'request' => $request->request->all()],
+                    "json"
+                ));
         }
 
         #Retorno
