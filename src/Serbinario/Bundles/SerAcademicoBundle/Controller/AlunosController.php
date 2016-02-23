@@ -295,7 +295,7 @@ class AlunosController extends FOSRestController
                 return new Response(
                     $serializer->serialize([$errors->serializeFormErrors($form, true, true),
                         'success' => false,
-                        'message' => $mensagem
+                        'message' => $mensagem,
                         'request' => $request->request->all()],
                         "json"
                     ));
