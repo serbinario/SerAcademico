@@ -25,7 +25,7 @@ class AlunosType extends AbstractType
                         'message' => "alunos.nome_pai_not_blank"
                     ]),
                     new Assert\Length([
-                        'min' => "10",
+                        'min' => "1",
                         'max' => "255",
                         'minMessage' => "Renginio pavadinimas negali būti trumpesnis nei {{ limit }} simboliai",
                         'maxMessage' => "Renginio pavadinimas negali būti ilgesnis nei {{ limit }} simboliai"
@@ -50,7 +50,7 @@ class AlunosType extends AbstractType
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy'
             ))
-            ->add('nacionalidadeAluno')
+            ->add('nacionalidade')
             ->add('naturalidade')
             ->add('anoConclusao2Grau')
             ->add('outraEscola')
