@@ -211,8 +211,6 @@ class AlunosController extends FOSRestController
      */
     public function putAlunosAction(Request $request)
     {
-
-
         #Recuperandoparametros da requisição
         $id = $request->request->get("idAluno");
 
@@ -220,8 +218,6 @@ class AlunosController extends FOSRestController
         $alunosRN   = $this->get("alunos_rn");
         $serializer = $this->get("jms_serializer");
         $errors     = $this->get("form_erros");
-
-        //return new Response( $serializer->serialize($request->request->all(), 'json'));
 
         #Validando o id do parâmetro
         if(!v::numeric()->validate($id)) {
@@ -391,7 +387,7 @@ class AlunosController extends FOSRestController
         $mensagem = $this->get('translator')->trans('request_error');
 
         #Retorno
-        return new Response($serializer->serialize([array(),
+        return new Response($serializer->serialize([$form,
             'success' => false,
             'message' => $mensagem],
             "json"

@@ -25,7 +25,7 @@ class AlunosType extends AbstractType
                         'message' => "alunos.nome_pai_not_blank"
                     ]),
                     new Assert\Length([
-                        'min' => "10",
+                        'min' => "1",
                         'max' => "255",
                         'minMessage' => "Renginio pavadinimas negali būti trumpesnis nei {{ limit }} simboliai",
                         'maxMessage' => "Renginio pavadinimas negali būti ilgesnis nei {{ limit }} simboliai"
