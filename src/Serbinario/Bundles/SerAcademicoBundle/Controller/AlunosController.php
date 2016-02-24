@@ -219,7 +219,6 @@ class AlunosController extends FOSRestController
         $serializer = $this->get("jms_serializer");
         $errors     = $this->get("form_erros");
 
-
         #Validando o id do parâmetro
         if(!v::numeric()->validate($id)) {
             #Setando a mensagem
@@ -340,8 +339,6 @@ class AlunosController extends FOSRestController
             #Verifica se os dados são válidos
             if ($form->isValid()) {
                 #Recuperando o objeto alunos
-
-
                 $alunos     = $form->getData();
 
                 #Tratamento de exceções
