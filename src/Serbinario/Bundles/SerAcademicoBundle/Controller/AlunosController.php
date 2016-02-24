@@ -376,6 +376,7 @@ class AlunosController extends FOSRestController
                 #Retorno
                 return new Response(
                     $serializer->serialize([$errors->serializeFormErrors($form, true, true),
+                        $request->request->all(),
                     'success' => false,
                     'message' => $mensagem],
                     "json"
@@ -387,7 +388,7 @@ class AlunosController extends FOSRestController
         $mensagem = $this->get('translator')->trans('request_error');
 
         #Retorno
-        return new Response($serializer->serialize([$form,
+        return new Response($serializer->serialize([array(),
             'success' => false,
             'message' => $mensagem],
             "json"
