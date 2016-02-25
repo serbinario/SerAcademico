@@ -35,7 +35,7 @@ class Alunos
     /**
      * @var string
      *
-     * @ORM\Column(name="nome", type="string", length=50, nullable=true)
+     * @ORM\Column(name="nome", type="string", length=50, nullable=false)
      * @SerializedName("nome")
      */
     private $nome;
@@ -84,7 +84,7 @@ class Alunos
     /**
      * @var string
      *
-     * @ORM\Column(name="cpf", type="string", length=20, nullable=true)
+     * @ORM\Column(name="cpf", type="string", length=11, nullable=false)
      * @SerializedName("cpf")
      */
     private $cpf;
