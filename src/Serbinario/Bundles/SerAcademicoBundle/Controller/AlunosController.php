@@ -25,6 +25,7 @@ use Serbinario\Bundles\SerAcademicoBundle\Entity\Auditivas;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Visuais;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Fisicas;
 use Serbinario\Bundles\SerAcademicoBundle\Entity\Emancipados;
+use Serbinario\Bundles\SerAcademicoBundle\Entity\Instituicao;
 use Serbinario\Bundles\UtilBundle\Util\GridClass;
 use FOS\RestBundle\Controller\Annotations\Post;
 
@@ -180,6 +181,7 @@ class AlunosController extends FOSRestController
                 'fisicas'       => $manager->getRepository(Fisicas::class)->findAll(),
                 'emancipados'   => $manager->getRepository(Emancipados::class)->findAll(),
                 'profissoes'    => $manager->getRepository(Profissoes::class)->findAll(),
+                'instituicao'   => $manager->getRepository(Instituicao::class)->findAll(),
             ];
 
             #Retorno

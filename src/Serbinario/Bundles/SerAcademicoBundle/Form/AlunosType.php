@@ -32,7 +32,6 @@ class AlunosType extends AbstractType
                     ])
                 ]
             ])
-            ->add('nomeSocial')
             ->add('nomeMae')
             ->add('identidade')
             ->add('orgaoRg')
@@ -66,7 +65,6 @@ class AlunosType extends AbstractType
             ->add('notaExameNacionalDois')
             ->add('enderecosEnderecos', EnderecosType::class)
             ->add('sexosSexos')
-            ->add('emancipadosEmancipados')
             ->add('turnosTurnos')
             ->add('grauInstrucoesGrauInstrucoes')
             ->add('profissoesProfissoes')
@@ -82,6 +80,9 @@ class AlunosType extends AbstractType
             ->add('visuaisVisuais')
             ->add('img')
             ->add('status')
+            ->add('telFixo')
+            ->add('celular')
+            ->add('instituicao')
         ;
     }
     
