@@ -12,6 +12,7 @@ use JMS\Serializer\Annotation\Type;
 
 /**
  *
+ *
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="Serbinario\Bundles\UserBundle\Entity\UserRepository")
  */

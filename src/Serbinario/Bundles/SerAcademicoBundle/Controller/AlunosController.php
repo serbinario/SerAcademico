@@ -384,6 +384,7 @@ class AlunosController extends FOSRestController
                 ));
             }
         }
+        
 
         #Setando a mensagem
         $mensagem = $this->get('translator')->trans('request_error');
