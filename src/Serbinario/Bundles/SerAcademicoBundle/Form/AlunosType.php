@@ -83,6 +83,7 @@ class AlunosType extends AbstractType
             ->add('telFixo')
             ->add('celular')
             ->add('instituicao')
+            ->add('email')
         ;
     }
     

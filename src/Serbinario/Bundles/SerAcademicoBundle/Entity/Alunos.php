@@ -411,6 +411,14 @@ class Alunos
     private $instituicao;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
+     * @SerializedName("email")
+     */
+    private $email;
+
+    /**
      * Get id
      *
      * @return integer
@@ -1403,5 +1411,22 @@ class Alunos
     {
         $this->instituicao = $instituicao;
     }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
 
 }
