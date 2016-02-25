@@ -67,9 +67,6 @@ class Enderecos
     private $bairrosBairros;
 
 
-
-    
-
     /**
      * Get id
      *

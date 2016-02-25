@@ -101,7 +101,7 @@ class Alunos
      * @var string
      *
      * @ORM\Column(name="titulo_eleitoral", type="string", length=20, nullable=true)
-     * @SerializedName("tituloEleitora")
+     * @SerializedName("tituloEleitoral")
      */
     private $tituloEleitoral;
 
