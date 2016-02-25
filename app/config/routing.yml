@@ -7,6 +7,11 @@ user:
     type:     annotation
     prefix:   /
 
+util:
+    resource: "@UtilBundle/Controller/UtilController.php"
+    type:     rest
+    prefix:   /util
+
 estados:
     resource: "@UtilBundle/Controller/EstadosController.php"
     type:     rest
@@ -26,8 +31,6 @@ users:
     resource: "@UserBundle/Controller/UserController.php"
     type:     rest
     prefix:   /users
-
-
 
 
 fos_oauth_server_token:
