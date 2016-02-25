@@ -5,53 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33d237ef-1d90-4fe0-9e17-eb13d6e6dc66" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/var/cache/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/var/logs/.gitkeep" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/AccessToken.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/AccessToken.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Instituicao.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Alunos.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Alunos.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Controller/AlunosController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Form/AlunosType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Aplicacoes.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Aplicacoes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Arcevos.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Arcevos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Auditivas.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Auditivas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/AuthCode.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/AuthCode.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Bairros.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Bairros.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Cidades.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Cidades.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Client.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Client.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/CoresRacas.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/CoresRacas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Editoras.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Editoras.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Emancipados.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Emancipados.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Enderecos.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Enderecos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Estados.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Entity/Estados.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/EstadosCivis.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/EstadosCivis.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Exames.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Exames.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Exemplares.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Exemplares.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Fisicas.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Fisicas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Util/FormErrorsSerializer.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Util/FormErrorsSerializer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/GrauInstrucoes.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/GrauInstrucoes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Idiomas.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Idiomas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Ilustracoes.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Ilustracoes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Perfil.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Perfil.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Permissoes.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Permissoes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Profissoes.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Profissoes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Projetos.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Projetos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/RefreshToken.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/RefreshToken.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Religioes.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Religioes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Role.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/Role.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Sexos.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Sexos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/TiposAcervos.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/TiposAcervos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/TiposSanguinios.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/TiposSanguinios.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Turnos.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Turnos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UserBundle/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Visuais.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/SerAcademicoBundle/Entity/Visuais.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/config.php" afterPath="$PROJECT_DIR$/web/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/translations/messages.en.yml" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.en.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.pt-BR.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/translations/validators.en.yml" afterPath="$PROJECT_DIR$/app/Resources/translations/validators.en.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Controller/UtilController.php" afterPath="$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Controller/UtilController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml" afterPath="$PROJECT_DIR$/app/Resources/translations/validators.pt-BR.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SerAcademico.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,8 +34,8 @@
       <file leaf-file-name="UtilController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Controller/UtilController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.16475973">
-              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.23112129">
+              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -187,6 +146,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,8 +274,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -414,10 +373,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1368" height="616" extended-state="6" />
+    <frame x="-1" y="24" width="1368" height="616" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26136363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2659091" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790223" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -763,7 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -771,7 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3707094">
           <caret line="379" column="27" selection-start-line="379" selection-start-column="27" selection-end-line="379" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -779,7 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3501144">
           <caret line="236" column="36" selection-start-line="236" selection-start-column="27" selection-end-line="236" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -787,7 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,9 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.25">
           <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#60#109#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -805,9 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.75">
           <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding>
-            <element signature="e#55#103#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -815,7 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3798627">
           <caret line="598" column="53" selection-start-line="598" selection-start-column="50" selection-end-line="598" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,7 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.72540045">
           <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,7 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26030368">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -845,8 +791,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Serbinario/Bundles/UtilBundle/Controller/UtilController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.16475973">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.23112129">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding />
         </state>
       </provider>

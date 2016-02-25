@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\SerializedName;
 /**
  * Alunos
  *
- * @ORM\Table(name="alunos", indexes={@ORM\Index(name="fk_enderecos1_idx", columns={"enderecos_id_enderecos"}), @ORM\Index(name="fk_sexos1_idx", columns={"sexos_id_sexos"}), @ORM\Index(name="fk_emancipados1_idx", columns={"emancipados_id_emancipados"}), @ORM\Index(name="fk_turnos1_idx", columns={"turnos_id_turnos"}), @ORM\Index(name="fk_grau_instrucoes1_idx", columns={"grau_instrucoes_id_grau_instrucoes"}), @ORM\Index(name="fk_profissoes1_idx", columns={"profissoes_id_profissoes"}), @ORM\Index(name="fk_religioes1_idx", columns={"religioes_id_religioes"}), @ORM\Index(name="fk_estados_civis1_idx", columns={"estados_civis_id_estados_civis"}), @ORM\Index(name="fk_tipos_sanguinios1_idx", columns={"tipos_sanguinios_id_tipos_sanguinios"}), @ORM\Index(name="fk_cores_racas1_idx", columns={"cores_racas_idcores_racas"}), @ORM\Index(name="fk_estados1_idx", columns={"estados_id_estados"}), @ORM\Index(name="fk_exames1_idx", columns={"exames_id_exames"}), @ORM\Index(name="fk_exames2_idx", columns={"exames_id_exames1"}), @ORM\Index(name="fk_auditivas1_idx", columns={"auditivas_id_auditivas"}), @ORM\Index(name="fk_fisicas1_idx", columns={"fisicas_id_fisicas"}), @ORM\Index(name="fk_visuais1_idx", columns={"visuais_id_visuais"})})
+ * @ORM\Table(name="alunos", indexes={@ORM\Index(name="fk_enderecos1_idx", columns={"enderecos_id_enderecos"}), @ORM\Index(name="fk_sexos1_idx", columns={"sexos_id_sexos"}), @ORM\Index(name="fk_turnos1_idx", columns={"turnos_id_turnos"}), @ORM\Index(name="fk_grau_instrucoes1_idx", columns={"grau_instrucoes_id_grau_instrucoes"}), @ORM\Index(name="fk_profissoes1_idx", columns={"profissoes_id_profissoes"}), @ORM\Index(name="fk_religioes1_idx", columns={"religioes_id_religioes"}), @ORM\Index(name="fk_estados_civis1_idx", columns={"estados_civis_id_estados_civis"}), @ORM\Index(name="fk_tipos_sanguinios1_idx", columns={"tipos_sanguinios_id_tipos_sanguinios"}), @ORM\Index(name="fk_cores_racas1_idx", columns={"cores_racas_idcores_racas"}), @ORM\Index(name="fk_estados1_idx", columns={"estados_id_estados"}), @ORM\Index(name="fk_exames1_idx", columns={"exames_id_exames"}), @ORM\Index(name="fk_exames2_idx", columns={"exames_id_exames1"}), @ORM\Index(name="fk_auditivas1_idx", columns={"auditivas_id_auditivas"}), @ORM\Index(name="fk_fisicas1_idx", columns={"fisicas_id_fisicas"}), @ORM\Index(name="fk_visuais1_idx", columns={"visuais_id_visuais"})})
  * @ORM\Entity
  *
  */
@@ -35,7 +35,7 @@ class Alunos
     /**
      * @var string
      *
-     * @ORM\Column(name="nome", type="string", length=50, nullable=true)
+     * @ORM\Column(name="nome", type="string", length=50, nullable=false)
      * @SerializedName("nome")
      */
     private $nome;
@@ -48,15 +48,7 @@ class Alunos
      */
     private $nomePai;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nome_social", type="string", length=50, nullable=true)
-     * @SerializedName("nomeSocial")
-     */
-    private $nomeSocial;
-
-    /**
+     /**
      * @var string
      *
      * @ORM\Column(name="nome_mae", type="string", length=50, nullable=true)
@@ -92,7 +84,7 @@ class Alunos
     /**
      * @var string
      *
-     * @ORM\Column(name="cpf", type="string", length=20, nullable=true)
+     * @ORM\Column(name="cpf", type="string", length=11, nullable=false)
      * @SerializedName("cpf")
      */
     private $cpf;
@@ -231,16 +223,6 @@ class Alunos
      */
     private $sexosSexos;
 
-    /**
-     * @var \Emancipados
-     *
-     * @SerializedName("emancipadosEmancipados")
-     * @ORM\ManyToOne(targetEntity="Emancipados")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="emancipados_id_emancipados", referencedColumnName="id")
-     * })
-     */
-    private $emancipadosEmancipados;
 
     /**
      * @var \Turnos
@@ -401,10 +383,40 @@ class Alunos
      */
     private $status;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tel_fixo", type="string", length=20, nullable=true)
+     * @SerializedName("telFixo")
+     */
+    private $telFixo;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="celular", type="string", length=20, nullable=true)
+     * @SerializedName("celular")
+     */
+    private $celular;
 
+    /**
+     * @var \Instituicao
+     *
+     * @SerializedName("instituicao")
+     * @ORM\ManyToOne(targetEntity="Instituicao")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="instituicao", referencedColumnName="id")
+     * })
+     */
+    private $instituicao;
 
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
+     * @SerializedName("email")
+     */
+    private $email;
 
     /**
      * Get id
@@ -486,30 +498,6 @@ class Alunos
     public function getNomePai()
     {
         return $this->nomePai;
-    }
-
-    /**
-     * Set nomeSocial
-     *
-     * @param string $nomeSocial
-     *
-     * @return Alunos
-     */
-    public function setNomeSocial($nomeSocial)
-    {
-        $this->nomeSocial = $nomeSocial;
-
-        return $this;
-    }
-
-    /**
-     * Get nomeSocial
-     *
-     * @return string
-     */
-    public function getNomeSocial()
-    {
-        return $this->nomeSocial;
     }
 
     /**
@@ -1065,30 +1053,6 @@ class Alunos
     }
 
     /**
-     * Set emancipadosEmancipados
-     *
-     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Emancipados $emancipadosEmancipados
-     *
-     * @return Alunos
-     */
-    public function setEmancipadosEmancipados(\Serbinario\Bundles\SerAcademicoBundle\Entity\Emancipados $emancipadosEmancipados = null)
-    {
-        $this->emancipadosEmancipados = $emancipadosEmancipados;
-
-        return $this;
-    }
-
-    /**
-     * Get emancipadosEmancipados
-     *
-     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\Emancipados
-     */
-    public function getEmancipadosEmancipados()
-    {
-        return $this->emancipadosEmancipados;
-    }
-
-    /**
      * Set turnosTurnos
      *
      * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Turnos $turnosTurnos
@@ -1399,4 +1363,70 @@ class Alunos
     {
         return $this->visuaisVisuais;
     }
+
+    /**
+     * @return string
+     */
+    public function getTelFixo()
+    {
+        return $this->telFixo;
+    }
+
+    /**
+     * @param string $telFixo
+     */
+    public function setTelFixo($telFixo)
+    {
+        $this->telFixo = $telFixo;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCelular()
+    {
+        return $this->celular;
+    }
+
+    /**
+     * @param string $celular
+     */
+    public function setCelular($celular)
+    {
+        $this->celular = $celular;
+    }
+
+    /**
+     * @return \Visuais
+     */
+    public function getInstituicao()
+    {
+        return $this->instituicao;
+    }
+
+    /**
+     * @param \Visuais $instituicao
+     */
+    public function setInstituicao($instituicao)
+    {
+        $this->instituicao = $instituicao;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+
 }

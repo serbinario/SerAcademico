@@ -17,7 +17,7 @@ class UtilController extends FOSRestController
     {
         try {
             #variáveis de uso
-            $result       =  false;
+            $result       =  true;
 
             #Recuperando os serviços
             $serializer   = $this->get("jms_serializer");
@@ -40,8 +40,8 @@ class UtilController extends FOSRestController
             $resultQuery  = $queryBuilder->getQuery()->getResult();
 
             #Verificando o resultado da consulta
-            if(!$resultQuery) {
-                $result = true;
+            if(!count($resultQuery) > 0) {
+                $result = false;
             }
 
             #Retorno

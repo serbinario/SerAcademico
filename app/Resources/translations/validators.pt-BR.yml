@@ -1,2 +1,3 @@
 alunos:
-  nome_pai_not_blank: Por favor entre com o nome do pai do aluno.
+  nome_aluno_not_blank: Por favor entre com o nome do aluno.
+  cpf_aluno_not_blank: Por favor entre com o CPF do aluno

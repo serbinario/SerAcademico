@@ -18,21 +18,20 @@ class AlunosType extends AbstractType
     {
         $builder
             ->add('matricula')
-            ->add('nome')
-            ->add('nomePai', null, [
+            ->add('nome', null, [
                 'constraints' =>[
                     new Assert\NotBlank([
-                        'message' => "alunos.nome_pai_not_blank"
+                        'message' => "alunos.nome_aluno_not_blank"
                     ]),
                     new Assert\Length([
                         'min' => "1",
-                        'max' => "255",
+                        'max' => "50",
                         'minMessage' => "Renginio pavadinimas negali būti trumpesnis nei {{ limit }} simboliai",
                         'maxMessage' => "Renginio pavadinimas negali būti ilgesnis nei {{ limit }} simboliai"
                     ])
                 ]
             ])
-            ->add('nomeSocial')
+            ->add('nomePai')
             ->add('nomeMae')
             ->add('identidade')
             ->add('orgaoRg')
@@ -40,7 +39,19 @@ class AlunosType extends AbstractType
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy'
              ))
-            ->add('cpf')
+            ->add('cpf', null, [
+                'constraints' =>[
+                    new Assert\NotBlank([
+                        'message' => "alunos.cpf_aluno_not_blank"
+                    ]),
+                    new Assert\Length([
+                        'min' => "11",
+                        'max' => "11",
+                        'minMessage' => "Renginio pavadinimas negali būti trumpesnis nei {{ limit }} simboliai",
+                        'maxMessage' => "Renginio pavadinimas negali būti ilgesnis nei {{ limit }} simboliai"
+                    ])
+                ]
+            ])
             ->add('tituloEleitoral')
             ->add('zona')
             ->add('secao')
@@ -66,7 +77,6 @@ class AlunosType extends AbstractType
             ->add('notaExameNacionalDois')
             ->add('enderecosEnderecos', EnderecosType::class)
             ->add('sexosSexos')
-            ->add('emancipadosEmancipados')
             ->add('turnosTurnos')
             ->add('grauInstrucoesGrauInstrucoes')
             ->add('profissoesProfissoes')
@@ -82,6 +92,10 @@ class AlunosType extends AbstractType
             ->add('visuaisVisuais')
             ->add('img')
             ->add('status')
+            ->add('telFixo')
+            ->add('celular')
+            ->add('instituicao')
+            ->add('email')
         ;
     }
     
