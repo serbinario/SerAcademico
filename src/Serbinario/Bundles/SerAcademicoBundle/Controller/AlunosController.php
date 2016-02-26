@@ -43,7 +43,7 @@ class AlunosController extends FOSRestController
         #Tratamento de exceções
         try {
             $columns = array("a.nome",
-            );
+                "a.cpf");
             //var_dump($request->request->all());exit;
             $entityJOIN = array();
             $eventosArray         = array();
