@@ -30,4 +30,38 @@ class GrauInstrucoes
      * @ORM\Column(name="grau_instrucoes", type="string", length=45, nullable=true)
      */
     private $grauInstrucoes;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set grauInstrucoes
+     *
+     * @param string $grauInstrucoes
+     *
+     * @return GrauInstrucoes
+     */
+    public function setGrauInstrucoes($grauInstrucoes)
+    {
+        $this->grauInstrucoes = $grauInstrucoes;
+
+        return $this;
+    }
+
+    /**
+     * Get grauInstrucoes
+     *
+     * @return string
+     */
+    public function getGrauInstrucoes()
+    {
+        return $this->grauInstrucoes;
+    }
 }

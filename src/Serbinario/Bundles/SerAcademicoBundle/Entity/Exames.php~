@@ -30,4 +30,38 @@ class Exames
      * @ORM\Column(name="exames", type="string", length=45, nullable=true)
      */
     private $exames;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set exames
+     *
+     * @param string $exames
+     *
+     * @return Exames
+     */
+    public function setExames($exames)
+    {
+        $this->exames = $exames;
+
+        return $this;
+    }
+
+    /**
+     * Get exames
+     *
+     * @return string
+     */
+    public function getExames()
+    {
+        return $this->exames;
+    }
 }

@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: serbinario
+ * Date: 26/02/16
+ * Time: 11:28
+ */
 
 namespace Serbinario\Bundles\SerAcademicoBundle\Entity;
 
@@ -6,12 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation\SerializedName;
 
 /**
- * Religioes
+ * Cursos
  *
- * @ORM\Table(name="religioes")
+ * @ORM\Table(name="cursos")
  * @ORM\Entity
  */
-class Religioes
+class Cursos
 {
     /**
      * @var integer
@@ -26,10 +32,10 @@ class Religioes
     /**
      * @var string
      *
-     * @SerializedName("religioes")
-     * @ORM\Column(name="religioes", type="string", length=45, nullable=true)
+     * @SerializedName("curso")
+     * @ORM\Column(name="turnos", type="string", length=45, nullable=true)
      */
-    private $religioes;
+    private $curso;
 
     /**
      * Get id
@@ -42,26 +48,26 @@ class Religioes
     }
 
     /**
-     * Set religioes
+     * Set curso
      *
-     * @param string $religioes
+     * @param string $curso
      *
-     * @return Religioes
+     * @return Cursos
      */
-    public function setReligioes($religioes)
+    public function setCurso($curso)
     {
-        $this->religioes = $religioes;
+        $this->curso = $curso;
 
         return $this;
     }
 
     /**
-     * Get religioes
+     * Get curso
      *
      * @return string
      */
-    public function getReligioes()
+    public function getCurso()
     {
-        return $this->religioes;
+        return $this->curso;
     }
 }

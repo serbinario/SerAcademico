@@ -30,4 +30,38 @@ class CoresRacas
      * @ORM\Column(name="cores_racas", type="string", length=45, nullable=true)
      */
     private $coresRacas;
+
+    /**
+     * Get idcoresRacas
+     *
+     * @return integer
+     */
+    public function getIdcoresRacas()
+    {
+        return $this->idcoresRacas;
+    }
+
+    /**
+     * Set coresRacas
+     *
+     * @param string $coresRacas
+     *
+     * @return CoresRacas
+     */
+    public function setCoresRacas($coresRacas)
+    {
+        $this->coresRacas = $coresRacas;
+
+        return $this;
+    }
+
+    /**
+     * Get coresRacas
+     *
+     * @return string
+     */
+    public function getCoresRacas()
+    {
+        return $this->coresRacas;
+    }
 }

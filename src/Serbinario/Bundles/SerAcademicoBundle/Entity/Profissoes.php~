@@ -30,4 +30,38 @@ class Profissoes
      * @ORM\Column(name="profissoes", type="string", length=45, nullable=true)
      */
     private $profissoes;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set profissoes
+     *
+     * @param string $profissoes
+     *
+     * @return Profissoes
+     */
+    public function setProfissoes($profissoes)
+    {
+        $this->profissoes = $profissoes;
+
+        return $this;
+    }
+
+    /**
+     * Get profissoes
+     *
+     * @return string
+     */
+    public function getProfissoes()
+    {
+        return $this->profissoes;
+    }
 }

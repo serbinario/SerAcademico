@@ -368,6 +368,26 @@ class Alunos
     private $visuaisVisuais;
 
     /**
+     * @var \Cursos
+     *
+     * @ORM\ManyToOne(targetEntity="Cursos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cursos_id", referencedColumnName="id")
+     * })
+     */
+    private $cursos;
+
+    /**
+     * @var \Turmas
+     *
+     * @ORM\ManyToOne(targetEntity="Turmas")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="turmas_id", referencedColumnName="id")
+     * })
+     */
+    private $turmas;
+
+    /**
      * @var string
      *
      * @SerializedName("img")
@@ -413,8 +433,8 @@ class Alunos
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, nullable=true)
      * @SerializedName("email")
+     * @ORM\Column(name="email",type="string", nullable=true)
      */
     private $email;
 
@@ -1429,4 +1449,52 @@ class Alunos
     }
 
 
+
+    /**
+     * Set cursos
+     *
+     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Cursos $cursos
+     *
+     * @return Alunos
+     */
+    public function setCursos(\Serbinario\Bundles\SerAcademicoBundle\Entity\Cursos $cursos = null)
+    {
+        $this->cursos = $cursos;
+
+        return $this;
+    }
+
+    /**
+     * Get cursos
+     *
+     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\Cursos
+     */
+    public function getCursos()
+    {
+        return $this->cursos;
+    }
+
+    /**
+     * Set turmas
+     *
+     * @param \Serbinario\Bundles\SerAcademicoBundle\Entity\Turmas $turmas
+     *
+     * @return Alunos
+     */
+    public function setTurmas(\Serbinario\Bundles\SerAcademicoBundle\Entity\Turmas $turmas = null)
+    {
+        $this->turmas = $turmas;
+
+        return $this;
+    }
+
+    /**
+     * Get turmas
+     *
+     * @return \Serbinario\Bundles\SerAcademicoBundle\Entity\Turmas
+     */
+    public function getTurmas()
+    {
+        return $this->turmas;
+    }
 }

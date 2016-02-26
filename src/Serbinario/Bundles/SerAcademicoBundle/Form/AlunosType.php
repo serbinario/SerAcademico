@@ -90,6 +90,8 @@ class AlunosType extends AbstractType
             ->add('auditivasAuditivas')
             ->add('fisicasFisicas')
             ->add('visuaisVisuais')
+            ->add('cursos')
+            ->add('turmas')
             ->add('img')
             ->add('status')
             ->add('telFixo')

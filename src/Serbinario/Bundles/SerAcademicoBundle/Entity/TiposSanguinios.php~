@@ -30,4 +30,38 @@ class TiposSanguinios
      * @ORM\Column(name="tipos_sanguinios", type="string", length=45, nullable=true)
      */
     private $tiposSanguinios;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set tiposSanguinios
+     *
+     * @param string $tiposSanguinios
+     *
+     * @return TiposSanguinios
+     */
+    public function setTiposSanguinios($tiposSanguinios)
+    {
+        $this->tiposSanguinios = $tiposSanguinios;
+
+        return $this;
+    }
+
+    /**
+     * Get tiposSanguinios
+     *
+     * @return string
+     */
+    public function getTiposSanguinios()
+    {
+        return $this->tiposSanguinios;
+    }
 }

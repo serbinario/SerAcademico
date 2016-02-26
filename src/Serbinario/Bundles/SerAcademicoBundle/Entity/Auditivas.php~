@@ -30,4 +30,38 @@ class Auditivas
      * @ORM\Column(name="auditivas", type="string", length=45, nullable=true)
      */
     private $auditivas;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set auditivas
+     *
+     * @param string $auditivas
+     *
+     * @return Auditivas
+     */
+    public function setAuditivas($auditivas)
+    {
+        $this->auditivas = $auditivas;
+
+        return $this;
+    }
+
+    /**
+     * Get auditivas
+     *
+     * @return string
+     */
+    public function getAuditivas()
+    {
+        return $this->auditivas;
+    }
 }

@@ -30,4 +30,38 @@ class Turnos
      * @ORM\Column(name="turnos", type="string", length=45, nullable=true)
      */
     private $turnos;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set turnos
+     *
+     * @param string $turnos
+     *
+     * @return Turnos
+     */
+    public function setTurnos($turnos)
+    {
+        $this->turnos = $turnos;
+
+        return $this;
+    }
+
+    /**
+     * Get turnos
+     *
+     * @return string
+     */
+    public function getTurnos()
+    {
+        return $this->turnos;
+    }
 }
