@@ -26,6 +26,7 @@ class UtilController extends FOSRestController
             $tableName    = $request->request->get("tableName");
             $fieldName    = $request->request->get("fieldName");
             $valueName    = $request->request->get("valueName");
+            $idValue      = $request->request->get("id");
 
             #Recupearando o entity manager e a query builder
             $manager      = $this->getDoctrine()->getManager();
@@ -35,6 +36,11 @@ class UtilController extends FOSRestController
             $queryBuilder->select("a");
             $queryBuilder->from("{$tableName}", "a");
             $queryBuilder->where("a.{$fieldName} = '{$valueName}'");
+
+            #consulta com id
+            if($idValue) {
+                $queryBuilder->andWhere("a.id != {$idValue}");
+            }
 
             #Executando a consulta
             $resultQuery  = $queryBuilder->getQuery()->getResult();
